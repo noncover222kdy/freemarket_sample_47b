@@ -2,7 +2,6 @@
 
 * Database creation
 
-
 ## usersテーブル
 
 |Column|Type|Options|
@@ -121,7 +120,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false|index: true|
 |category|string|null: false|
 |discription|text|null: false|
 |size|string|null: false|
