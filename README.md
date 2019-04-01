@@ -22,11 +22,11 @@
 
 ### Association
 
-- has_many :items
-- has_many :works
-- has_many :infos
-- has_many :news
-- has_many :commments
+- has_many :items, dependent: :destroy
+- has_many :works, dependent: :destroy
+- has_many :infos, dependent: :destroy
+- has_many :news, dependent: :destroy
+- has_many :commments, dependent: :destroy
 - has_many :trading_comments
 - has_many :evalutions, dependent: :destroy
 - has_many :banks, dependent: :destroy
@@ -131,10 +131,10 @@
 <!-- priceは、整数でなくてはならないバリデーション設定 -->
 ### Association
 - has_many :likes, dependent: :destroy
-- has_many :comments
-- has_many :item_images
-- has_many :trading_comments
-- has_many :users, through: :likes
+- has_many :comments, dependent: :destroy
+- has_many :item_images, dependent: :destroy
+- has_many :trading_comments, dependent: :destroy
+- has_many :users, through: :likes, dependent: :destroy
 - belongs_to :saler, class_name: "User"
 
 
@@ -152,7 +152,7 @@
 - belongs_to :bought_items, foreign_key: "buyer_id", class_name: "Item"
 - belongs_to :selling_item, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 - belings_to :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
-- has_many :trading_comments
+- has_many :trading_comments, dependent: :destroy
 
 
 ## trading_commentsテーブル
