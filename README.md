@@ -202,5 +202,5 @@
 ### Association
 - belongs_to :item
 
-
+<!-- historyからrevertしました -->
 
