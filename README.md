@@ -18,9 +18,7 @@
 |introduction|text|
 |point|integer|
 |expiration|date|
-|bought_items|reference|null: false, foreign_key:true|
-|selling_items|reference|null: false, foreign_key:true|
-|sold_items|reference|null: false, foreign_key:true|
+
 
 ### Association
 
@@ -35,9 +33,7 @@
 - has_many :addresses, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :likes_items, through: :likes, source: :item
-- has_many :bought_items, foreign_key: "buyer_id", class_name: "Item"
-- has_many :selling_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
-- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+
 <!-- sourceは「参照元のモデル」をさすオプション -->
 
 
@@ -131,7 +127,6 @@
 |shopping_days|string|null: false|
 |price|integer|null: false, validates :price, numericality: { only_integer: true }|
 |saler_id|references|null: false, foreign_key:true|
-|buyer_id|references|null: false, foreign_key:true|
 
 <!-- priceは、整数でなくてはならないバリデーション設定 -->
 ### Association
@@ -139,11 +134,37 @@
 - has_many :comments
 - has_many :item_images
 - has_many :trading_comments
-- belongs_to :user
-- has_many :likes_users, through: :likes, source: :user
+- has_many :users, through: :likes
 - belongs_to :saler, class_name: "User"
-- belongs_to :buyer, class_name: "User"
 
+
+## dealsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|buyer_id|references|null: false, foreign_key: true|
+|selling_id|references|null: false, foreign_key: true|
+|bought_items|reference|null: false, foreign_key:true|
+|sold_items|reference|null: false, foreign_key:true|
+
+### Association
+- belongs_to :buyer, class_name: "User"
+- belongs_to :bought_items, foreign_key: "buyer_id", class_name: "Item"
+- belongs_to :selling_item, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+- belings_to :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :trading_comments
+
+
+## trading_commentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|buyer|reference|null: false|
+|saler|reference|null: false|
+|message|text|
+
+### Association
+- belongs_to :deal
 
 ## likesテーブル
 
@@ -182,13 +203,4 @@
 - belongs_to :item
 
 
-## trading_commentsテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|item|reference|null: false|
-|user|integer|null: false|
-|message|text|
-
-### Association
-- belongs_to :item
