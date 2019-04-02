@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'items#index'
+
+  resources :users do
+    resources :items do
+      resources :item_images
+    end
+    resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
+    resources :banks, only: [:new, :create, :edit, :update, :destroy]
+  end
+
 end
