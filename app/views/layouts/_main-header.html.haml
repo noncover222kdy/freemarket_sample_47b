@@ -16,17 +16,17 @@
               %li list_1-3
           %li.nav_list ブランドから探す
       %menu.header_bottom_menu
-      %ul.menu
-        / not log-in
-        %li.menu_list 新規登録
-        %li.menu_list ログイン
-        / signed-in
-        %li.menu__list
-          %span.round>
-          マイページ
-        %li.menu__list
-          %span.bell> £
-          お知らせ
-        %li.menu__list
-          %span.check> ☑
-          やることリスト
+        %ul.menu
+          %li.menu_list 新規登録
+          %li.menu_list ログイン
+          / signed-in
+          - if user_signed_in? && current_user.id ==item.user_id
+            %li.menu__list
+              %span.round>
+              マイページ
+            %li.menu__list
+              %span.bell> £
+              お知らせ
+            %li.menu__list
+              %span.check> ☑
+              やることリスト
