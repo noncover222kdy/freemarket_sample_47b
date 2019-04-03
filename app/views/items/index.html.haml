@@ -1,0 +1,49 @@
+= render :partial => "layouts/main-header"
+%section.bxslider-wrap
+  .top-image
+/ content
+%main.main
+  %h2 ピックアップカテゴリー
+  %article.item-wrap
+    %h2
+      %a{:href => "#"} レディース
+    %ul.item-list
+      %li.item
+        %a{:href => "#"}
+          %section.item_top
+            .item_top_image
+          %section.item_bottom
+            %h3.item_bottom_name
+              item name,あいうえおかきくけこさしすせそたちつてとなにぬねの
+            .item_bottom-num
+              %p.price 300
+              %p.like
+                ♡
+                %span 0
+      %li.item
+      %li.item
+      %li.item
+    %p.all-show
+      %a{:href => "#"} 全ての商品を見る
+  %article.item-wrap
+    %h2
+      %a{:href => "#"} レディース
+    %ul.item-list
+      %li.item
+        %section.item_top
+          .item_top_image
+        %section.item_bottom
+          %h3.item_bottom_name
+            item name,あいうえおかきくけこさしすせそたちつてとなにぬねの
+          .item_bottom-num
+            %p.price 300
+            %p.like
+              ♡
+              %span 0
+      %li.item
+      %li.item
+      %li.item
+    %p.all-show
+      %a{:href => "#"} 全ての商品を見る
+%button.listing 出品
+= render :partial => "layouts/main-header"
