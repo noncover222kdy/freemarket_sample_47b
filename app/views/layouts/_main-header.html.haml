@@ -1,24 +1,29 @@
 %body
   %header.header
     %section.header_top
-      %h1.header_top_logo logo
-      %form.header_top_form{:action => "#", :method => "post"}
-        %input.header_top_form_search{:name => "search", :type => "text"}/
-        %input.header_top_form_btn{:type => "submit", :value => "🔍"}/
+      %h1.header_top_logo
+        = link_to root_path do
+          = image_tag("mercari_main_icon", :class => "mercari_main_logo")
+      %form.header_top_form{:action => "/items/search", :method => "get"}
+        %input.header_top_form_search{:name => "search", :type => "text", :placeholder => "何かお探しですか？"}
+          = icon 'search', class: "header_top_form_btn"
     %section.header_bottom
       %nav.header_bottom_nav
-        %ul.nav
-          %li.nav_list
-            カテゴリから探す
-            %ul
-              %li list_1-1
-              %li list_1-2
-              %li list_1-3
-          %li.nav_list ブランドから探す
+        %ul.search_list
+          %li.search_list-two
+            = icon 'list', class: "nav_list_logo"
+            = link_to "カテゴリから探す", "/", class: "nav_list_str"
+          %li.search_list-two
+            = icon "tag", class: "nav_list_logo"
+            = link_to "ブランドから探す", "/", class: "nav_list_str"
+
+
+
       %menu.header_bottom_menu
-        %ul.menu
-          %li.menu_list 新規登録
-          %li.menu_list ログイン
+        %ul.menu_list
+          = link_to "ログイン", "/users/sign_in", class: "menu_list_login"
+          = link_to "新規登録", "/users/sign_up", class: "menu_list_signup"
+
           / signed-in
           - if user_signed_in? && current_user.id ==item.user_id
             %li.menu__list
@@ -30,3 +35,4 @@
             %li.menu__list
               %span.check> ☑
               やることリスト
+
