@@ -1,10 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 .user-signup-page-ways {
   position: relative;
   padding-bottom: 220px;
+  box-sizing: border-box;
   .signup-main {
     height: 408px;
     width: 100%;
@@ -122,7 +119,7 @@
 .user-signup-page {
   position: relative;
   padding-bottom: 220px;
-
+  box-sizing: border-box;
   .membership-information {
     height: 1816px;
     width: 100%;
@@ -246,6 +243,7 @@
 .user-signin-page {
   position: relative;
   padding-bottom: 220px;
+  box-sizing: border-box;
   .signin-main {
     height: 731px;
     width: 100%;
