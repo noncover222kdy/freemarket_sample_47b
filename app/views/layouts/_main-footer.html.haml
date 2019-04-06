@@ -29,6 +29,10 @@
           =link_to "公式ブログ", "/", class: "footer-link"
         %li
           =link_to "メルカリロゴ利用ガイドライン", "/", class: "footer-link"
+        %li
+          = link_to "/", class: "footer_social-link" do
+            = image_tag("twetter.facebook_icon", class: "twitter_facebook_icon")
+
 
     .footer-cell
       %h2.footer-head ヘルプ＆ガイド
@@ -84,6 +88,6 @@
   %h1.white_logo
     = link_to root_path, class: "logo_path" do
       = image_tag("mercari_white_icon", :class => "mercari_white_logo")
-    %p.footer-copyright ©️ 2018 Mercari
+    %p.footer-copyright ©️ 2019 Mercari
 = link_to "items/", class: 'footer-sell-btn' do
   .sell 出品

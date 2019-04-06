@@ -1,24 +1,103 @@
-.main {
+.bxslider-wrap {
+  width: 100%;
+  height: 390px;
+  background: #cfcfcf;
+  display: block;
+
+  .slide_image_mobile-app {
+    background: image-url("main_header_banner");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+
+    .app-banner_header {
+      overflow: hidden;
+      position: relative;
+      width: 860px;
+      height: 390px;
+      margin: 0 auto;
+      color: #333333;
+      display: block;
+
+      .app-banner_header-inner {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translate(0, -50%);
+
+        h2 {
+          font-size: 60px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 18px;
+          margin: 10px 0 0;
+        }
+        .app-banner-icon {
+          margin: 20px 0 0;
+          .footer_logos {
+            float: left;
+            line-height: 68px;
+            position: relative;
+            right: 20px;
+            li {
+              float: left;
+              .footer_appstore_logo {
+                width: 170px;
+                display: block;
+                line-height: 68px;
+              }
+            }
+            li {
+              float: left;
+              margin: 0 0 0 16px;
+              .footer_google_logo {
+                width: 170px;
+                display: block;
+                line-height: 68px;
+              }
+            }
+          }
+        }
+      }
+      .smart_ph_img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 440px;
+        height: 400px;
+        .footer_sp_img {
+        width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.bodymain {
   width: calc(100% - (5% * 2));
   height: auto;
-  margin: 0 5%;
+  margin: 2% 5%;
   padding-bottom: 30px;
-  background: #ffcfcf;
   display: block;
 }
 
-.main > h2 {
+.bodymain > h2 {
   width: 100%;
   height: 50px;
   display: block;
   line-height: 50px;
   text-align: center;
+  font-size: 28px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  padding: 0 20px 20px;
+  font-weight: 600;
 }
 
 .item-wrap {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  background: #cfffcf;
   display: block;
 }
 
@@ -28,15 +107,27 @@
   display: block;
   line-height: 30px;
   text-align: center;
+  padding: 10px 0 20px 0;
+
+  .item_new {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    color: #0099E8;
+  }
+
 }
 
-.item-list {
+
+.index_item-list {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
+  table-layout: fixed;
   .item {
-    height: 300px;
+    width: 220px;
+    height: 320px;
     margin: 0 5px;
     background: #fff;
     display: block;
@@ -46,22 +137,28 @@
 
         .item_top_image {
           width: 100%;
-          height: 200px;
+          height: 220px;
           background: #f0f0f0;
           display: block;
         }
       }
       .item_bottom {
         width: calc(100% - (5% * 2));
-        height: auto;
+        height: 110px;
         padding: 5px 10px 5%;
         display: block;
         .item_bottom_name {
           width: auto;
-          height: 50px;
+          height: 3em;
+          text-align: left;
+          color: #333;
           display: block;
           overflow: hidden;
+          word-break: break-word;
+          position: relative;
+          line-height: 45px;
         }
+
         .item_top_image::after {
           content: "";
           width: 100px;
@@ -77,17 +174,27 @@
           left: calc(100% - 100px);
           z-index: 1000;
         }
-        .price{
-          float: left;
-        }
-        .price::after {
-          content: "(税込)";
-        }
-        .like{
-          width: 50px;
-          height: 25px;
-          display: block;
-          float: right;
+        .item_bottom-num {
+          .price{
+            float: left;
+            font-weight: 600;
+            color: #333;
+            position: relative;
+            top: 20px;
+          }
+          .price::after {
+            content: "(税込)";
+            word-wrap: break-word;
+            font-size: 12px;
+          }
+          .like{
+            width: 50px;
+            height: 25px;
+            display: block;
+            float: right;
+            position: relative;
+            top: 20px;
+          }
         }
       }
     }
@@ -97,6 +204,14 @@
 .all-show {
   display: block;
   float: right;
+  padding: 20px 0 20px 0;
+  position: relative;
+  right: 15%;
+  .all-show_path {
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    color: #0099E8;
+    font-size: 14px;
+  }
 }
 
 

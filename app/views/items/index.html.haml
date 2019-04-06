@@ -1,22 +1,37 @@
 = render :partial => "layouts/main-header"
 %section.bxslider-wrap
-  .top-image
-/ content
-%main.main
+  .infinite_slide_images
+    .slide_image_mobile-app
+      .app-banner_header
+        .app-banner_header-inner
+          %h2 スマホでかんたん
+          %h2 フリマアプリ
+          %p メルカリはスマホカメラからすぐに出品できる
+          %p 購入時も安心な独自システムのアプリです
+          .app-banner-icon
+            %ul.footer_logos
+              %li
+                = image_tag("app-store", class: "footer_appstore_logo")
+              %li
+                = image_tag("google-play", class: "footer_google_logo")
+        .smart_ph_img
+          = image_tag("main_content_pc", class: "footer_sp_img")
+
+%main.bodymain
   %h2 ピックアップカテゴリー
   %article.item-wrap
     %h2
-      %a{:href => "#"} レディース
-    %ul.item-list
+      = link_to "レディース新着アイテム","/",class: "item_new"
+    %ul.index_item-list
       %li.item
-        %a{:href => "#"}
+        = link_to "/" do
           %section.item_top
-            .item_top_image
+            = image_tag("mercari_icon", class: "item_top_image")
           %section.item_bottom
-            %h3.item_bottom_name
-              item name,あいうえおかきくけこさしすせそたちつてとなにぬねの
+            %h3.item_bottom_name メルカリアイテム
             .item_bottom-num
-              %p.price 300
+              %p.price ¥300
+              / {"¥#{}"}
               %p.like
                 ♡
                 %span 0
@@ -24,27 +39,50 @@
       %li.item
       %li.item
     %p.all-show
-      %a{:href => "#"} 全ての商品を見る
+      = link_to "全ての商品を見る", "/", class: "all-show_path"
   %article.item-wrap
     %h2
-      %a{:href => "#"} レディース
-    %ul.item-list
+      = link_to "メンズ新着アイテム","/",class: "item_new"
+    %ul.index_item-list
       %li.item
-        %section.item_top
-          .item_top_image
-        %section.item_bottom
-          %h3.item_bottom_name
-            item name,あいうえおかきくけこさしすせそたちつてとなにぬねの
-          .item_bottom-num
-            %p.price 300
-            %p.like
-              ♡
-              %span 0
+        = link_to "/" do
+          %section.item_top
+            = image_tag("mercari_icon", class: "item_top_image")
+          %section.item_bottom
+            %h3.item_bottom_name メルカリアイテム
+            .item_bottom-num
+              %p.price ¥300
+              / {"¥#{}"}
+              %p.like
+                ♡
+                %span 0
       %li.item
       %li.item
       %li.item
     %p.all-show
-      %a{:href => "#"} 全ての商品を見る
+      = link_to "全ての商品を見る", "/", class: "all-show_path"
+  %article.item-wrap
+    %h2
+      = link_to "ベビー・キッズ新着アイテム","/",class: "item_new"
+    %ul.index_item-list
+      %li.item
+        = link_to "/" do
+          %section.item_top
+            = image_tag("mercari_icon", class: "item_top_image")
+          %section.item_bottom
+            %h3.item_bottom_name メルカリアイテム
+            .item_bottom-num
+              %p.price ¥300
+              / {"¥#{}"}
+              %p.like
+                ♡
+                %span 0
+      %li.item
+      %li.item
+      %li.item
+    %p.all-show
+      = link_to "全ての商品を見る", "/", class: "all-show_path"
+
 = render "layouts/main-footer"
 
 = render "layouts/footer-sell-btn"

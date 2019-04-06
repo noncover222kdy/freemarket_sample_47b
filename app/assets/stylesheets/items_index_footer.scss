@@ -104,7 +104,6 @@
         font-size: 16px;
         font-weight: 100;
         line-height: 1.4;
-
       }
       ul {
         li {
@@ -115,8 +114,15 @@
             color: #fff;
             font-size: 12px;
             text-align: left;
-
-
+          }
+        }
+        li {
+          .footer_social-link {
+            .twitter_facebook_icon {
+              width: 120px;
+              position: relative;
+              right: 62px;
+            }
           }
         }
       }
