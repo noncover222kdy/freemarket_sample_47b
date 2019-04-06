@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_06_070725) do
+ActiveRecord::Schema.define(version: 2019_04_06_074739) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "post_address"
+    t.string "prefectures"
+    t.string "city"
+    t.string "address"
+    t.string "building_nama"
+    t.string "tell_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "banks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -59,6 +71,21 @@ ActiveRecord::Schema.define(version: 2019_04_06_070725) do
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "item_id", null: false
     t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category", null: false
+    t.text "discription", null: false
+    t.string "size", null: false
+    t.string "brand", null: false
+    t.string "status", null: false
+    t.string "shopping_charges", null: false
+    t.string "source_area", null: false
+    t.string "shopping_days", null: false
+    t.integer "price", null: false
+    t.integer "saler_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
