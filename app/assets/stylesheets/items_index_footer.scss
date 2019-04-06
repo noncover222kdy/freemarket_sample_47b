@@ -1,0 +1,201 @@
+.app-banner {
+  background: image-url("fotter_main_image");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+  .app-banner_footer {
+    overflow: hidden;
+    position: relative;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    display: block;
+
+    .app-banner_footer-inner {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translate(0, -50%);
+
+      h2 {
+        font-size: 16px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        line-height: 1.4;
+      }
+      p {
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        margin: 10px 0 0;
+      }
+      .app-banner-icon {
+        margin: 20px 0 0;
+        figure {
+          float: left;
+          .footer_mercari_logo {
+            width: 68px;
+            height: 68px;
+            vertical-align: middle;
+            position: relative;
+            right: 40px;
+          }
+        }
+        .footer_logos {
+          float: left;
+          line-height: 68px;
+          position: relative;
+          top: 30px;
+          right: 85px;
+          li {
+            float: left;
+            .footer_appstore_logo {
+              display: block;
+              line-height: 68px;
+            }
+          }
+          li {
+            float: left;
+            margin: 0 0 0 16px;
+            .footer_google_logo {
+              display: block;
+              line-height: 68px;
+            }
+          }
+        }
+      }
+    }
+    .smart_ph_img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      height: 100%;
+      .footer_sp_img {
+      width: 100%;
+      }
+    }
+  }
+}
+
+.global-footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  .content-list {
+    width: 1020px;
+    margin: 0 auto;
+    .footer-cell:first-child {
+      padding: 0 10px 0 0;
+    }
+    .footer-cell {
+      width: 20%;
+      padding: 0 40px 0 0;
+      vertical-align: top;
+      display: block;
+      float: left;
+      margin-top: 18px;
+
+      .footer-head {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 100;
+        line-height: 1.4;
+      }
+      ul {
+        li {
+          margin: 16px 0 0;
+          .footer-link {
+            display: block;
+            opacity: .7;
+            color: #fff;
+            font-size: 12px;
+            text-align: left;
+          }
+        }
+        li {
+          .footer_social-link {
+            .twitter_facebook_icon {
+              width: 120px;
+              position: relative;
+              right: 62px;
+            }
+          }
+        }
+      }
+    }
+    .footer-cell.full-width {
+      margin-top: 18px;
+      padding: 0 40px 0 0;
+      width: 42%;
+
+      .inner_footer-cell {
+        float: left;
+        width: 50%;
+      }
+    }
+    .footer-cell.footer-nav-lang {
+      width: auto;
+      margin-top: 18px;
+      padding: 0;
+      float: left;
+      display: block;
+      .footer-head {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 100;
+        line-height: 1.4;
+
+      }
+      ul {
+        li {
+          .active {
+            font-size: 12px;
+            color: #fff;
+            text-align: left;
+            display: block;
+            opacity: .7;
+
+          }
+        }
+      }
+    }
+  }
+  .white_logo {
+    width: 100%;
+    margin: 30px auto 20px;
+    display: inline-block;
+    .logo_path {
+      line-height: 1.5em;
+      .mercari_white_logo {
+        width: 125px;
+        height: 35px;
+        display: inline-block;
+        position: relative;
+        left: 5%;
+      }
+
+
+    }
+    .footer-copyright {
+      width: 100%;
+      display: inline-block;
+      margin: 8px 0 0;
+      text-align: center;
+      vertical-align: sub;
+      font-size: 12px;
+      opacity: .7;
+
+
+    }
+  }
+}
+.footer-sell-btn {
+
+}
+
+
+
