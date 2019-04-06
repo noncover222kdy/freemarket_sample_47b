@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+}
+
+.user-signup-page-ways {
+  position: relative;
+  padding-bottom: 220px;
+  .signup-main {
+    height: 408px;
+    width: 100%;
+    background-color: #f5f5f5;
+    .signup-contents {
+      height: 100%;
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      .signup-contents__title {
+        height: 97px;
+        width: 100%;
+        border-bottom: ridge thin #eee;
+        h2 {
+          font-size: 22px;
+          font-weight: bold;
+          text-align: center;
+          line-height: 97px;
+        }
+      }
+      .signup-contents__ways {
+        position: relative;
+        height: calc(100% - 97px);
+        width: 100%;
+        .signup-ways {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          height: 182px;
+          width: 320px;
+            .signup-ways__mail {
+              .signup-ways__mail__button {
+                display: block;
+                width: 320px;
+                height: 50px;
+                background-color: #eee;
+                padding: 0 auto;
+                margin-bottom:16px;
+                .signup-ways__mail__button__text {
+                  float: right;
+                  margin-right: 90px;
+                  line-height: 50px;
+                  color: #000;
+                  font-size: 14px;
+                }
+                .fa-envelope{
+                  margin-top: 10px;
+                  margin-left: 20px;
+
+                }
+
+              }
+            }
+            .signup-ways__facebook {
+              .signup-ways__facebook__button {
+                display: block;
+                width: 320px;
+                height: 50px;
+                background-color: #385185;
+                margin-bottom:16px;
+                .signup-ways__facebook__text {
+                  float: right;
+                  line-height: 50px;
+                  color: #fff;
+                  font-size: 14px;
+                  margin-right: 100px;
+                }
+                .signup-ways__facebook__text__logo {
+                  width: 30px;
+                  height: 30px;
+                  float: left;
+                  margin-top: 10px;
+                  margin-left: 20px;
+                }
+              }
+
+            }
+            .signup-ways__google {
+              .signup-ways__google__button {
+                display: block;
+                width: 320px;
+                height: 50px;
+                background-color: #fff;
+                border: solid 1px #aaa;
+                .signup-ways__google__button__text {
+                  float: right;
+                  margin-right: 110px;
+                  line-height: 50px;
+                  color: #000;
+                  font-size: 14px;
+                }
+                .signup-ways__google__text__logo {
+                  float: left;
+                  width: 30px;
+                  height: 30px;
+                  margin-top: 10px;
+                  margin-left: 20px;
+                }
+              }
+            }
+        }
+      }
+    }
+  }
+  .user-signup-ways-simplefooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.user-signup-page {
+  position: relative;
+  padding-bottom: 220px;
+
+  .membership-information {
+    height: 1816px;
+    width: 100%;
+    background-color: #f5f5f5;
+    .membership-input {
+      height: 100%;
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      .membership-input__title {
+        height: 97px;
+        width: 100%;
+        border-bottom: ridge thin #eee;
+        h2 {
+          font-size: 22px;
+          font-weight: bold;
+          text-align: center;
+          line-height: 97px;
+        }
+      }
+      .membership-input__elements {
+        .membership-forms {
+          height: 1239px;
+          width: 320px;
+          margin: 0 auto;
+          margin-top: 70px;
+          clear: both;
+          .membership-forms__field {
+            label {
+              float: left;
+              font-weight: 600;
+              margin-right: 10px;
+            }
+            .membership-forms__field__required {
+              float: left;
+              padding: 2px 4px;
+              background-color: #ea352d;
+              color: #fff;
+              border-radius: 2px;
+              font-size: 12px;
+            }
+            input {
+              height: 48px;
+              width: 320px;
+              margin-top: 10px;
+              margin-bottom: 30px;
+              padding-left: 15px;
+              border-radius: 4px;
+            }
+             select {
+               height: 48px;
+               width: 140px;
+               margin-top: 10px;
+               background-color: #fff;
+               display:block;
+
+            }
+          }
+          .membership-forms__identification-description {
+            h3 {
+              font-size: 22px;
+              font-weight: 600;
+            }
+            p {
+              margin-top: 5px;
+              margin-bottom: 30px;
+              font-size: 14px;
+            }
+          }
+          .membership-forms__correct-input-description {
+            margin-top: 5px;
+            p {
+            color: #888;
+            font-size: 14px;
+            }
+          }
+        }
+          .membership-forms__signup-recaptcha {
+            height: 70px;
+            width: 300px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: gray;
+          }
+          .membership-forms__service-ok {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            p {
+            font-size: 14px;
+            }
+            .membership-forms__service-ok__text {
+              color: #0099e8;
+              font-size: 14px;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
+          .membership-forms__actions {
+            .membership-forms__actions__next-button {
+              width: 320px;
+              height: 50px;
+              background-color: #ea352d;
+              color: #fff;
+              font-size: 14px;
+              cursor: pointer;
+            }
+          }
+      }
+    }
+    .user-signup-simplefooter {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
+.user-signin-page {
+  position: relative;
+  padding-bottom: 220px;
+  .signin-main {
+    height: 731px;
+    width: 100%;
+    background-color: #f5f5f5;
+    .signin-contents {
+      height: 731px;
+      width: 456px;
+      margin: 0 auto;
+      background-color: #fff;
+      .go__signup {
+        height: 144px;
+        width: 100%;
+        border-bottom: ridge thin #eee;
+        position: relative;
+        .go__signup-contents {
+          text-align: center;
+          height: 50px;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          .go__signup-contents__message {
+            p.go__signup-contents__message__text {
+              font-size: 14px;
+            }
+          }
+          .go__signup-contents__link {
+            display: block;
+            height: 42px;
+            width: 328px;
+            margin: 0 auto;
+            background-color: #0099e8;
+            color: #fff;
+            line-height: 42px;
+          }
+        }
+      }
+
+      .go__login {
+        height: calc(100% - 144px);
+        width: 100%;
+          .signin__ways {
+            margin-top: 30px;
+            .signin-ways__facebook {
+              .signin-ways__facebook__button {
+                display: block;
+                width: 320px;
+                height: 50px;
+                background-color: #385185;
+                margin-bottom:16px;
+                margin-left: auto;
+                margin-right: auto;
+                .signin-ways__facebook__text {
+                  float: right;
+                  line-height: 50px;
+                  color: #fff;
+                  font-size: 14px;
+                  margin-right: 90px;
+                }
+                .signin-ways__facebook__text__logo {
+                  width: 30px;
+                  height: 30px;
+                  float: left;
+                  margin-top: 10px;
+                  margin-left: 20px;
+                }
+              }
+
+            }
+            .signin-ways__google {
+              .signin-ways__google__button {
+                display: block;
+                width: 320px;
+                height: 50px;
+                background-color: #fff;
+                border: solid 1px #aaa;
+                margin-left: auto;
+                margin-right: auto;
+                .signin-ways__google__button__text {
+                  float: right;
+                  margin-right: 100px;
+                  line-height: 50px;
+                  color: #000;
+                  font-size: 14px;
+                }
+                .signin-ways__google__text__logo {
+                  float: left;
+                  width: 30px;
+                  height: 30px;
+                  margin-top: 10px;
+                  margin-left: 20px;
+                }
+              }
+            }
+          }
+        .signin-form {
+          margin-top: 60px;
+          .signin-form-contents {
+            .field {
+              margin-bottom: 25px;
+              text-align:center;
+              input {
+                height: 48px;
+                width: 320px;
+              }
+            }
+            .login-recaptcha {
+              height: 70px;
+              width: 300px;
+              margin-top: 20px;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: gray;
+            }
+            .actions {
+              .actions__login-button {
+              display: block;
+              height: 50px;
+              width: 320px;
+              margin-top: 20px;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: #ea352d;
+              color: #fff;
+              font-size: 16px;
+              }
+            }
+            .password-forgotten {
+              padding-left: 64px;
+              margin-top: 40px;
+              .password-forgotten__text {
+                font-size: 14px;
+                color: #0099e8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-simplefooter {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+  }
+}

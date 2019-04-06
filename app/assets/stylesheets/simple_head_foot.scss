@@ -63,3 +63,55 @@
 }
 
 
+.simpleheader-registaration {
+  height: 128px;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-top: 3%;
+  padding-left: 25%;
+
+  .simpleheader-regi {
+    h1 {
+      .header-registaration_icon {
+        &__logo {
+          float: left;
+          height: 60px;
+          width: 250px;
+
+        }
+        &__logo:hover {
+        opacity: 0.5;
+        }
+      }
+    }
+    .registration-bar {
+      float: left;
+      .registration-bar__elements {
+
+        .registration-bar__elements__ele, .registration-bar__elements__ele-red {
+          display: inline-block;
+          list-style-type: disc;
+          font-weight: 600;
+          font-size: 12px;
+          color: #ccc;
+          margin-right: 30px;
+          .registration-circle, .registration-circle-red {
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            background-color: #ccc;
+            border-radius: 50%;
+          }
+        }
+        .registration-bar__elements__ele-red {
+          color: #ea352d;
+          .registration-circle-red {
+            background-color: #ea352d;
+          }
+        }
+      }
+    }
+  }
+}
+
+
