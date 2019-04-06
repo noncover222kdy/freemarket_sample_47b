@@ -1,2 +1,93 @@
-%footer.footer
-  %li Copyright ©sample site All Rights Reserved.
+%aside.app-banner
+  .app-banner_footer
+    .app-banner_footer-inner
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード
+      .app-banner-icon
+        %figure
+          = image_tag("mercari_icon", class: "footer_mercari_logo")
+        %ul.footer_logos
+          %li
+            = image_tag("app-store", class: "footer_appstore_logo")
+          %li
+            = image_tag("google-play", class: "footer_google_logo")
+    .smart_ph_img
+      = image_tag("mobiles_image", class: "footer_sp_img")
+
+.global-footer
+  .content-list
+    .footer-cell
+      %h2.footer-head メルカリについて
+      %ul
+        %li
+          = link_to "会社概要（運営会社）", "/", class: "footer-link"
+        %li
+          = link_to "採用情報", "/", class: "footer-link"
+        %li
+          = link_to "プレリリース", "/", class: "footer-link"
+        %li
+          =link_to "公式ブログ", "/", class: "footer-link"
+        %li
+          =link_to "メルカリロゴ利用ガイドライン", "/", class: "footer-link"
+        %li
+          = link_to "/", class: "footer_social-link" do
+            = image_tag("twetter.facebook_icon", class: "twitter_facebook_icon")
+
+
+    .footer-cell
+      %h2.footer-head ヘルプ＆ガイド
+      %ul
+        %li
+          =link_to "メルカリガイド", "/", class: "footer-link"
+        %li
+          =link_to "らくらくメルカリ便", "/", class: "footer-link"
+        %li
+          =link_to "ゆうゆうメルカリ便", "/", class: "footer-link"
+        %li
+          =link_to "大型らくらくメルカリ便", "/", class: "footer-link"
+        %li
+          =link_to "車体取引ガイド", "/", class: "footer-link"
+        %li
+          =link_to "メルカリあんしん・あんぜん宣言！", "/", class: "footer-link"
+        %li
+          =link_to "偽ブランド品撲滅への取り組み", "/", class: "footer-link"
+        %li
+          =link_to "メルカリボックス", "/", class: "footer-link"
+    .footer-cell.full-width
+      %h2.footer-head プライバシーと利用規約
+      .inner_footer-cell
+        %ul
+          %li
+            =link_to "プライバシーポリシー", "/", class: "footer-link"
+          %li
+            =link_to "メルカリ利用規約", "/", class: "footer-link"
+          %li
+            =link_to "あんしんスマホサポート制度に関する利用特約", "/", class: "footer-link"
+          %li
+            =link_to "コンプライアンスポリシー", "/", class: "footer-link"
+      .inner_footer-cell
+        %ul
+          %li
+            =link_to "個人データの安全管理に関わる基本方針", "/", class: "footer-link"
+          %li
+            =link_to "特定商品取引に関する表記", "/", class: "footer-link"
+          %li
+            =link_to "資金決済法に基づく表示", "/", class: "footer-link"
+          %li
+            =link_to "法令厳守と犯罪抑止のために", "/", class: "footer-link"
+          %li
+            =link_to "返品・返金ポリシー", "/", class: "footer-link"
+    .footer-cell.footer-nav-lang
+      %h2.footer-head 国
+      %ul
+        %li
+          =link_to "日本", "/", class: "active"
+        %li
+          =link_to "United States", "/", class: "active"
+
+  %h1.white_logo
+    = link_to root_path, class: "logo_path" do
+      = image_tag("mercari_white_icon", :class => "mercari_white_logo")
+    %p.footer-copyright ©️ 2019 Mercari
+= link_to "items/", class: 'footer-sell-btn' do
+  .sell 出品
