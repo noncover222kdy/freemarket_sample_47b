@@ -81,13 +81,14 @@
       %h2.footer-head 国
       %ul
         %li
-          =link_to "日本", "/", class: "active"
+          =link_to "日本", "/", class: "footer_active"
         %li
-          =link_to "United States", "/", class: "active"
+          =link_to "United States", "/", class: "footer_active"
 
-  %h1.white_logo
-    = link_to root_path, class: "logo_path" do
-      = image_tag("mercari_white_icon", :class => "mercari_white_logo")
+  %h1.footer_white_logo
+    = link_to root_path, class: "footer_logo_path" do
+      = image_tag("mercari_white_icon", class: "mercari_white_logo")
     %p.footer-copyright ©️ 2019 Mercari
-= link_to "items/", class: 'footer-sell-btn' do
-  .sell 出品
+= link_to "/", class: 'footer-sell-btn' do
+  %p 出品
+  = icon 'camera', class: "footer_icon_camera"

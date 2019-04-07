@@ -42,19 +42,23 @@
             right: 20px;
             li {
               float: left;
-              .footer_appstore_logo {
-                width: 170px;
-                display: block;
-                line-height: 68px;
+              a {
+                .footer_appstore_logo {
+                  width: 170px;
+                  display: block;
+                  line-height: 68px;
+                }
               }
             }
             li {
               float: left;
               margin: 0 0 0 16px;
-              .footer_google_logo {
-                width: 170px;
-                display: block;
-                line-height: 68px;
+              a {
+                .footer_google_logo {
+                  width: 170px;
+                  display: block;
+                  line-height: 68px;
+                }
               }
             }
           }
@@ -75,7 +79,7 @@
   }
 }
 
-.bodymain {
+.index_mainbody {
   width: calc(100% - (5% * 2));
   height: auto;
   margin: 2% 5%;
@@ -83,7 +87,7 @@
   display: block;
 }
 
-.bodymain > h2 {
+.index_mainbody > h2 {
   width: 100%;
   height: 50px;
   display: block;
@@ -95,13 +99,13 @@
   font-weight: 600;
 }
 
-.item-wrap {
+.index_item-wrap {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.item-wrap > h2 {
+.index_item-wrap > h2 {
   width: 100%;
   height: 30px;
   display: block;
@@ -109,7 +113,7 @@
   text-align: center;
   padding: 10px 0 20px 0;
 
-  .item_new {
+  .index_item_new {
     font-size: 22px;
     font-weight: 600;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
@@ -119,13 +123,13 @@
 }
 
 
-.index_item-list {
+.index_item-lists {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   table-layout: fixed;
-  .item {
+  .index_item-list {
     width: 220px;
     height: 320px;
     margin: 0 5px;
@@ -133,21 +137,21 @@
     display: block;
     a {
 
-      .item_top {
+      .index_item_top {
 
-        .item_top_image {
+        .index_item_top_image {
           width: 100%;
           height: 220px;
           background: #f0f0f0;
           display: block;
         }
       }
-      .item_bottom {
+      .index_item_bottom {
         width: calc(100% - (5% * 2));
         height: 110px;
         padding: 5px 10px 5%;
         display: block;
-        .item_bottom_name {
+        .index_item_bottom_name {
           width: auto;
           height: 3em;
           text-align: left;
@@ -159,7 +163,7 @@
           line-height: 45px;
         }
 
-        .item_top_image::after {
+        .index_item_top_image::after {
           content: "";
           width: 100px;
           height: 25px;
@@ -174,20 +178,20 @@
           left: calc(100% - 100px);
           z-index: 1000;
         }
-        .item_bottom-num {
-          .price{
+        .index_item_bottom-num {
+          .index_price{
             float: left;
             font-weight: 600;
             color: #333;
             position: relative;
             top: 20px;
           }
-          .price::after {
+          .index_price::after {
             content: "(税込)";
             word-wrap: break-word;
             font-size: 12px;
           }
-          .like{
+          .index_like{
             width: 50px;
             height: 25px;
             display: block;
@@ -201,13 +205,13 @@
   }
 }
 
-.all-show {
+.index_all-show {
   display: block;
   float: right;
   padding: 20px 0 20px 0;
   position: relative;
   right: 15%;
-  .all-show_path {
+  .index_all-show_path {
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     color: #0099E8;
     font-size: 14px;

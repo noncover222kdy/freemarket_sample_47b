@@ -1,7 +1,7 @@
-address, small, div, caption, li, th, td, dd, dl, h1, h2, h3, h4, h5, a, p, pre, span, input, textarea, label{
-  font-weight: 400;
-  font-size: 16px;
-}
+// address, small, div, caption, li, th, td, dd, dl, h1, h2, h3, h4, h5, a, p, pre, span, input, textarea, label{
+//   font-weight: 400;
+//   font-size: 16px;
+// }
 
 body, header, footer, main, article{
   display: block;
@@ -11,40 +11,15 @@ body, header, footer, main, article{
 
 li, dl{
   list-style: none;
-  text-align: center;
+  // text-align: center;
 }
 
 a {
   text-decoration: none;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
 }
 
-@media screen and (max-width: 700px) {
-  .item:last-child{
-    display: none;
-  }
-  .item:nth-child(3){
-    display: none;
-  }
-  .item {
-  width: 49%;
-  }
-}
-@media screen and (min-width: 701px) and (max-width: 900px) {
-  .item:last-child{
-    display: none;
-  }
-  .item {
-  width: 31%;
-  }
-}
-
-@media screen and (min-width: 901px) {
-  .item {
-  width: 23%;
-  }
-}
 
 .sample_tag {
   -webkit-transition: 0.5s;
@@ -54,30 +29,30 @@ a {
   transition: 0.5s;
 }
 
-.header {
+.index_header {
   height: 100px;
   padding: 0 10% 15px;
   display: block;
   background: #fff;
 
-  &_top {
+  .index_header_top {
     width: 100%;
     height: 50px;
     padding-top: 10px;
     display: block;
 
-    .header_top_logo {
+    .index_header_top_logo {
       width: 150px;
       height: 50px;
       display: block;
       float: left;
-      .mercari_main_logo{
+      .index_mercari_main_logo{
         width: 134px;
         height: 36px;
         padding-top: 7px;
       }
     }
-    .header_top_form {
+    .index_header_top_form {
       width: calc(97% - 150px);
       height: 50px;
       display: block;
@@ -86,14 +61,14 @@ a {
       left: 3%;
 
 
-      .header_top_form_search, .header_top_form_btn {
+      .index_header_top_form_search, .index_header_top_form_btn {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -o-box-sizing: border-box;
         -ms-box-sizing: border-box;
         box-sizing: border-box;
       }
-      .header_top_form_search {
+      .index_header_top_form_search {
         width: 100%;
         height: 50px;
         padding: 0 42px 0 10px;
@@ -103,7 +78,7 @@ a {
         border: none;
       }
 
-      .header_top_form_btn {
+      .index_header_top_form_btn {
         -webkit-appearance: none;
         -moz-appearance: none;
         -o-appearance: none;
@@ -118,48 +93,48 @@ a {
       }
     }
   }
-  .header_bottom {
+  .index_header_bottom {
     width: 100%;
     height: auto;
     display: block;
     clear: both;
     padding-top: 10px;
 
-    .header_bottom_nav {
+    .index_header_bottom_nav {
       width: 340px;
       height: 30px;
       display: block;
       float: left;
 
-      .search_list {
+      .index_search_list {
 
-        .search_list-two {
+        .index_search_list-two {
           width: 170px;
           height: 30px;
           display: block;
           float: left;
           line-height: 30px;
 
-          .nav_list_str{
+          .index_nav_list_str{
             font-weight: bold;
             color: #333333
           }
         }
 
-        .search_list-two:hover {
+        .index_search_list-two:hover {
           display: block;
         }
 
       }
     }
-    .header_bottom_menu {
+    .index_header_bottom_menu {
       width: auto;
       height: 30px;
       display: block;
       float: right;
       margin: 0;
-      .menu_list {
-        .menu_list_login {
+      .index_menu_list {
+        .index_menu_list_login {
           width: 80px;
           height: 30px;
           margin-right: 10px;
@@ -173,7 +148,7 @@ a {
           background: #ea352d;
         }
 
-        .menu_list_signup {
+        .index_menu_list_signup {
           width: 100px;
           height: 30px;
           display: inline-block;
@@ -185,10 +160,10 @@ a {
           border-radius: 4px;
           background: #fff;
         }
-        .menu_list:hover {
+        .index_menu_list:hover {
           background: #fcf;
         }
-        .menu__list {
+        .index_menu__list {
           display: none;
         }
       }
