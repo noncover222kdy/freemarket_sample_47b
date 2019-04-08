@@ -57,3 +57,36 @@
     font-size: 14px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .user_identification {
+    width: 700px;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
+  }
+  .user_identification__main{
+    float: none;
+    width: 700px;
+  }
+  .my-page-aside_nav{
+    width: 700px;
+    margin: 40px auto 0;
+  }
+
+}
+
+@media screen and (min-width: 1068px) {
+  .user_identification {
+    width: 1020px;
+    margin: 40px auto 0;
+    padding: 0 0 40px;
+  }
+  .user_identification__main{
+    float: right;
+    width: 700px;
+  }
+  .my-page-aside_nav{
+    width: 280px;
+    margin: 0 40px 0 0;
+  }
+}
