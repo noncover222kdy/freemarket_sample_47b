@@ -9,6 +9,17 @@ $(document).ready(function(){
         pagerCustom: '#bx-pager-1, #bx-pager-2',
     });
 
+    $('.bxslider-wrap').bxSlider({
+        auto: true,
+        spead: 15000,
+        pause: 6000,
+        controls: false,
+        autoHover: true,
+        pager: false,
+
+    });
+
+
     $('#bx-pager-1, #bx-pager-2').bxSlider({
       pager: false,
       minSlides: 6,  //１スライド内のサムネイルの数
