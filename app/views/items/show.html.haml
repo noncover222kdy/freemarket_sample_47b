@@ -1,0 +1,96 @@
+.interval
+  %main.item-wrap
+    %h1.item-name item name
+    .slider
+      %ul.bxslider
+        %li.img{style: "background:#ffffcf;"}
+        %li.img{style: "background:#ffcfcf;"}
+        %li.img{style: "background:#ffcfff;"}
+        %li.img{style: "background:#cfcfff;"}
+        %li.img{style: "background:#cfffff;"}
+        %li.img{style: "background:#cfffcf;"}
+      #bx-pager-1
+        %li.sub-img{style: "background:#ffffcf;"}
+          %a{"data-slide-index" => "0", href: ""}
+        %li.sub-img{style: "background:#ffcfcf;"}
+          %a{"data-slide-index" => "1", href: ""}
+        %li.sub-img{style: "background:#ffcfff;"}
+          %a{"data-slide-index" => "2", href: ""}
+        %li.sub-img{style: "background:#cfcfff;"}
+          %a{"data-slide-index" => "3", href:""}
+        %li.sub-img{style: "background:#cfffff;"}
+          %a{"data-slide-index" => "4", href:""}
+      #bx-pager-2
+        %li.sub-img{style: "background:#cfffcf;"}
+          %a{"data-slide-index" => "5", href: ""}
+
+    %table.table
+      %tr.table_row
+        %td.table_data 出品者
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data カテゴリー
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data ブランド
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data 商品の状態
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data 配送料の負担
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data 配送の方法
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data 配送元地域
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data 発送日の目安
+        %td.table_data カルボナーラ
+    .info
+      .info_price
+        %p.info_price_num
+          1,000
+          %span.info_price_tax (税込)
+          %span.info_price_shipping 送料込み
+      .info_buy
+        %a.info_buy_btn{href: "#"} 購入画面に進む
+      .info_content
+        %p.info_content_text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text
+      %ul.info_review-wrap
+        %li.info_review-wrap_like
+          %i.far.fa-heart いいね！
+        %li.info_review-wrap_report
+          %i.far.fa-flag 不適切な商品の報告
+        %p.info_review-wrap_support
+          %i.fas.fa-unlock-alt あんしん・あんぜんへの取り組み
+  %article.comment-wrap
+    .comment-list
+      .comment_user
+        %figure.comment_user_icon
+        %p.comment_user_owner 出品者
+      .comment_text
+        %p.comment_text_user-name user name
+        %p.comment_text_content sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text
+    %p.comment_wanted 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %form.comment_form
+      %textarea.comment_form_comment{placeholder: "コメント"}
+      %input.comment_form_btn{type: "submit", value: "コメントする"}
+    %section.item-list-prev-next
+      %li.item-list_prev
+        %i.fas.fa-chevron-left
+        prev
+      %li.item-list_next
+        next
+        %i.fas.fa-chevron-right
+    %section.sns-list-wrap
+      %li.sns-list_facebook
+        = image_tag "Facebook.jpg"
+      %li.sns-list_twitter
+        = image_tag "Twitter.jpg"
+      %li.sns-list_line
+        = image_tag "Line.jpg"
+      %li.sns-list_pinterest
+        = image_tag "Pinterest.jpg"
