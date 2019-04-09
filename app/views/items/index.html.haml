@@ -1,6 +1,6 @@
 = render :partial => "layouts/main-header"
-%section.bxslider-wrap
-  .infinite_slide_images
+%ul.bxslider-wrap
+  %li
     .slide_image_mobile-app
       .app-banner_header
         .app-banner_header-inner
@@ -19,6 +19,10 @@
                   = image_tag("google-play", class: "footer_google_logo")
         .smart_ph_img
           = image_tag("main_content_pc", class: "footer_sp_img")
+  %li
+    .slide_image_second
+  %li
+    .slide_image_third
 
 %main.index_mainbody
   %h2 ピックアップカテゴリー

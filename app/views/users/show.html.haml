@@ -1,170 +1,77 @@
-= render :partial => "layouts/main-header"
-
-.interval
-  %main.my-page-main
-    .my-page-main_image
-      .my-page-main_account
-        %i.my-page-main_account_icon
-        %p.my-page-main_account_name user name
-        %p.my-page-main_account_about
-          評価
-          %span.my-page-main_account_about_review 0
-          出品数
-          %span.my-page-main_account_about_listing 0
-    .my-page-main_notice-wrap
-      %menu.my-page-main_notice
-        %li.my-page-main_notice_news お知らせ
-        %li.my-page-main_notice_todo やることリスト
-      %ul.my-page-main_news-wrap
-        %li.my-page-main_news-list
-          %a{:href => "#"}
-            %figure.my-page-main_news-list_icon
-            .my-page-main_news-list_content
-              %p.my-page-main_news-list_content_text notice 1
-              %time.my-page-main_news-list_content_time
-                %i.my-page-main_news-list_content_clock.far.fa-clock
-                2 days ago
-              %i.my-page-main_news-list_right-arrow.fas.fa-chevron-right
-        %li.my-page-main_news-list
-          %a{:href => "#"}
-            %figure.my-page-main_news-list_icon
-            .my-page-main_news-list_content
-              %p.my-page-main_news-list_content_text notice 2
-              %time.my-page-main_news-list_content_time
-                %i.my-page-main_news-list_content_clock.far.fa-clock
-                3 days ago
-              %i.my-page-main_news-list_right-arrow.fas.fa-chevron-right
-        %li.my-page-main_news-list_more
-          %a{:href => "#"} 一覧を見る
-      %ul.my-page-main_todo-wrap
-        %li.my-page-main_todo-list
-          %a{:href => "#"} todo sample 1
-        %li.my-page-main_todo-list
-          %a{:href => "#"} todo sample 2
-    %h2 購入した商品
-    .my-page-main_notice-wrap
-      %menu.my-page-main_notice
-        %li.my-page-main_notice_news 取引中
-        %li.my-page-main_notice_todo 過去の取引
-  %aside.my-page-aside
-    %ul.my-page-aside_nav
+%body.user_show_body
+  = render partial: "layouts/main-header"
+  %nav.bread-crumbs
+    %ul
       %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          マイページ
-          %span.num 1
-          %i.my-page-aside_nav_list_right-arrow &gt;
       %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          お知らせ
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          やることリスト
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          いいね！一覧
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          出品する
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          出品した商品 - 出品中
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          出品した商品 - 取引中
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          出品した商品 - 売却済み
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          購入した商品 - 取引中
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          購入した商品 - 過去の取引
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          ニュース一覧
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          評価一覧
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          ガイド
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_nav_list{:href => "#"}
-          お問い合わせ
-          %span.num
-          %i.my-page-aside_nav_list_right-arrow &gt;
-    %h3.merupay メルペイ
-    %ul.my-page-aside_merupay
-      %li
-        %a.my-page-aside_merupay_list{:href => "#"}
-          売上・振込申請
-          %span.num
-          %i.my-page-aside_merupay_list_right-arrow &gt;
-      %li
-        %a.my-page-aside_merupay_list{:href => "#"}
-          ポイント
-          %span.num
-          %i.my-page-aside_merupay_list_right-arrow &gt;
-    %h3.config 設定
-    %ul.my-page-aside_config
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          プロフィール
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          発送元・お届け先住所変更
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          支払い方法
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          メール/パスワード
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          本人情報
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          電話番号の確認
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-      %li.my-page-aside_config_list
-        %a.my-page-aside_config_list_a{:href => "#"}
-          ログアウト
-          %span.num
-          %i.my-page-aside_config_list_right-arrow &gt;
-
+  .user_show_main
+    %section.user_details
+      .user_details__profile
+        %a{href: ""}
+          .user_details__profile__photo{style: "backaground-image: url('')"}
+          %h2.user_details__profile__name.font_6
+            あああ
+        .user_details__profile__score
+          %span.font_3
+            評価 100
+          %span.font_3
+            出品数 100
+      .user_details__info
+        .user_details__rate
+          %div.user_details__rate__other.clearfix
+            %i{class: "fas fa-grin"}
+            .user_details__rate__score
+              12
+          %div.user_details__rate__other.clearfix
+            %i{class: "fas fa-meh"}
+            .user_details__rate__score
+              34
+          %div.user_details__rate__other.clearfix
+            %i{class: "fas fa-frown"}
+            .user_details__rate__score
+              56
+        .user_details__comment
+          %p.user_details__comment__content
+            仮でございやす。
+      .sns_icons
+        %ul.sns_icons__content
+          %li
+            %a{href: ""}
+              %i{class: "fab fa-facebook-square fa-3x"}
+          %li
+            %a{href: ""}
+              %i{class: "fab fa-twitter-square fa-3x"}
+          %li
+            %a{href: ""}
+              %i{class: "fab fa-line fa-3x"}
+      %section.user_details__items
+        %h2 この出品者の商品
+        .user_details__items__content
+          %section.item_box
+            %a{href: ""}
+              %figure.item_box__image
+                = image_tag('test1.jpg', class: 'item_box__image__set')
+              .item_box__text
+                %h3.item_box__text__name
+                  abc
+                .item_box__text__num
+                  .item_box__text__price
+                    ¥ 99,999
+                  %p.item_box__text__tax
+                    (税込)
+          %section.item_box
+            %a{href: ""}
+              %figure.item_box__image
+                = image_tag('test1.jpg', class: 'item_box__image__set')
+              .item_box__text
+                %h3.item_box__text__name
+                  abc
+                .item_box__text__num
+                  .item_box__text__price
+                    ¥ 99,999
+                  %p.item_box__text__tax
+                    (税込)
+          %section.item_box
+          %section.item_box
+  = render partial: "layouts/main-footer"
+  = render "layouts/footer-sell-btn"
