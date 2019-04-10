@@ -1,0 +1,74 @@
+.index-bank-main {
+  padding-top :40px;
+  padding-bottom: 40px;
+  .interval-bank {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    .index-bank {
+      height: 358px;
+      width: 700px;
+      background-color: #fff;
+      float: right;
+      .index-bank__title {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid #f5f5f5;
+        h2 {
+          font-size: 24px;
+          text-align: center;
+          line-height: 50px;
+        }
+      }
+      .index-bank_content {
+        height: calc(358px - 50px);
+        width: 100%;
+        .index-bank_content__description {
+          height: 16px;
+          width: 572px;
+          margin-top: 80px;
+          margin-bottom: 30px;
+          h3 {
+            font-size: 16px;
+            padding-left: 190px;
+          }
+        }
+        .index-bank_content__button {
+          height: 107px;
+          width: 572px;
+          border-bottom: 1px solid #f5f5f5;
+          margin: 0 auto;
+          .bank-card__button {
+            display: block;
+            height: 50px;
+            width: 320px;
+            background-color: #ea352d;
+            margin: 0 auto;
+            .index-bank_content__button__text {
+              float: right;
+              margin-right: 40px;
+              color: #fff;
+              line-height: 50px;
+            }
+            .fa-credit-card {
+              margin-top: 17px;
+              margin-left: 40px;
+              color: #fff;
+            }
+          }
+        }
+        .about-payway-link {
+          display: block;
+          height: 18px;
+          width: 126px;
+          color: #0099e8;
+          float: right;
+          margin-top: 30px;
+          margin-right: 50px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
