@@ -34,6 +34,8 @@ a {
   padding: 0 10% 15px;
   display: block;
   background: #fff;
+  z-index: 9999;
+  position: static;
 
   .index_header_top {
     width: 100%;
@@ -74,7 +76,7 @@ a {
         padding: 0 42px 0 10px;
         border-radius: 2px;
         display: inline-block;
-        background-color: #e6e6e6;
+        background-color: #f5f5f5;
         border: none;
       }
 
@@ -117,7 +119,11 @@ a {
 
           .index_nav_list_str{
             font-weight: bold;
-            color: #333333
+            color: #333;
+            font-size: 14px;
+          }
+          .index_nav_list_str:hover{
+            color: #0099E8;
           }
         }
 
@@ -172,3 +178,234 @@ a {
 }
 
 
+.category_nav {
+  clear: both;
+  z-index: 1000;
+  position: relative;
+}
+.category_nav > ul {
+  position: absolute;
+}
+
+
+
+
+
+#lists-1 {
+  margin-left: 70px;
+  width: 200px;
+}
+#lists-1 > li {
+  padding: 10px 16px;
+}
+#lists-1 > li:hover {
+  background-color: #EA352C;
+  color: #fff;
+}
+
+
+#lists-2 {
+  margin-left: 270px;
+  width: 200px;
+}
+
+#lists-2 > li:hover {
+  background-color: #E6E6E6;
+}
+
+
+#lists-3 {
+  margin-left: 470px;
+}
+
+#lists-3 > li:hover {
+  background-color: #E6E6E6;
+}
+.category_nav > ul > li{
+  padding: 6px 16px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-shadow: 1px 0 0 0 #eee inset;
+  background-color: #fff;
+}
+.search__bland > {
+  clear: both;
+  position: relative;
+}
+
+.search__bland > ul {
+  z-index: 1000;
+  position: absolute;
+  width: 170px;
+  height: 150px;
+  background: #fff;
+  display: none;
+}
+
+.bland-list {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+}
+
+.search__bland:hover ul {
+  display: block;
+}
+
+.search__bland li {
+  width: 130px;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 20px;
+  background: #fff;
+}
+
+.search__bland li:hover {
+  background: #ea352d;
+}
+.bland-list:hover {
+  color: #fff;
+}
+
+
+.index_nav_list_logo{
+  color: #EA352C;
+}
+
+
+.menu__list {
+  width: 130px;
+  height: 30px;
+  float: left;
+  line-height: 30px;
+  display: none;
+}
+
+.menu_list:hover {
+  background: #fcf;
+}
+
+
+.menu__list_my-page_wrap {
+  width: 320px;
+  height: auto;
+  background: #fff;
+  display: block;
+}
+
+.menu__list_my-page {
+  width: 304px;
+  height: auto;
+  margin: 0 8px 10px 8px;
+  background: red;
+  display: block;
+}
+
+.menu__list_image {
+  width: 100%;
+  height: 90px;
+  background: #ffcfff;
+  display: block;
+}
+
+.menu__list_account {
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  top: 40px;
+  text-align: center;
+}
+
+.menu__list_account_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: grey;
+  display: block;
+}
+
+.menu__list_name, .menu__list_about {
+  width: 150px;
+  height: 20px;
+  display: block;
+  text-align: center;
+  line-height: 20px;
+}
+
+.menu__list_name {
+  margin: 20px auto 10px;
+  font-size: 16px;
+}
+
+.menu__list_about {
+  margin: 10px auto 10px;
+  font-size: 12px;
+}
+
+.menu__list_about_review, .menu__list_about_listing {
+  margin: 0 10px;
+}
+
+.menu__list_my-page__list:hover .menu__list_my-page__list_right-arrow {
+  color: black;
+  font-weight: bold;
+}
+
+.menu__list_my-page_list, .menu__list_my-page__list {
+  width: calc(100% - (16px * 2));
+  height: 16px;
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: solid #eee 1px;
+  display: block;
+  position: relative;
+}
+
+.menu__list_my-page__list {
+  background: #fff;
+}
+
+.menu__list_my-page__list {
+  background: #f5f5f5;
+}
+
+.menu__list_my-page_list_right-arrow, .menu__list_my-page__list_right-arrow {
+  width: 14px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 8px);
+}
+
+.menu__list_my-page_list:hover .menu__list_my-page_list_right-arrow {
+  color: black;
+  font-weight: bold;
+  right: 5px;
+}
+
+.menu__list_my-page_list:hover {
+  background: #f5f5f5;
+}
+.num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  display: block;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  right: 30px;
+  top: calc(50% - (14px / 2));
+}
+
+.blank {
+  height:14px;
+}

@@ -1,200 +1,212 @@
-.interval {
-  width: 1020px;
-  height: auto;
-  margin: 0 auto;
-  padding-bottom: 30px;
-  display: block;
-}
-
-.my-page-main, .my-page-asaid {
-  float: right;
-}
-
-.my-page-main {
-  width: 700px;
-  height: auto;
-  display: block;
-
-  &_image {
+.my-page {
+  a {
     width: 100%;
-    height: 195px;
-    background: #ffcfff;
+    height: 100%;
     display: block;
   }
 
-  &_account {
-    width: 160px;
-    height: 100px;
-    margin: 0 auto;
+  &_interval {
+    width: 1020px;
+    height: auto;
+    margin: 20px auto 0;
+    padding-bottom: 30px;
     display: block;
-    position: relative;
-    top: calc(50% - (100px / 2));
-    text-align: center;
+  }
 
-    &_icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin: 0 auto;
-      background: #fcffff;
+  &-main, &-asaid {
+    float: right;
+  }
+
+  &-main {
+    width: 700px;
+    height: auto;
+    display: block;
+
+    &_image {
+      width: 100%;
+      height: 195px;
+      background: url(user_bg);
       display: block;
     }
 
-    &_name, &_about {
+    &_account {
       width: 160px;
-      height: 20px;
-      display: block;
-      line-height: 20px;
-      font-size: 14px;
-    }
-
-    &_name {
-      font-weight: bold;
-    }
-
-    &_about {
-      font-size: 12px;
-
-      &_review, &_listing {
-        margin: 0 10px;
-      }
-    }
-  }
-
-  &_notice-wrap {
-    width: 700px;
-    min-height: 300px;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    background: #ffffcf;
-    display: block;
-  }
-
-  &_notice {
-    width: 700px;
-    height: 70px;
-    padding: 0;
-    display: block;
-    clear: both;
-
-    &_news, &_todo {
-      width: calc(700px / 2);
-      height: 70px;
-      line-height: 72px;
-      text-align: center;
-      display: block;
-      float: left;
-    }
-
-    &_news {
-      background: #ffffcf;
-      border-top: solid red 2px;
-    }
-
-    &_todo {
-      background: #999;
-      border-top: solid #999 2px;
-    }
-  }
-
-  &_news-list {
-    width: 668px;
-    min-height: 48px;
-    padding: 16px;
-    background: #fffffc;
-    border-bottom: solid #666 1px;
-    text-align: left;
-    display: block;
-
-    &_icon, &_content, &_right-arrow {
-      float: left;
-    }
-
-    &_icon {
-      width: 48px;
-      height: 48px;
-      margin: 0;
-      background-image: url(asset-path("mercari_profile.png"));
-      background-size: contain;
-      display: block;
-    }
-
-    &_content {
-      width: 580px;
-      min-height: 48px;
-      padding-left: 20px;
-      display: block;
-    }
-
-    &_right-arrow {
-      width: 14px;
-      height: 100%;
-      line-height: 100%;
+      height: 100px;
+      margin: 0 auto;
       display: block;
       position: relative;
-      left: 100%;
+      top: calc(50% - (100px / 2));
+      text-align: center;
+
+      &_icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background: #fcffff;
+        display: block;
+      }
+
+      &_name, &_about {
+        width: 160px;
+        height: 20px;
+        display: block;
+        line-height: 20px;
+        font-size: 14px;
+      }
+
+      &_name {
+        font-weight: bold;
+      }
+
+      &_about {
+        font-size: 12px;
+
+        &_review, &_listing {
+          margin: 0 10px;
+        }
+      }
     }
 
-    &_more {
+    &_notice-wrap {
+      width: 700px;
+      min-height: 300px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      background: #fff;
+      display: block;
+    }
+
+    &_notice {
+      width: 700px;
+      height: 70px;
+      padding: 0;
+      display: block;
+      clear: both;
+
+      &_news, &_todo {
+        width: calc(700px / 2);
+        height: 70px;
+        line-height: 72px;
+        text-align: center;
+        display: block;
+        float: left;
+      }
+
+      &_news {
+        background: #fff;
+        border-top: solid #ea352d 2px;
+      }
+
+      &_todo {
+        background: #e5e5e5;
+        border-top: solid #e5e5e5 2px;
+      }
+    }
+
+    &_news-list {
+      width: 668px;
+      min-height: 48px;
+      padding: 16px;
+      background: #fff;
+      border-bottom: solid #666 1px;
+      text-align: left;
+      display: block;
+
+      &_icon, &_content, &_right-arrow {
+        float: left;
+      }
+
+      &_icon {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        background-image: url(asset-path("mercari_profile.png"));
+        background-size: contain;
+        display: block;
+      }
+
+      &_content {
+        width: 580px;
+        min-height: 48px;
+        padding-left: 20px;
+        display: block;
+      }
+
+      &_right-arrow {
+        width: 14px;
+        height: 100%;
+        line-height: 100%;
+        display: block;
+        position: relative;
+        left: 100%;
+      }
+
+      &_more {
+        width: 668px;
+        min-height: 48px;
+        margin: 16px;
+        background: #eee;
+        display: block;
+        line-height: 48px;
+        text-align: center;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+
+    }
+    &_todo-wrap {
       width: 668px;
       min-height: 48px;
       margin: 16px;
-      background: #ffcfff;
-      display: block;
-      line-height: 48px;
-      text-align: center;
+      background: #fffcff;
+      display: none;
     }
-
   }
-  &_todo-wrap {
-    width: 668px;
-    min-height: 48px;
-    margin: 16px;
-    background: #fffcff;
-    display: none;
-  }
-}
 
 
 
 
 
-.my-page-aside {
-  width: 280px;
-  height: auto;
-  margin-right: 40px;
-  display: block;
-
-  &_nav_list, &_merupay_list, &_config_list {
-    width: 228px;
-    height: 16px;
-    padding: 16px;
-    background: #fff;
-    font-size: 14px;
-    text-align: left;
-    border-bottom: solid #666 1px;
+  &-aside {
+    width: 280px;
+    height: auto;
+    margin-right: 40px;
     display: block;
-    position: relative;
 
-    &_right-arrow {
-      width: 14px;
+    &_nav_list, &_merupay_list, &_config_list {
+      width: 228px;
+      height: 16px;
+      padding: 16px;
+      background: #fff;
+      font-size: 14px;
+      text-align: left;
+      border-bottom: solid #666 1px;
       display: block;
-      position: absolute;
-      right: 10px;
-      top: calc(50% - 8px);
+      position: relative;
+
+      &_right-arrow {
+        width: 14px;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 8px);
+      }
+
+      &:hover {
+        background: #e5e5e5;
+      }
+
+      &:hover &_right-arrow {
+        color: black;
+        font-weight: bold;
+        right: 5px;
+      }
     }
 
-    &:hover {
-      background: #ccc;
-    }
-
-    &:hover &_right-arrow {
-      color: black;
-      font-weight: bold;
-      right: 5px;
-    }
   }
-
 }
 
 .merupay, .config {
@@ -208,7 +220,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: red;
+  background: #ea352d;
   display: block;
   color: #fff;
   font-size: 10px;
