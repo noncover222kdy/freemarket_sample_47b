@@ -1,99 +1,75 @@
+
 .bxslider-wrap {
   width: 100%;
   height: 390px;
-  background: #cfcfcf;
   display: block;
-  li {
-    .slide_image_mobile-app {
-      background: image-url("main_header_banner");
-      background-position: center;
-      background-size: cover;
-      width: 100%;
+  position: relative;
+  top: 0;
+
+  .slide_image {
+    &_mobile-app {
+      background-image: url("main_header_banner");
 
       .app-banner_header {
-        overflow: hidden;
-        position: relative;
-        width: 860px;
-        height: 390px;
-        margin: 0 auto;
-        color: #333333;
+        width: 60%;
+        height: 60px;
+        margin: 10px;
         display: block;
+        position: absolute;
+        top: 0;
+        left: 10%;
 
-        .app-banner_header-inner {
-          position: absolute;
-          top: 50%;
-          left: 16px;
-          transform: translate(0, -50%);
-
-          h2 {
-            font-size: 60px;
-            font-weight: 600;
-          }
-          p {
-            font-size: 18px;
-            margin: 10px 0 0;
-          }
-          .app-banner-icon {
-            margin: 20px 0 0;
-            .footer_logos {
-              float: left;
-              line-height: 68px;
-              position: relative;
-              right: 20px;
-              li {
-                float: left;
-                a {
-                  .footer_appstore_logo {
-                    width: 170px;
-                    display: block;
-                    line-height: 68px;
-                  }
-                }
-              }
-              li {
-                float: left;
-                margin: 0 0 0 16px;
-                a {
-                  .footer_google_logo {
-                    width: 170px;
-                    display: block;
-                    line-height: 68px;
-                  }
-                }
-              }
-            }
-          }
+        h2 {
+          font-size: 60px;
+          font-weight: 600;
         }
-        .smart_ph_img {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          width: 440px;
-          height: 400px;
-          .footer_sp_img {
-          width: 100%;
+        p {
+          font-size: 18px;
+          margin: 10px 0 0;
+        }
+        .footer {
+          &_logos {
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            display: block;
+          }
+          &_appstore_logo, &_google_logo {
+            width: 170px;
+            display: block;
+            line-height: 68px;
+
+            float: left;
+            margin-left: 10px;
           }
         }
       }
+      .smart_ph_img {
+        position: absolute;
+        top: 0;
+        right: 10%;
+        width: 440px;
+        height: 400px;
+      }
     }
-  }
-  li {
-    .slide_image_second {
-      background: image-url("first_slide_image");
+
+    &_second {
+      background-image: url("first_slide_image");
+    }
+
+    &_third {
+      background-image: url("third_slide_image");
+    }
+
+    &_mobile-app, &_second, &_third {
       background-position: center;
       background-size: cover;
       width: 100%;
       height: 390px;
-    }
-  }
-  li {
-    .slide_image_third {
-      background: image-url("third_slide_image");
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      height: 390px;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
     }
   }
 }
@@ -237,4 +213,7 @@
   }
 }
 
-
+.bx-wrapper{
+  position: static;
+  z-index: 1;
+}
