@@ -10,29 +10,96 @@
     %section.index_header_bottom
       %nav.index_header_bottom_nav
         %ul.index_search_list
-          %li.index_search_list-two
+          %li.index_search_list-two.search__category
             = icon 'list', class: "index_nav_list_logo"
             = link_to "カテゴリから探す", "/", class: "index_nav_list_str"
-          %li.index_search_list-two
+          %li.index_search_list-two.search__bland
             = icon "tag", class: "index_nav_list_logo"
             = link_to "ブランドから探す", "/", class: "index_nav_list_str"
-
-
-
+            %ul
+              .blank
+              %li.bland-lists
+                =link_to "シャネル", "/", class: "bland-list"
+              %li.bland-lists
+                =link_to "ナイキ", "/", class: "bland-list"
+              %li.bland-lists
+                =link_to "ルイヴィトン", "/", class: "bland-list"
+              %li.bland-lists
+                =link_to "シュプリーム", "/", class: "bland-list"
+              %li.bland-lists
+                =link_to "アディダス", "/", class: "bland-list"
+              %li.bland-lists
+                =link_to "ブランド一覧", "/", class: "bland-list"
       %menu.index_header_bottom_menu
         %ul.index_menu_list
+          / not log-in
           = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
           = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
-
           / signed-in
-          / - if user_signed_in? && current_user.id == item.user_id
-          /   %li.index_menu__list
-          /     %span.round>
-          /     マイページ
-          /   %li.index_menu__list
-          /     %span.bell> £
-          /     お知らせ
-          /   %li.index_menu__list
-          /     %span.check> ☑
-          /     やることリスト
+          %li.menu__list
+            %span.bell
+            お知らせ
+          %li.menu__list
+            %span.check
+            やることリスト
 
+          %li.menu__list
+            %span.round
+            マイページ
+            %ul.menu__list_my-page_wrap
+              .menu__list_image
+                .menu__list_account
+                  %i.menu__list_account_icon
+              %p.menu__list_name user name
+              %p.menu__list_about
+                評価
+                %span.menu__list_about_review 0
+                出品数
+                %span.menu__list_about_listing 0
+              %section.menu__list_my-page
+                %li
+                  %a.menu__list_my-page__list{:href => "#"}
+                    売上金
+                    %span.sales-num
+                    %i.menu__list_my-page__list_right-arrow
+                %li
+                  %a.menu__list_my-page__list{:href => "#"}
+                    ポイント
+                    %span.merukari-point p
+                    %i.menu__list_my-page__list_right-arrow
+              %li
+                %a.menu__list_my-page_list{:href => "#"}
+                  いいね！一覧
+                  %span.num
+                  %i.menu__list_my-page_list_right-arrow
+              %li
+                %a.menu__list_my-page_list{:href => "#"}
+                  出品した商品 - 出品中
+                  %span.num
+                  %i.menu__list_my-page_list_right-arrow
+              %li
+                %a.menu__list_my-page_list{:href => "#"}
+                  出品した商品 - 取引中
+                  %span.num
+                  %i.menu__list_my-page_list_right-arrow
+              %li
+                %a.menu__list_my-page_list{:href => "#"}
+                  出品した商品 - 売却済み
+                  %span.num
+                  %i.menu__list_my-page_list_right-arrow
+              %li
+                %a.menu__list_my-page_list{:href => "#"}
+                  購入した商品 - 取引中
+                  %span.num
+                  %i.menu__list_my-page_list_right-arrow
+              %li
+                %a.menu__list_my-page_list{:href => "#"}
+                  購入した商品 - 過去の取引
+                  %span.num
+                  %i.menu__list_my-page_list_right-arrow
+
+
+  %nav.category_nav
+    %ul{id: "lists-1"}
+    %ul{id: "lists-2"}
+    %ul{id: "lists-3"}
