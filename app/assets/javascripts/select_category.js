@@ -157,7 +157,37 @@ var lists = [
   { name: "時計",                             tier: "an" },
 
 
-  { name: "メンズ",                      tier: "b" },
+  { name: "メンズ",                            tier: "b" },
+
+  { name: "トップス",                          tier: "ba" },
+
+  { name: "Tシャツ/カットソー(半袖/袖なし)",     tier: "baa" },
+  { name: "Tシャツ/カットソー(七分/長袖)",       tier: "bab" },
+  { name: "シャツ",                           tier: "bac" },
+  { name: "ポロシャツ",                        tier: "bad" },
+  { name: "タンクトップ",                      tier: "bae" },
+  { name: "ニット/セーター",                    tier: "baf" },
+  { name: "パーカー",                          tier: "bag" },
+  { name: "カーディガン",                      tier: "bah" },
+  { name: "スウェット",                        tier: "bai" },
+  { name: "ジャージ",                         tier: "baj" },
+  { name: "ベスト",                           tier: "bak" },
+  { name: "その他",                           tier: "bal" },
+
+  { name: "ジャケット/アウター",               tier: "bb" },
+  { name: "パンツ",                          tier: "bc" },
+  { name: "靴",                              tier: "bd" },
+  { name: "バッグ",                          tier: "be" },
+  { name: "スーツ",                          tier: "bf" },
+  { name: "帽子",                            tier: "bg" },
+  { name: "アクセサリー",                     tier: "bh" },
+  { name: "小物",                            tier: "bi" },
+  { name: "時計",                            tier: "bj" },
+  { name: "水着",                            tier: "bk" },
+  { name: "レッグウェア",                     tier: "bl" },
+  { name: "アンダーウェア",                   tier: "bm" },
+  { name: "その他",                          tier: "bn" },
+
   { name: "ベビー・キッズ",               tier: "c" },
   { name: "インテリア・住まい・小物",       tier: "d"},
   { name: "本・音楽・ゲーム",              tier: "e"},
@@ -235,7 +265,7 @@ function makeList3(list) {
     })
   })
 
-  $(".bxslider-wrap").on('mouseover', function(){
+  $('body').on('mouseover',"div", function(){
     $("#lists-1").empty()
     $("#lists-2").empty()
     $("#lists-3").empty()
