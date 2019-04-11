@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_054118) do
+
+ActiveRecord::Schema.define(version: 2019_04_11_004225) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -78,8 +80,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_054118) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category", null: false
     t.text "discription", null: false
-    t.string "size", null: false
-    t.string "brand", null: false
+    t.string "size", default: ""
+    t.string "brand", default: ""
     t.string "status", null: false
     t.string "shopping_charges", null: false
     t.string "source_area", null: false
@@ -88,8 +90,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_054118) do
     t.integer "saler_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "images"
+    t.string "name", default: "", null: false
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
