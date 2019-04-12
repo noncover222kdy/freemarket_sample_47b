@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
   def index
+    @items = Item.where("category = 'レディース'").order('id DESC').limit(4)
   end
 
   def new
@@ -22,6 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @nickname = Item.saler.nickname
+    @item = Item.find(params[:id])
   end
 
   def update
