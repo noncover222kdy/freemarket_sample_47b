@@ -3,7 +3,7 @@
 .my-page_interval
 
   .my-page-sub_log-out
-    = link_to "ログアウト", { controller: "users", action: "destroy" }, { class: "my-page-sub_log-out_btn" }
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "my-page-sub_log-out_btn"
 
   = render :partial => "layouts/user-aside-menu"
 
