@@ -81,13 +81,14 @@
 }
 
 .global-footer {
-  padding: 0 20px 10px 20px;
+  padding: 20px 0 20px 65px;
   background: #212121;
   color: #fff;
   position: absolute;
   width: 100%;
+  box-sizing: border-box;
   .content-list {
-    width: 1020px;
+    width: 100%;
     margin: 0 auto;
     height: 330px;
     .footer-cell:first-child {
@@ -167,7 +168,7 @@
     }
   }
   .footer_white_logo {
-    width: 1020px;
+    width: 100%;
     margin: 30px auto 20px;
     display: table;
 
@@ -198,14 +199,14 @@
   right: 32px;
   width: 160px;
   height: 160px;
-  font-size: 22px;
   z-index: 1000;
   border-radius: 50%;
   background: #ea352d;
   color: #fff;
   text-align: center;
   p {
-    margin: 20px 0 0;
+    margin: 30px 0 0;
+    font-size: 22px;
   }
   .footer_icon_camera {
     font-size: 60px;
