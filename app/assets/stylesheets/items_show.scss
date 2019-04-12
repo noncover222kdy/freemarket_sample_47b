@@ -5,7 +5,7 @@ body {
 .interval {
   width: 700px;
   height: auto;
-  margin: 0 auto;
+  margin: 40px auto;
   display: block;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .table {
-  border: solid 1px;
+  border: solid 1px #f5f5f5;
   box-sizing: border-box;
   margin: 0 0 0 20px;
   border-collapse: separate;
@@ -83,7 +83,12 @@ body {
   }
 
   &_row:not(:last-child){
-    border-bottom: solid 1px;
+    border-bottom: solid 1px #f5f5f5;
+  }
+
+  &_row > td {
+    padding: 8px;
+    font-size: 14px;
   }
 
   &_data {
@@ -102,6 +107,9 @@ body {
       width: 195px;
     }
   }
+}
+.link_blue {
+  color: #0099e8;
 }
 
 .info {
@@ -334,5 +342,30 @@ body {
     margin: 0 5px;
     display: block;
   }
+}
+
+.edit_item {
+  margin: 24px 0 24px 0;
+  background-color: #fff;
+  padding: 8px 16px 8px 16px;
+}
+.edit_item > p {
+  margin-top: 16px;
+  font-size: 16px;
+  text-align: center;
+}
+.btn_gray__long {
+  background-color: #aaa;
+  color: #fff;
+  margin: 16px 0 0;
+  border: 1px solid #aaa;
+  outline: 0;
+}
+.btn_gray__long:last-child {
+  background-color: #aaa;
+  color: #fff;
+  margin: 16px 0;
+  border: 1px solid #aaa;
+  outline: 0;
 }
 
