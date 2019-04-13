@@ -1,0 +1,18 @@
+= render :partial => "layouts/main-header"
+
+.my-page_interval
+  .my-page-sub_profile-form-wrap
+    %h2.my-page-sub_profile-form_profile プロフィール
+    .my-page-sub_profile-form_user-background
+    = form_with model: @user do |f|
+      %p.my-page-sub_profile-form_user-wrap
+        %i.my-page-sub_profile-form_icon
+        = f.text_field :nickname, class: "my-page-sub_profile-form_user-name"
+      = f.text_area :introduction, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "my-page-sub_profile-form_textarea"
+      = f.submit "変更する", class: "my-page-sub_profile-form_btn"
+
+  = render :partial => "layouts/user-aside-menu"
+
+= render "layouts/main-footer"
+
+= render "layouts/footer-sell-btn"

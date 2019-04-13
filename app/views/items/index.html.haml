@@ -1,0 +1,67 @@
+= render :partial => "layouts/main-header"
+%ul.bxslider-wrap
+  %li.slide_image_mobile-app
+    .app-banner_header
+      %h2 スマホでかんたん
+      %h2 フリマアプリ
+      %p メルカリはスマホカメラからすぐに出品できる
+      %p 購入時も安心な独自システムのアプリです
+      %ul.footer_logos
+        %li= link_to image_tag("app-store", class: "footer_appstore_logo"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+        %li= link_to image_tag("google-play", class: "footer_google_logo"), "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+    = image_tag("main_content_pc", class: "smart_ph_img")
+  %li.slide_image_second
+  %li.slide_image_third
+
+%main.index_mainbody
+  %h2 ピックアップカテゴリー
+  %article.index_item-wrap
+    %h2
+      = link_to "レディース新着アイテム","/",class: "index_item_new"
+    %ul.index_item-lists
+      - @items.each do |item|
+        %li.index_item-list
+          = link_to "items/#{item.id}" do
+            %section.index_item_top
+              = image_tag("mercari_icon", class: "index_item_top_image")
+            %section.index_item_bottom
+              %h3.index_item_bottom_name
+                = item.name
+              .index_item_bottom-num
+                %p.index_item_bottom-num_price
+                  = item.price
+                %p.index_item_bottom-num_like
+                  ♡
+                  %span 0
+      %li.index_item-list
+      %li.index_item-list
+      %li.index_item-list
+    %p.index_all-show
+      = link_to "全ての商品を見る", "/", class: "index_all-show_path"
+
+  %article.index_item-wrap
+    %h2
+      = link_to "メンズ新着アイテム","/",class: "index_item_new"
+    %ul.index_item-lists
+      %li.index_item-list
+        = link_to "/" do
+          %section.index_item_top
+            = image_tag("mercari_icon", class: "index_item_top_image")
+          %section.index_item_bottom
+            %h3.index_item_bottom_name メルカリアイテム
+            .index_item_bottom-num
+              %p.index_price ¥300
+              / {"¥#{}"}
+              %p.index_like
+                ♡
+                %span 0
+      %li.index_item-list
+      %li.index_item-list
+      %li.index_item-list
+    %p.index_all-show
+      = link_to "全ての商品を見る", "/", class: "index_all-show_path"
+
+
+= render "layouts/main-footer"
+
+= render "layouts/footer-sell-btn"

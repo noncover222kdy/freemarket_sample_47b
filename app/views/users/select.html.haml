@@ -1,0 +1,26 @@
+.user-signup-page-ways
+  = render "layouts/simple-header"
+  %main.signup-main
+    .signup-contents
+      .signup-contents__title
+        %h2 新規会員登録
+      .signup-contents__ways
+        .signup-ways
+          %li.signup-ways__mail
+            =link_to new_user_registration_path, class: "signup-ways__mail__button" do
+              .signup-ways__mail__button__text
+                メールアドレスで登録
+              = icon('envelope fa-2x fa-pull-left')
+          %li.signup-ways__facebook
+            =link_to user_facebook_omniauth_authorize_path, class: "signup-ways__facebook__button" do
+              .signup-ways__facebook__text
+                Facebookで登録
+              %img{src: "../assets/flogo-HexRBG-Wht-58.png", class: "signup-ways__facebook__text__logo"}
+          %li.signup-ways__google
+            =link_to user_google_oauth2_omniauth_authorize_path, class: "signup-ways__google__button" do
+              .signup-ways__google__button__text
+                Googleで登録
+              %img{src: "../assets/google-logo.png", class: "signup-ways__google__text__logo"}
+
+  .user-signup-ways-simplefooter
+    = render "layouts/simple-footer"

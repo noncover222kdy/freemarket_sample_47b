@@ -1,0 +1,12 @@
+= render :partial => "layouts/main-header"
+
+.my-page_interval
+
+  .my-page-sub_log-out
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "my-page-sub_log-out_btn"
+
+  = render :partial => "layouts/user-aside-menu"
+
+= render "layouts/main-footer"
+
+= render "layouts/footer-sell-btn"

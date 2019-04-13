@@ -1,0 +1,112 @@
+.bxslider-wrap {
+  width: 100%;
+  height: 150px;
+  background: #cfcfcf;
+  display: block;
+  .top-image {
+
+  }
+}
+
+.main {
+  width: calc(100% - (5% * 2));
+  height: auto;
+  margin: 0 5%;
+  padding-bottom: 30px;
+  background: #ffcfcf;
+  display: block;
+}
+
+.main > h2 {
+  width: 100%;
+  height: 50px;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+}
+
+.item-wrap {
+  width: 100%;
+  height: auto;
+  background: #cfffcf;
+  display: block;
+}
+
+.item-wrap > h2 {
+  width: 100%;
+  height: 30px;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+}
+
+.item-list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  .item {
+    height: 300px;
+    margin: 0 5px;
+    background: #fff;
+    display: block;
+    a {
+
+      .item_top {
+
+        .item_top_image {
+          width: 100%;
+          height: 200px;
+          background: #f0f0f0;
+          display: block;
+        }
+      }
+      .item_bottom {
+        width: calc(100% - (5% * 2));
+        height: auto;
+        padding: 5px 10px 5%;
+        display: block;
+        .item_bottom_name {
+          width: auto;
+          height: 50px;
+          display: block;
+          overflow: hidden;
+        }
+        .item_top_image::after {
+          content: "";
+          width: 100px;
+          height: 25px;
+          display: block;
+          -webkit-box-shadow: -70px 0px 50px 0px #fff inset;
+          -moz-box-shadow: -70px 0px 50px 0px #fff inset;
+          -o-box-shadow: -70px 0px 50px 0px #fff inset;
+          -ms-box-shadow: -70px 0px 50px 0px #fff inset;
+          box-shadow: -70px 0px 50px 0px #fff inset;
+          position: relative;
+          bottom: calc(-100% - 25px);
+          left: calc(100% - 100px);
+          z-index: 1000;
+        }
+        .price{
+          float: left;
+        }
+        .price::after {
+          content: "(税込)";
+        }
+        .like{
+          width: 50px;
+          height: 25px;
+          display: block;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.all-show {
+  display: block;
+  float: right;
+}
+
+
