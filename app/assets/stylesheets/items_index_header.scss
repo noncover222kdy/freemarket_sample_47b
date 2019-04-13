@@ -139,12 +139,14 @@ a {
       display: block;
       float: right;
       margin: 0;
+      z-index: 1000;
+      position: relative;
       .index_menu_list {
         .index_menu_list_login {
           width: 80px;
           height: 30px;
           margin-right: 10px;
-          display: inline-block;
+          display: none;
           float: left;
           line-height: 30px;
           border: 1px solid #ea352d;
@@ -157,7 +159,7 @@ a {
         .index_menu_list_signup {
           width: 100px;
           height: 30px;
-          display: inline-block;
+          display: none;
           float: left;
           line-height: 30px;
           border: 1px solid #0099e8;
@@ -276,15 +278,43 @@ a {
 
 
 .menu__list {
-  width: 130px;
+  width: 100px;
   height: 30px;
   float: left;
   line-height: 30px;
-  display: none;
+  display: block;
+  font-size: 14px;
+}
+.menu__list > span {
+  margin-left: 10px;
+  font-size: 14px;
 }
 
-.menu_list:hover {
-  background: #fcf;
+.menu__list__info {
+
+}
+.menu__list__todo {
+  width: 150px;
+  height: 30px;
+  float: left;
+  line-height: 30px;
+  display: block;
+  font-size: 14px;
+  position: relative;
+}
+.menu__list__plof{
+  width: 110px;
+  height: 30px;
+  float: left;
+  display: inline-block;
+  font-size: 14px;
+}
+.menu__list__plof > a > div {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 
@@ -306,7 +336,9 @@ a {
 .menu__list_image {
   width: 100%;
   height: 90px;
-  background: #ffcfff;
+  background-image: url("user-bg.jpg");
+  background-size: 320px 80px;
+  background-repeat: no-repeat;
   display: block;
 }
 
@@ -325,7 +357,8 @@ a {
   height: 60px;
   border-radius: 50%;
   margin: 0 auto;
-  background: grey;
+  background-image: url("mypage_image.jpg");
+  background-size: contain;
   display: block;
 }
 
@@ -369,9 +402,33 @@ a {
 .menu__list_my-page__list {
   background: #fff;
 }
+.menu__list_my-page__list > span {
+  color: #333;
+}
+.menu__list_my-page_list > span {
+  color: #333;
+}
 
 .menu__list_my-page__list {
   background: #f5f5f5;
+}
+.menu__list_my-page__list > i {
+  float: right;
+  color: #ccc;
+}
+.menu__list_my-page_list > i {
+  float: right;
+  color: #ccc;
+}
+.merukari-point {
+  float: right;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.sales-num {
+  float: right;
+  margin-right: 10px;
+  font-size: 12px;
 }
 
 .menu__list_my-page_list_right-arrow, .menu__list_my-page__list_right-arrow {
@@ -408,4 +465,135 @@ a {
 
 .blank {
   height:14px;
+}
+
+.gray_icon {
+  color: #ccc;
+}
+
+.top_icon {
+  width: 32px;
+  height: 32px;
+}
+.top_mypage {
+  color: #333;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+.top_mypage:hover {
+  color: #0099e8;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+
+.menu__list:hover {
+  color: #0099e8;
+}
+.menu__list__todo:hover {
+  color: #0099e8;
+}
+.notification-box {
+  left: 18%;
+  &__link{
+    display: block;
+    min-height: 80px;
+    padding: 16px;
+    color: #333;
+    text-decoration: none;
+  }
+  &__link > figure {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+  }
+  &__link > figure > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    vertical-align: middle;
+  }
+  &__link > time {
+    display: inline-block;
+    color: #888;
+  }
+  &__link > time > i {
+    margin-top: 0 8px 0 0;
+    vertical-align: middle;
+  }
+  &__link > i {
+    position: absolute;
+    right: 16px;
+    color: #ccc;
+  }
+  &__body {
+    margin: 0 40px 0 68px;
+  }
+  &__text {
+    overflow: hidden;
+    display: -webkit-box;
+    max-height: 4.4em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow:ellipsis;
+    line-height: 1.5;
+  }
+}
+.notification-box > li {
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+.todo-box {
+  left: -45%;
+  &__content {
+    border: 0;
+    position: relative;
+    padding: 160px 0 60px;
+    background-image: url("mercari_gray.svg");
+    background-position: center 40px;
+    background-repeat: no-repeat;
+    background-size: 120px;
+    font-size: 16px;
+    text-align: center;
+    color: #ccc;
+    font-weight: 600;
+  }
+}
+
+.menu__list_my-page_wrap{
+  right: 2%;
+}
+.menu__list__info:hover .notification-box {
+  display: block;
+}
+
+.menu__list__todo:hover .todo-box {
+  display: block;
+}
+.menu__list__plof:hover .menu__list_my-page_wrap {
+  display: block;
+}
+
+.menu__list__box {
+  position: absolute;
+  top: 44px;
+  z-index: 1000;
+  display: none;
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+  font-size: 14px;
+}
+.blank-box {
+  height: 44px;
+  opacity: 0;
 }
