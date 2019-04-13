@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
     resources :banks, only: [:new, :create, :edit, :update, :destroy]
   end
+
 end
