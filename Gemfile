@@ -50,11 +50,7 @@ gem 'ancestry'
 gem 'jquery-rails'
 gem 'active_hash'
 gem 'fog-aws'
-<<<<<<< HEAD
 gem 'payjp'
-=======
-
->>>>>>> noncover222kdy/master
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
