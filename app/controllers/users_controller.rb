@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     @items = @user.items
   end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def destroy
   end
- 
+
   def about
   end
 

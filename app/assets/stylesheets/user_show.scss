@@ -37,6 +37,9 @@
       position: relative;
       top: calc(50% - (100px / 2));
       text-align: center;
+      &_name {
+        color: #333;
+      }
 
       &_icon {
         width: 60px;

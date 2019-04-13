@@ -1,4 +1,5 @@
 = render :partial => "layouts/main-header"
+
 .interval
   %main.item-wrap
     %h1.item-name= @item.name
@@ -34,7 +35,10 @@
         %td.table_data= @item.category
       %tr.table_row
         %td.table_data ブランド
-        %td.table_data.link_blue カルボナーラ
+        %td.table_data= @item.brand
+      %tr.table_row
+        %td.table_data 商品のサイズ
+        %td.table_data= @item.size
       %tr.table_row
         %td.table_data 商品の状態
         %td.table_data= @item.status
@@ -108,3 +112,8 @@
         = image_tag "Line.jpg"
       %li.sns-list_pinterest
         = image_tag "Pinterest.jpg"
+
+
+= render "layouts/main-footer"
+
+= render "layouts/footer-sell-btn"

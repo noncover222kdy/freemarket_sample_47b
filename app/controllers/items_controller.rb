@@ -23,8 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @nickname = Item.saler.nickname
     @item = Item.find(params[:id])
+    @nickname = @item.user.nickname
   end
 
   def update
