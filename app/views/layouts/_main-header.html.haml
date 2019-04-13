@@ -3,9 +3,9 @@
     %section.index_header_top
       %h1.index_header_top_logo
         = link_to root_path do
-          = image_tag("mercari_main_icon", :class => "index_mercari_main_logo")
-      %form.index_header_top_form{:action => "/items/search", :method => "get"}
-        %input.index_header_top_form_search{:name => "search", :type => "text", :placeholder => "何かお探しですか？"}
+          = image_tag("mercari_main_icon", class: "index_mercari_main_logo")
+      %form.index_header_top_form{action: "/items/search", method: "get"}
+        %input.index_header_top_form_search{name: "search", type: "text", placeholder: "何かお探しですか？"}
           = icon 'search', class: "index_header_top_form_btn"
     %section.index_header_bottom
       %nav.index_header_bottom_nav

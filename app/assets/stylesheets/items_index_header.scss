@@ -292,9 +292,9 @@ a {
     position: relative;
     &:hover {
       color: #0099e8;
-    }
-    &:hover .todo-box {
-      display: block;
+      .todo-box {
+        display: block;
+      }
     }
   }
   &__plof{
