@@ -153,6 +153,7 @@
               また、出品をもちまして
               %a{href: "", class: "sell_cation"} 加盟店規約
               に同意したことになります。
-          %button{type: "submit", class: 'btn_default buy_item__button'} 出品する
-          %a.btn_default.btn_gray もどる
+          %button{type: "submit", class: 'btn_default buy_item__button'}
+            出品する
+          = link_to "もどる", "/", class: "btn_default btn_gray"
   = render partial: "layouts/simple-footer"

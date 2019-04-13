@@ -85,7 +85,6 @@
                   %i.menu__list_account_icon
               %p.menu__list_name
                 aa
-                //= current_user.name
               %p.menu__list_about
                 評価:
                 %span.menu__list_about_review 0
@@ -93,44 +92,42 @@
                 %span.menu__list_about_listing 0
               %section.menu__list_my-page
                 %li
-                  %a.menu__list_my-page__list{:href => "#"}
+                  = link_to "/", class: "menu__list_my-page__list" do
                     %span 売上金
                     %i.fas.fa-chevron-right
                     %span.sales-num
                       ¥5,000
                 %li
-                  %a.menu__list_my-page__list{:href => "#"}
+                  = link_to "/", class: "menu__list_my-page__list" do
                     %span ポイント
                     %i.fas.fa-chevron-right
                     %span.merukari-point
                       p 0
 
               %li
-                %a.menu__list_my-page__list-other{:href => "#"}
+                = link_to "/", class: "menu__list_my-page__list-other" do
                   %span いいね！一覧
                   %i.fas.fa-chevron-right
               %li
-                %a.menu__list_my-page__list-other{:href => "#"}
+                = link_to "/", class: "menu__list_my-page__list-other" do
                   %span 出品した商品 - 出品中
                   %i.fas.fa-chevron-right
               %li
-                %a.menu__list_my-page__list-other{:href => "#"}
+                = link_to "/", class: "menu__list_my-page__list-other" do
                   %span 出品した商品 - 取引中
                   %i.fas.fa-chevron-right
               %li
-                %a.menu__list_my-page__list-other{:href => "#"}
+                = link_to "/", class: "menu__list_my-page__list-other" do
                   %span 出品した商品 - 売却済み
                   %i.fas.fa-chevron-right
               %li
-                %a.menu__list_my-page__list-other{:href => "#"}
+                = link_to "/", class: "menu__list_my-page__list-other" do
                   %span 購入した商品 - 取引中
                   %i.fas.fa-chevron-right
               %li
-                %a.menu__list_my-page__list-other{:href => "#"}
+                = link_to "/", class: "menu__list_my-page__list-other" do
                   %span 購入した商品 - 過去の取引
                   %i.fas.fa-chevron-right
-
-
   %nav.category_nav
     %ul{id: "lists-1"}
     %ul{id: "lists-2"}

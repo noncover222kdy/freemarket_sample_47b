@@ -116,21 +116,18 @@ a {
           display: block;
           float: left;
           line-height: 30px;
-
+          &:hover {
+            display: block;
+          }
           .index_nav_list_str{
             font-weight: bold;
             color: #333;
             font-size: 14px;
-          }
-          .index_nav_list_str:hover{
-            color: #0099E8;
+            &:hover{
+              color: #0099E8;
+            }
           }
         }
-
-        &-two:hover {
-          display: block;
-        }
-
       }
     }
     &_menu {
@@ -142,6 +139,9 @@ a {
       z-index: 1000;
       position: relative;
       .index_menu_list {
+        &:hover {
+          background: #fcf;
+        }
         &_login {
           width: 80px;
           height: 30px;
@@ -167,12 +167,6 @@ a {
           text-align: center;
           border-radius: 4px;
           background: #fff;
-        }
-        .index_menu_list:hover {
-          background: #fcf;
-        }
-        .index_menu__list {
-          display: none;
         }
       }
     }
@@ -207,10 +201,10 @@ a {
   width: 200px;
   li {
     padding: 10px 16px;
-  }
-  li:hover {
-    background-color: #EA352C;
-    color: #fff;
+    &:hover {
+      background-color: #EA352C;
+      color: #fff;
+    }
   }
 }
 
@@ -232,9 +226,11 @@ a {
     background-color: #E6E6E6;
   }
 }
-.search__bland > {
-  clear: both;
+.search__bland {
   position: relative;
+  &:hover ul {
+    display: block;
+  }
   ul {
     z-index: 1000;
     position: absolute;
@@ -249,6 +245,9 @@ a {
     line-height: 42px;
     padding: 0 20px;
     background: #fff;
+    &:hover {
+      background: #ea352d;
+    }
   }
 }
 
@@ -257,19 +256,10 @@ a {
   font-size: 14px;
   color: #333;
   text-align: left;
+  &:hover {
+    color: #fff;
+  }
 }
-
-.search__bland:hover ul {
-  display: block;
-}
-.search__bland li:hover {
-  background: #ea352d;
-}
-.bland-list:hover {
-  color: #fff;
-}
-
-
 .index_nav_list_logo{
   color: #EA352C;
 }
@@ -282,9 +272,15 @@ a {
   line-height: 30px;
   display: block;
   font-size: 14px;
+  &:hover {
+    color: #0099e8;
+  }
   span {
     margin-left: 10px;
     font-size: 14px;
+  }
+  &__info:hover .notification-box {
+    display: block;
   }
   &__todo {
     width: 150px;
@@ -294,6 +290,12 @@ a {
     display: block;
     font-size: 14px;
     position: relative;
+    &:hover {
+      color: #0099e8;
+    }
+    &:hover .todo-box {
+      display: block;
+    }
   }
   &__plof{
     width: 110px;
@@ -301,6 +303,9 @@ a {
     float: left;
     display: inline-block;
     font-size: 14px;
+    &:hover .menu__list_my-page_wrap {
+      display: block;
+    }
     a > div {
       width: 32px;
       height: 32px;
@@ -330,6 +335,9 @@ a {
         span {
           color: #333;
         }
+        &:hover {
+          background: #f5f5f5;
+        }
         i {
           float: right;
           color: #ccc;
@@ -358,7 +366,7 @@ a {
     position: relative;
     top: 40px;
     text-align: center;
-    &_account_icon {
+    &_icon {
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -424,9 +432,7 @@ a {
 
 
 
-.menu__list_my-page__list-other:hover {
-  background: #f5f5f5;
-}
+
 .num {
   width: 20px;
   height: 20px;
@@ -459,15 +465,9 @@ a {
   position: absolute;
   margin-left: 5px;
   margin-top: 7px;
-}
-.top_mypage:hover {
-  color: #0099e8;
-}
-.menu__list:hover {
-  color: #0099e8;
-}
-.menu__list__todo:hover {
-  color: #0099e8;
+  &:hover {
+    color: #0099e8;
+  }
 }
 .notification-box {
   left: 18%;
@@ -503,7 +503,7 @@ a {
         vertical-align: middle;
       }
     }
-    i {
+    .fas {
       position: absolute;
       right: 16px;
       color: #ccc;
@@ -544,19 +544,8 @@ a {
     font-weight: 600;
   }
 }
-
 .menu__list_my-page_wrap{
   right: 2%;
-}
-.menu__list__info:hover .notification-box {
-  display: block;
-}
-
-.menu__list__todo:hover .todo-box {
-  display: block;
-}
-.menu__list__plof:hover .menu__list_my-page_wrap {
-  display: block;
 }
 .blank-box {
   height: 44px;
