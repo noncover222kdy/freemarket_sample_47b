@@ -633,6 +633,7 @@ a {
       padding: 0 50px 0 10px;
       border: 1px solid #ccc;
       box-sizing: border-box;
+      outline: 0;
     }
   }
   &__nav {
@@ -642,6 +643,10 @@ a {
       &__str {
         color: #333;
         font-size: 14px;
+        &:hover {
+          text-decoration: underline;
+          opacity: 0.5;
+        }
       }
     }
     &__list {
