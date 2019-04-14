@@ -6,7 +6,7 @@
   }
 
   &_interval {
-    width: 1020px;
+    width: 100%;
     height: auto;
     margin: 20px auto 0;
     padding-bottom: 30px;
@@ -21,6 +21,7 @@
     width: 700px;
     height: auto;
     display: block;
+    margin: 0 auto;
 
     &_image {
       width: 100%;
@@ -174,13 +175,10 @@
 
 
   &-aside {
-    width: 280px;
     height: auto;
-    margin-right: 40px;
     display: block;
 
     &_nav_list, &_merupay_list, &_config_list {
-      width: 228px;
       height: 16px;
       padding: 16px;
       background: #fff;
@@ -232,4 +230,15 @@
   position: absolute;
   right: 30px;
   top: calc(50% - (14px / 2));
+}
+
+@media screen and (max-width: 1000px) {
+  .my-page {
+    &-main {
+      float: none;
+    }
+    &-asaid {
+      float: none;
+    }
+  }
 }

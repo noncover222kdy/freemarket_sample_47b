@@ -213,5 +213,25 @@
   }
 }
 
-
+@media screen and (max-width: 768px) {
+  .footer-sell-btn{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+    border-radius: 50%;
+    background: #ea352d;
+    color: #fff;
+    text-align: center;
+    p {
+      margin: 15px 0 0;
+      font-size: 14px;
+    }
+    .footer_icon_camera {
+      font-size: 30px;
+    }
+  }
+}
 
