@@ -1,21 +1,24 @@
 .simple_main
   = render partial: "layouts/simple-header"
   %main.simple_content
-    = form_for @item, html: {class: "simple_content", id: "item-dropzone"} do |f|
+    = form_for @item, html: {class: "simple_content_form", id: "item-dropzone"} do |f|
       %h2.heading 商品の情報を入力
-      %form.sell_form
-        .sell_upload
-          %h3.sell_upload__head
-            出品画像
-            %span.form_require 必須
-          .sell_upload__comment
-            .sell_upload__drop-box
-              %ul.sell_upload__drop-list
-                  = f.fields_for :item_images, html: {class: "sell_upload__img"} do |fin|
+      %form.sell_form-container
+        %label.sell_upload__head 出品画像
+        %span.form_require 必須
 
-                    %li.sell_upload__drop-image
-                      = fin.file_field :image,  class: "item-contents__image_drop-box_click", id: "file-image-#{i}"
-              = f.label :image, "クリックしてファイルをアップロード", class: "upload-drop-text", for: "file-image-0"
+        = f.fields_for :item_images, html: {class: "sell_upload__img"} do |fin|
+          .dropzone-container.clearfix
+            #preview
+            .dropzone-area
+              = fin.label :image, class: "dropzone-box", for: "upload-image" do
+                .input_area
+                  = fin.file_field :image, multiple: true, name: "item_images[image][]", class: "upload-image", id: "upload-image", 'data-image': 0
+                  %p ここをクリックしてください
+            .dropzone-area2
+              = fin.label :image, class: "dropzone-box", for: "upload-image" do
+                %p
+
 
         .sell_item
           .sell_item__form

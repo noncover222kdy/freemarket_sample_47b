@@ -25,29 +25,107 @@ h2 {
   background-color: #f5f5f5;
 }
 
-.simle_main > div, p, label {
-  font-size: 14px;
-}
 .heading {
   padding: 24px 8px;
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
 }
-.input_some {
-  width: 100%;
-  margin: 8px 0 0;
-  height: 48px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  background-color: #fff;
-  line-height: 1.5;
-  font-size: 14px;
-  display: inline-block;
-  outline: 0;
-  box-sizing:border-box;
-  border: 1px solid #ccc;
+
+
+.simple_content_form {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+
+  .heading {
+    font-size: 22px;
+    padding: 32px 16px;
+  }
+
+  .sell_upload__head {
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    padding-left: 40px;
+  }
+  .form_require {
+    background-color: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
 }
+
+
+.dropzone-container.clearfix {
+  width: 620px;
+  padding: 40px;
+  position: relative;
+
+  #preview {
+    display: flex;
+    width: 620px;
+    height: 180px;
+    position: relative;
+
+    .img_view {
+      width: 116px;
+      background: #f5f5f5;
+      margin: 0 0 10px 10px;
+      position: relative;
+
+      img {
+        width: 116px;
+        display: inline-block;
+        position: relative;
+        top: 20px;
+      }
+
+      .btn_wrapper {
+
+        .btn_edit {
+          position: absolute;
+          display: inline-block;
+          bottom: 0;
+          left: 10px;
+        }
+        .btn_delete {
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          right: 10px;
+
+        }
+      }
+    }
+  }
+  .dropzone-area {
+
+    .dropzone-box {
+
+      .input_area {
+
+        .upload-box {
+
+        }
+      }
+    }
+  }
+}
+
+
+
+img {
+  width: 116px;
+  display: inline-block;
+  position: relative;
+  top: 20px;
+}
+
 .btn_default {
   display: block;
   width: 100%;
@@ -60,45 +138,7 @@ h2 {
   text-align: center;
 }
 
-.sell_form {
-  border-top: 1px solid #eee;
-}
 
-.sell_upload {
-  padding: 40px 2.5%;
-  &__head {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  &__comment {
-    margin: 8px 0 0;
-    line-height: 1.5;
-  }
-  &__img {
-    display: inline;
-    margin: 16px auto 0;
-    &__drop {
-      width: 100%;
-      margin-left: 0;
-      position: relative;
-      min-height: 162px;
-      background-color: #f5f5f5;
-      border: 1px dashed #ccc;
-      font-size: 0;
-      text-align: center;
-      &__file {
-        display: none;
-      }
-      .fa-camera {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 14px;
-      }
-    }
-  }
-}
 
 .sell_item {
   padding: 40px;
@@ -265,7 +305,6 @@ h2 {
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
-  vertical-align: top;
   font-weight: bold;
 }
 
