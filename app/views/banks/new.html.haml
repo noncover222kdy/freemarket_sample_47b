@@ -1,140 +1,66 @@
 = render :partial => "layouts/main-header"
-
-.index-bank-main
-  .interval-bank
-    %main.my-page-main
-      .index-bank
-        .index-bank__title
-          %h2 支払い方法
-        .index-bank_content
-          .index-bank_content__description
-            %h3 クレジットカード一覧
-          .index-bank_content__button
-            =link_to "", class: "bank-card__button" do
-              .index-bank_content__button__text
-                クレジットカードを追加する
-              = icon('fal fa-credit-card fa-pull-left')
-          = link_to "支払い方法について＞", "",class: "about-payway-link"
-    %aside.my-page-aside
-      %ul.my-page-aside_nav
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            マイページ
-            %span.num 1
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            お知らせ
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            やることリスト
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            いいね！一覧
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            出品する
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            出品した商品 - 出品中
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            出品した商品 - 取引中
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            出品した商品 - 売却済み
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            購入した商品 - 取引中
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            購入した商品 - 過去の取引
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            ニュース一覧
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            評価一覧
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            ガイド
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_nav_list{:href => "#"}
-            お問い合わせ
-            %span.num
-            %i.my-page-aside_nav_list_right-arrow &gt;
-      %h3.merupay メルペイ
-      %ul.my-page-aside_merupay
-        %li
-          %a.my-page-aside_merupay_list{:href => "#"}
-            売上・振込申請
-            %span.num
-            %i.my-page-aside_merupay_list_right-arrow &gt;
-        %li
-          %a.my-page-aside_merupay_list{:href => "#"}
-            ポイント
-            %span.num
-            %i.my-page-aside_merupay_list_right-arrow &gt;
-      %h3.config 設定
-      %ul.my-page-aside_config
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            プロフィール
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            発送元・お届け先住所変更
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            支払い方法
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            メール/パスワード
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            本人情報
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            電話番号の確認
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-        %li.my-page-aside_config_list
-          %a.my-page-aside_config_list_a{:href => "#"}
-            ログアウト
-            %span.num
-            %i.my-page-aside_config_list_right-arrow &gt;
-
-= render :partial => "layouts/main-footer"
+.my-page_interval
+  %main.my-page-main.bank-new
+    %h2.heading-2 クレジットカード情報入力
+    = form_tag("/", method: :post, id: 'pay-form') do
+      .bank-new__inner
+        .bank-new__main
+          .bank-new__form
+            %span.bank-new__form__title カード番号
+            %span.form_require 必須
+            %input.input_some{maxlength: "16", name: "number", placeholder: "半角数字のみ", type: "number", id: "payment_card_no"}
+            = image_tag "visa.svg", class:"buy_user_info__card"
+            = image_tag "master-card.svg", class:"buy_user_info__card"
+            = image_tag "saison-card.svg", class:"buy_user_info__card"
+            = image_tag "jcb.svg", class:"buy_user_info__card"
+            = image_tag "american_express.svg", class:"buy_user_info__card"
+            = image_tag "dinersclub.svg", class:"buy_user_info__card"
+            = image_tag "discover.svg", class:"buy_user_info__card"
+          .bank-new__form
+            %span.bank-new__form__title 有効期限
+            %span.form_require 必須
+            .bank-new__form__selecter
+              .select_wrap
+                %select.select_default
+                  %option{value: "1"}01
+                  %option{value: "2"}02
+                  %option{value: "3"}03
+                  %option{value: "4"}04
+                  %option{value: "5"}05
+                  %option{value: "6"}06
+                  %option{value: "7"}07
+                  %option{value: "8"}08
+                  %option{value: "9"}09
+                  %option{value: "10"}10
+                  %option{value: "11"}11
+                  %option{value: "12"}12
+                %i.fas.fa-angle-down
+              %span 月
+            .bank-new__form__selecter
+              .select_wrap
+                %select.select_default
+                  %option{value: "2019"}19
+                  %option{value: "2020"}20
+                  %option{value: "2021"}21
+                  %option{value: "2022"}22
+                  %option{value: "2023"}23
+                  %option{value: "2024"}24
+                  %option{value: "2025"}25
+                  %option{value: "2026"}26
+                  %option{value: "2027"}27
+                  %option{value: "2028"}28
+                  %option{value: "2029"}29
+                %i.fas.fa-angle-down
+              %span 年
+          .bank-new__form
+            %span.bank-new__form__title セキュリティー番号
+            %span.form_require 必須
+            %input.input_some{maxlength: "3", name: "cvc", placeholder: "カード背面４桁もしくは３桁の番号", type: "number", id: "payment_card_cvc"}
+            .sell_cation.bank-new__form__cation
+              .sell_question
+                ?
+              カード裏面の番号とは?
+          .actions
+            %button.btn_default.buy_item__button{type: "submit"} 登録完了
+  = render :partial => "layouts/user-aside-menu"
+= render partial: "layouts/main-footer"

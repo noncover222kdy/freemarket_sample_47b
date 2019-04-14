@@ -4,7 +4,7 @@
   %main.my-page-main
     .my-page-main_image
       .my-page-main_account
-        = link_to "/users/show" do
+        = link_to "/users/1/" do
           %i.my-page-main_account_icon
           %p.my-page-main_account_name
             user name
@@ -50,5 +50,5 @@
         %li.my-page-main_notice_todo 過去の取引
 
   = render :partial => "layouts/user-aside-menu"
-
+= render partial: "layouts/main-footer"
 

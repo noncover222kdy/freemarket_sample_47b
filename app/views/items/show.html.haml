@@ -64,7 +64,7 @@
 
       /- else
       .info_buy
-        %a.info_buy_btn{href: "#"} 購入画面に進む
+        = link_to "購入画面に進む", "/items/#{@item.id}/buy", class: "info_buy_btn"
       .info_content
         %p.info_content_text= @item.discription
 
