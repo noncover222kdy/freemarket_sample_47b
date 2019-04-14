@@ -1,0 +1,35 @@
+/出品した商品ー出品中ページからリンクで飛ぶと行く商品詳細ページ
+= render :partial => "layouts/main-header"
+
+.my-page_interval
+  %main.my-page-main-exhibit
+    .my-page-main-exhibit_title
+      %h2 出品した商品
+    .my-page-main-exhibit_notice-wrap
+      %menu.my-page-main-exhibit_notice-index
+        %li.my-page-main-exhibit_notice-index_news 出品中
+        %li.my-page-main-exhibit_notice-index_todo 取引中
+        %li.my-page-main-exhibit_notice-index_todo 売却済み
+
+      - @items.each do |item|
+        = link_to  exhibitshow_item_path(item.id), class: "my-page-main-exhibit_item" do
+          .my-page-main-exhibit_item_ele
+            .my-page-main-exhibit_item_ele_image
+              / = @item.item_images.image
+            .my-page-main-exhibit_item_ele_name
+              = item.name
+            .my-page-main-exhibit_item_ele_icons
+              .my-page-main-exhibit_item_ele_icons_heart
+                = icon('fal fa-heart')
+              .my-page-main-exhibit_item_ele_icons_number
+                0
+              .my-page-main-exhibit_item_ele_icons_comment
+                = icon('fal fa-comment-alt')
+              .my-page-main-exhibit_item_ele_icons_number
+                0
+              .my-page-main-exhibit_item_ele_icons_exhibit
+                出品中
+          = icon('far fa-chevron-right')
+
+  = render :partial => "layouts/user-aside-menu"
+

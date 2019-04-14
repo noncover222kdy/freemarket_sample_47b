@@ -1,0 +1,98 @@
+/出品した商品ー出品中
+= render :partial => "layouts/main-header"
+.interval
+  %main.item-wrap
+    %h1.item-name= @item.name
+    .slider
+      %ul.bxslider
+        %li.img{style: "background:#ffffcf;"}
+        %li.img{style: "background:#ffcfcf;"}
+        %li.img{style: "background:#ffcfff;"}
+        %li.img{style: "background:#cfcfff;"}
+        %li.img{style: "background:#cfffff;"}
+        %li.img{style: "background:#cfffcf;"}
+      #bx-pager-1
+        %li.sub-img{style: "background:#ffffcf;"}
+          %a{"data-slide-index" => "0", href: ""}
+        %li.sub-img{style: "background:#ffcfcf;"}
+          %a{"data-slide-index" => "1", href: ""}
+        %li.sub-img{style: "background:#ffcfff;"}
+          %a{"data-slide-index" => "2", href: ""}
+        %li.sub-img{style: "background:#cfcfff;"}
+          %a{"data-slide-index" => "3", href:""}
+        %li.sub-img{style: "background:#cfffff;"}
+          %a{"data-slide-index" => "4", href:""}
+      #bx-pager-2
+        %li.sub-img{style: "background:#cfffcf;"}
+          %a{"data-slide-index" => "5", href: ""}
+
+    %table.table
+      %tr.table_row
+        %td.table_data 出品者
+        %td.table_data= @nickname
+      %tr.table_row
+        %td.table_data カテゴリー
+        %td.table_data= @item.category
+      %tr.table_row
+        %td.table_data ブランド
+        %td.table_data.link_blue カルボナーラ
+      %tr.table_row
+        %td.table_data 商品の状態
+        %td.table_data= @item.status
+      %tr.table_row
+        %td.table_data 配送料の負担
+        %td.table_data= @item.shopping_charges
+      %tr.table_row
+        %td.table_data 配送の方法
+        %td.table_data カルボナーラ
+      %tr.table_row
+        %td.table_data 配送元地域
+        %td.table_data= @item.source_area
+      %tr.table_row
+        %td.table_data 発送日の目安
+        %td.table_data= @item.shopping_days
+    .info
+      .info_price
+        %p.info_price_num
+          = @item.price
+          %span.info_price_tax (税込)
+          %span.info_price_shipping 送料込み
+      /- if @item.user_id == current_user.id
+
+      /- else
+      .info_content
+        %p.info_content_text= @item.discription
+
+  .edit_item
+    = link_to "商品の編集",  edit_item_path(@item.id), method: :get, class: "btn_default buy_item__button"
+    %p
+      or
+    %form{}
+      %input{type: "hidden", value: ""}
+        %button{type: "submit", class: "btn_default btn_gray__long"}
+          出品を一旦停止する
+    = link_to "この商品を削除する","/items/#{@item.id}", method: :delete, class: "btn_default btn_gray__long delete_button"
+  %article.comment-wrap
+    .comment-list
+      .comment_user
+        %figure.comment_user_icon
+        %p.comment_user_owner 出品者
+      .comment_text
+        %p.comment_text_user-name user name
+        %p.comment_text_content sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text
+    %p.comment_wanted 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %form.comment_form
+      %textarea.comment_form_comment{placeholder: "コメント"}
+      %input.comment_form_btn{type: "submit", value: "コメントする"}
+    %section.item-list-prev-next
+    %section.sns-list-wrap
+      %li.sns-list_facebook
+        = image_tag "Facebook.jpg"
+      %li.sns-list_twitter
+        = image_tag "Twitter.jpg"
+      %li.sns-list_line
+        = image_tag "Line.jpg"
+      %li.sns-list_pinterest
+        = image_tag "Pinterest.jpg"
+
+= render :partial => "layouts/main-footer"

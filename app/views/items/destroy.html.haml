@@ -1,0 +1,50 @@
+= render :partial => "layouts/main-header"
+
+.my-page_interval
+  %main.my-page-main
+    .my-page-main_image
+      .my-page-main_account
+        %i.my-page-main_account_icon
+        %p.my-page-main_account_name user name
+        %p.my-page-main_account_about
+          評価
+          %span.my-page-main_account_about_review 0
+          出品数
+          %span.my-page-main_account_about_listing 0
+    .my-page-main_notice-wrap
+      %menu.my-page-main_notice
+        %li.my-page-main_notice_news お知らせ
+        %li.my-page-main_notice_todo やることリスト
+      %ul.my-page-main_news-wrap
+        %li.my-page-main_news-list
+          %a{:href => "#"}
+            %figure.my-page-main_news-list_icon
+            .my-page-main_news-list_content
+              %p.my-page-main_news-list_content_text notice 1
+              %time.my-page-main_news-list_content_time
+                %i.my-page-main_news-list_content_clock.far.fa-clock
+                2 days ago
+              %i.my-page-main_news-list_right-arrow.fas.fa-chevron-right
+        %li.my-page-main_news-list
+          %a{:href => "#"}
+            %figure.my-page-main_news-list_icon
+            .my-page-main_news-list_content
+              %p.my-page-main_news-list_content_text notice 2
+              %time.my-page-main_news-list_content_time
+                %i.my-page-main_news-list_content_clock.far.fa-clock
+                3 days ago
+              %i.my-page-main_news-list_right-arrow.fas.fa-chevron-right
+        %li.my-page-main_news-list_more
+          %a{:href => "#"} 一覧を見る
+      %ul.my-page-main_todo-wrap
+        %li.my-page-main_todo-list
+          %a{:href => "#"} todo sample 1
+        %li.my-page-main_todo-list
+          %a{:href => "#"} todo sample 2
+    %h2 購入した商品
+    .my-page-main_notice-wrap
+      %menu.my-page-main_notice
+        %li.my-page-main_notice_news 取引中
+        %li.my-page-main_notice_todo 過去の取引
+
+  = render :partial => "layouts/user-aside-menu"
