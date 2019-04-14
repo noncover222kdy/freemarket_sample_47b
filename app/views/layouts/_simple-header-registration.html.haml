@@ -1,7 +1,7 @@
 %header.simpleheader-registaration
   .simpleheader-regi
     %h1
-      %a{href: '', class: 'header-registaration_icon'}
+      = link_to root_path, class: "header-registaration_icon" do
         =image_tag('mercari_logo_horizontal.png', class: 'header-registaration_icon__logo')
 
     .registration-bar

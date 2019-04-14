@@ -44,8 +44,8 @@
                   %span= "¥ 1,200"
             -#- unless
               -#%p.buy_item__error 配送先と支払い方法の入力を完了してください。
-            %button{type: 'submit', class: "buy_item__button btn_default"} 購入する
-            %input{type: "hidden"}
+          = form_tag(action: :pay, method: :post) do
+            %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" , data: { text: "購入する" , key: "pk_test_63842d276bb67485bc96d3ea"}}
       %section.buy_content.buy_user_info
         .buy_content__inner
           %h3.buy_user_info__heading 配送先
