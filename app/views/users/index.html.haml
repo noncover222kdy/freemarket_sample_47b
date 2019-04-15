@@ -19,7 +19,7 @@
         %li.my-page-main_notice_todo やることリスト
       %ul.my-page-main_news-wrap
         %li.my-page-main_news-list
-          %a{:href => "#"}
+          = link_to "#" do
             %figure.my-page-main_news-list_icon
             .my-page-main_news-list_content
               %p.my-page-main_news-list_content_text notice 1
@@ -28,7 +28,7 @@
                 2 days ago
               %i.my-page-main_news-list_right-arrow.fas.fa-chevron-right
         %li.my-page-main_news-list
-          %a{:href => "#"}
+          = link_to "#" do
             %figure.my-page-main_news-list_icon
             .my-page-main_news-list_content
               %p.my-page-main_news-list_content_text notice 2
@@ -37,12 +37,12 @@
                 3 days ago
               %i.my-page-main_news-list_right-arrow.fas.fa-chevron-right
         %li.my-page-main_news-list_more
-          %a{:href => "#"} 一覧を見る
+          = link_to "一覧を見る", "#"
       %ul.my-page-main_todo-wrap
         %li.my-page-main_todo-list
-          %a{:href => "#"} todo sample 1
+          = link_to "todo sample 1", "#"
         %li.my-page-main_todo-list
-          %a{:href => "#"} todo sample 2
+          = link_to "todo sample 2", "#"
     %h2 購入した商品
     .my-page-main_notice-wrap
       %menu.my-page-main_notice
