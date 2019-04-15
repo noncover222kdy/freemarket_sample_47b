@@ -35,6 +35,10 @@ class ItemsController < ApplicationController
     item.destroy if item.user_id == current_user.id
   end
 
+  def category
+    @items = Item.where("category = ?", "#{params[:category]}")
+  end
+
   private
 
   def item_params
