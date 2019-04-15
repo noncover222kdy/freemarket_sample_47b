@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get 'log_out'
       get 'about'
+      get 'exhibitindex'
     end
     resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
     resources :banks, only: [:new, :create, :edit, :update, :destroy]
