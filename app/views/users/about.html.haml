@@ -1,58 +1,59 @@
 %body.user_show_body
   = render partial: "layouts/main-header"
-  %nav.bread-crumbs
-    %ul
-      %li
-      %li
-  %main.user_identification
-    .user_identification__main
-      %section.user_identification__content
-        %h2.user_identification__head 本人情報の登録
-        %form{class: "user_identification__form", novalidate: true}
-          %div
-            %p
-              お客様の本人情報をご登録ください。
-              %br
-              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要となります。
-            %p.user_identification__right_text
-              = link_to "本人確認書類のアップロードについて", "/"
-                %i.fas.fa-chevron-right
-          .user_identification__form__group
-            %label お名前
-            %p 山田 太郎
-          .user_identification__form__group
-            %label お名前カナ
-            %p ヤマダ タロウ
-          .user_identification__form__group
-            %label 生年月日
-            %p 2000/01/01
-          .user_identification__form__group
-            %label 郵便番号
-            %span.form_arbitrary 任意
-            %input{type: "text", value: "1234567", placeholder: "例)1234567", class: "input_some"}
-          .user_identification__form__group
-            %label 都道府県
-            %span.form_arbitrary 任意
-            .select_wrap
-              %select.select_default
-              %i.fas.fa-chevron-down
-          .user_identification__form__group
-            %label 市町村
-            %span.form_arbitrary 任意
-            %input{type: "text", value: "TECH", placeholder: "例) 横浜市緑区", class: "input_some"}
-          .user_identification__form__group
-            %label 番地
-            %span.form_arbitrary 任意
-            %input{type: "text", value: "1-1", placeholder: "例) 青山1-1-1", class: "input_some"}
-          .user_identification__form__group
-            %label 建物名
-            %span.form_arbitrary 任意
-            %input{type: "text", value: "", placeholder: "例) 柳ビル103", class: "input_some"}
-          %button{type: "submit", class: "btn_default buy_item__button"} 登録する
-          .user_identification__form__group
-            %p.user_identification__right_text
-              = link_to "本人情報の登録について", "/"
-                %i.fas.fa-chevron-right
+  .my-page_interval
+    %main.my-page-main
+      %nav.bread-crumbs
+        %ul
+          %li
+          %li
+      %main.user_identification
+        .user_identification__main
+          %section.user_identification__content
+            %h2.user_identification__head 本人情報の登録
+            %form{class: "user_identification__form", novalidate: true}
+              %div
+                %p
+                  お客様の本人情報をご登録ください。
+                  %br
+                  登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要となります。
+                %p.user_identification__right_text
+                  = link_to "本人確認書類のアップロードについて", "/"
+                    %i.fas.fa-chevron-right
+              .user_identification__form__group
+                %label お名前
+                %p 山田 太郎
+              .user_identification__form__group
+                %label お名前カナ
+                %p ヤマダ タロウ
+              .user_identification__form__group
+                %label 生年月日
+                %p 2000/01/01
+              .user_identification__form__group
+                %label 郵便番号
+                %span.form_arbitrary 任意
+                %input{type: "text", value: "", placeholder: "例)1234567", class: "input_some"}
+              .user_identification__form__group
+                %label 都道府県
+                %span.form_arbitrary 任意
+                .select_wrap
+                  %select.select_default
+                  %i.fas.fa-chevron-down
+              .user_identification__form__group
+                %label 市町村
+                %span.form_arbitrary 任意
+                %input{type: "text", value: "", placeholder: "例) 横浜市緑区", class: "input_some"}
+              .user_identification__form__group
+                %label 番地
+                %span.form_arbitrary 任意
+                %input{type: "text", value: "", placeholder: "例) 青山1-1-1", class: "input_some"}
+              .user_identification__form__group
+                %label 建物名
+                %span.form_arbitrary 任意
+                %input{type: "text", value: "", placeholder: "例) 柳ビル103", class: "input_some"}
+              %button{type: "submit", class: "btn_default buy_item__button"} 登録する
+              .user_identification__form__group
+                %p.user_identification__right_text
+                  = link_to "本人情報の登録について", "/"
+                    %i.fas.fa-chevron-right
   = render partial: "layouts/user-aside-menu"
   = render partial: "layouts/main-footer"
-  = render "layouts/footer-sell-btn"

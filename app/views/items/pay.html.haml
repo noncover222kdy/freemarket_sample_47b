@@ -1,0 +1,47 @@
+.simple_main
+  = render partial: "layouts/simple-header"
+  %main.simple_content
+    %section.simple_container
+      %section.notice
+        .notice__red
+          %i.far.fa-clock
+          発送をお待ちください
+        .notice__black
+          出品者からの発送通知をお待ちください
+      %h2.heading 購入が完了しました
+      %section.buy_content.buy_item
+        .buy_content__inner
+          = image_tag('test1.jpg', class: 'buy_item__img')
+          %p.item__name= "ルンバ的"
+          %form.buy_item__form
+            %p.buy_item__price
+              = "¥ 1,200 "
+              %span.buy_item__postage
+                = "送料込み"
+      %section.buy_content.buy_user_info
+        .buy_content__inner
+          %h3.buy_user_info__heading 配送先
+          %address.buy_user_info__text
+            = "〒123-4567"
+            %br
+            = "日本"
+            %br
+            = "山田 太郎"
+          = link_to "/", class: "buy_user_info__fix"
+            %span 変更する
+            %i.fas.fa-chevron-right
+      %section.buy_content.buy_user_info
+        .buy_content__inner
+          %h3.buy_user_info__heading 支払い方法
+          -if current_user = 0
+            %p.buy_user_info__text
+              = "12345678"
+              %br
+              = "10 20"
+            = image_tag('master-card.svg', class: 'buy_user_info__card')
+          -else
+            %p /
+          = link_to "/", class: "buy_user_info__fix"
+            %span 変更する
+            %i.fas.fa-chevron-right
+  = render partial: "layouts/simple-footer"
