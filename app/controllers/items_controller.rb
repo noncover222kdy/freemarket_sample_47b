@@ -28,23 +28,15 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    if item.update(item_params)
-      redirect_to controller: :items, action: :index
-    else
-      render "edit"
-    end
-  end
-
-  def exhibitshow
-    @item = Item.find(params[:id])
-    @nickname = @item.user.nickname
   end
 
   def destroy
     item = Item.find(params[:id])
-    item.destroy
+    if item.destroy
+      redirect_to controller: :users, action: :index
+    else item.destroy
+      render "show"
+    end
   end
 
   private

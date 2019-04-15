@@ -6,10 +6,6 @@ Rails.application.routes.draw do
     resources :item_images
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
-    member do
-      get 'exhibitshow'
-    end
-
   end
   resources :users do
     member do
