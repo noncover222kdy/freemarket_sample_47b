@@ -42,6 +42,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def category
+    @items = Item.where("category = ?", "#{params[:category]}")
+  end
+
   private
 
   def item_params

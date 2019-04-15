@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
+    collection do
+      get 'category/:category' => 'items#category'
+    end
     resources :item_images
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
