@@ -12,12 +12,32 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.save
-        format.html { redirect_to root_path }
+        params[:item_images][:image].each do |image|
+          @item.item_images.create(image: image, item_id: @item.id)
+        end
+        format.html{redirect_to root_path}
       else
-        format.json { render template: "sells/index", locals: {item: @item} }
+        @item.item_images.build
+        format.html{render action: "new"}
       end
     end
   end
+
+
+
+  # def create
+  #   @item = Item.new(item_params)
+  #   respond_to do |format|
+  #     if @item.save
+  #       params[:item_images]["image"].each do |a|
+  #         @item_images = @item.item_images.create!( image: a, item_id: @item.id )
+  #       end
+  #       format.html { redirect_to root_path }
+  #     else
+  #       format.json
+  #     end
+  #   end
+  # end
 
   def edit
     @item = Item.find(params[:id])
@@ -38,10 +58,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes:[:id, :image, :_destroy]).merge(saler_id: current_user.id)
-  end
-
-  def item_images_params
-    params.require(:item).permit(:image).merge(saler_id:current_user.id)
+    params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes: [:id, :item_id, :image, :_destroy]).merge(saler_id: current_user.id)
   end
 end

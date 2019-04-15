@@ -34,7 +34,7 @@ $(document).on("turbolinks:load", function(){
         image.attr('data-image', index);
         preview2.append(image);
         dropzone2.css({
-          'width': `calc(100% - (135px * ${images.length - 5}))`
+          'width': `calc(100% - (100px * ${images.length - 5}))`
         })
       })
        if (images.length == 9) {
@@ -48,7 +48,7 @@ $(document).on("turbolinks:load", function(){
         preview.append(image);
       })
       dropzone.css({
-        'width': `calc(100% - (135px * ${images.length}))`
+        'width': `calc(100% - (100px * ${images.length}))`
       })
     }
     if (images.length == 4) {
@@ -57,10 +57,11 @@ $(document).on("turbolinks:load", function(){
     if (image.length == 10) {
       dropzone2.css({
         "display": "none"
-      });
+      })
       return;
     }
-    var new_image = $(`<input multiple= "multiple" name="product_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
+    var new_image = $(`<input multiple= "multiple" name="item_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
+    input_area.prepend(new_image);
   });
   $(document).on('click', '.delete', function() {
     var target_image = $(this).parent().parent();
@@ -97,13 +98,13 @@ $(document).on("turbolinks:load", function(){
         preview2.append(image);
       })
       dropzone2.css({
-        'width': `calc(100% - (135px * ${images.length - 5}))`
+        'width': `calc(100% - (100px * ${images.length - 5}))`
       })
       if(images.length == 9) {
         dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
       }
       if(images.length == 8) {
-        dropzone2.find('i').replaceWith('<p>ココをクリックしてください</p>')
+        dropzone2.find('i').replaceWith('<p>ココをクリックして画像ファイルをアップロードしてください</p>')
       }
     } else {
       dropzone.css({
@@ -114,7 +115,7 @@ $(document).on("turbolinks:load", function(){
         preview.append(image);
       })
       dropzone.css({
-        'width': `calc(100% - (135px * ${images.length}))`
+        'width': `calc(100% - (100px * ${images.length}))`
       })
     }
     if(images.length == 4) {
@@ -123,7 +124,31 @@ $(document).on("turbolinks:load", function(){
       })
     }
     if(images.length == 3) {
-      dropzone.find('i').replaceWith('<p>ココをクリックしてください</p>')
+      dropzone.find('i').replaceWith('<p>ココをクリックして画像ファイルをアップロードしてください</p>')
+    }
+  });
+
+    $("#item_price").keyup(function() {
+
+    var maxPrice = 999999
+    var minPrice = 300
+    var num = $("#item_price").val();
+    var fee = Math.floor(num * 0.1)
+    var profit = num - fee
+
+    if(num >= minPrice && num <= maxPrice) {
+      $("#fee_price").text(fee);
+      $("#profit_price").text(profit);
+    } else {
+      $("#fee_price").text("-");
+      $("#profit_price").text("-");
     }
   });
 });
+
+
+
+
+
+
+
