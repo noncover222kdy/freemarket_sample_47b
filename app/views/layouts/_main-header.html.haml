@@ -33,101 +33,103 @@
       %menu.index_header_bottom_menu
         %ul.index_menu_list
           // not log-in
-          = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
-          = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
-          // signed-in
-          %li.menu__list.menu__list__info
-            = icon "bell", class: "gray_icon"
-            お知らせ
-            .blank-box
-            %ul.menu__list__box.notification-box
-              %li
-                = link_to "/", class: "notification-box__link" do
-                  %figure
-                    = image_tag("mercari_profile.png")
-                  .notification-box__body
-                    .notification-box__text
-                      事務局からメッセージです。
-                    %time
-                      %i.far.fa-clock
-                      %span ４時間前
-                  %i.fas.fa-chevron-right
-              %li
-                = link_to "/", class: "notification-box__link" do
-                  %figure
-                    = image_tag("mercari_profile.png")
-                  .notification-box__body
-                    .notification-box__text
-                      取引相手からメッセージです。
-                    %time
-                      %i.far.fa-clock
-                      %span ５時間前
-                  %i.fas.fa-chevron-right
-              %li
-              %li
-          %li.menu__list__todo
-            = icon "check", class: "gray_icon"
-            やることリスト
-            .blank-box
-            %ul.menu__list__box.todo-box
-              %li.todo-box__content
-                現在、やることリストはありません
-          %li.menu__list__plof
-            = link_to "/users" do
-              %div
-                = image_tag("test1.jpg", class: "top_icon")
-              %span.top_mypage
-                マイページ
-            .blank-box
-            %ul.menu__list__box.menu__list_my-page_wrap
-              .menu__list_image
-                .menu__list_account
-                  %i.menu__list_account_icon
-              %p.menu__list_name
-                aa
-              %p.menu__list_about
-                評価:
-                %span.menu__list_about_review 0
-                出品数:
-                %span.menu__list_about_listing 0
-              %section.menu__list_my-page
+          - unless user_signed_in?
+            = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
+            = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
+            // signed-in
+          - else
+            %li.menu__list.menu__list__info
+              = icon "bell", class: "gray_icon"
+              お知らせ
+              .blank-box
+              %ul.menu__list__box.notification-box
                 %li
-                  = link_to "/", class: "menu__list_my-page__list" do
-                    %span 売上金
+                  = link_to "/", class: "notification-box__link" do
+                    %figure
+                      = image_tag("mercari_profile.png")
+                    .notification-box__body
+                      .notification-box__text
+                        事務局からメッセージです。
+                      %time
+                        %i.far.fa-clock
+                        %span ４時間前
                     %i.fas.fa-chevron-right
-                    %span.sales-num
-                      ¥5,000
                 %li
-                  = link_to "/", class: "menu__list_my-page__list" do
-                    %span ポイント
+                  = link_to "/", class: "notification-box__link" do
+                    %figure
+                      = image_tag("mercari_profile.png")
+                    .notification-box__body
+                      .notification-box__text
+                        取引相手からメッセージです。
+                      %time
+                        %i.far.fa-clock
+                        %span ５時間前
                     %i.fas.fa-chevron-right
-                    %span.merukari-point
-                      p 0
+                %li
+                %li
+            %li.menu__list__todo
+              = icon "check", class: "gray_icon"
+              やることリスト
+              .blank-box
+              %ul.menu__list__box.todo-box
+                %li.todo-box__content
+                  現在、やることリストはありません
+            %li.menu__list__plof
+              = link_to "/users" do
+                %div
+                  = image_tag("test1.jpg", class: "top_icon")
+                %span.top_mypage
+                  マイページ
+              .blank-box
+              %ul.menu__list__box.menu__list_my-page_wrap
+                .menu__list_image
+                  .menu__list_account
+                    %i.menu__list_account_icon
+                %p.menu__list_name
+                  = current_user.nickname
+                %p.menu__list_about
+                  評価:
+                  %span.menu__list_about_review 0
+                  出品数:
+                  %span.menu__list_about_listing= current_user.items.count
+                %section.menu__list_my-page
+                  %li
+                    = link_to "/", class: "menu__list_my-page__list" do
+                      %span 売上金
+                      %i.fas.fa-chevron-right
+                      %span.sales-num
+                        ¥5,000
+                  %li
+                    = link_to "/", class: "menu__list_my-page__list" do
+                      %span ポイント
+                      %i.fas.fa-chevron-right
+                      %span.merukari-point
+                        p 0
 
-              %li
-                = link_to "/", class: "menu__list_my-page__list-other" do
-                  %span いいね！一覧
-                  %i.fas.fa-chevron-right
-              %li
-                = link_to "/", class: "menu__list_my-page__list-other" do
-                  %span 出品した商品 - 出品中
-                  %i.fas.fa-chevron-right
-              %li
-                = link_to "/", class: "menu__list_my-page__list-other" do
-                  %span 出品した商品 - 取引中
-                  %i.fas.fa-chevron-right
-              %li
-                = link_to "/", class: "menu__list_my-page__list-other" do
-                  %span 出品した商品 - 売却済み
-                  %i.fas.fa-chevron-right
-              %li
-                = link_to "/", class: "menu__list_my-page__list-other" do
-                  %span 購入した商品 - 取引中
-                  %i.fas.fa-chevron-right
-              %li
-                = link_to "/", class: "menu__list_my-page__list-other" do
-                  %span 購入した商品 - 過去の取引
-                  %i.fas.fa-chevron-right
+                %li
+                  = link_to "/", class: "menu__list_my-page__list-other" do
+                    %span いいね！一覧
+                    %i.fas.fa-chevron-right
+                %li
+                  = link_to "/", class: "menu__list_my-page__list-other" do
+                    %span 出品した商品 - 出品中
+                    %i.fas.fa-chevron-right
+                %li
+                  = link_to "/", class: "menu__list_my-page__list-other" do
+                    %span 出品した商品 - 取引中
+                    %i.fas.fa-chevron-right
+                %li
+                  = link_to "/", class: "menu__list_my-page__list-other" do
+                    %span 出品した商品 - 売却済み
+                    %i.fas.fa-chevron-right
+                %li
+                  = link_to "/", class: "menu__list_my-page__list-other" do
+                    %span 購入した商品 - 取引中
+                    %i.fas.fa-chevron-right
+                %li
+                  = link_to "/", class: "menu__list_my-page__list-other" do
+                    %span 購入した商品 - 過去の取引
+                    %i.fas.fa-chevron-right
   %nav.category_nav
     %ul{id: "lists-1"}
     %ul{id: "lists-2"}
