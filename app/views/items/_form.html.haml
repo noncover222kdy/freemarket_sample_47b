@@ -1,6 +1,6 @@
 .simple_main
   = render partial: "layouts/simple-header"
-  %main.simple_content
+  %main.simple_container
     = form_for @item, html: {class: "simple_content", id: "section"} do |f|
       %h2.heading 商品の情報を入力
       %form.sell_form

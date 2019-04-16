@@ -72,10 +72,26 @@
     width: 700px;
     margin: 40px auto 0;
   }
+    .my-page-aside_merupay{
+    width: 700px;
+    margin: 10px auto 0;
+  }
+    .my-page-aside_config{
+    width: 700px;
+    margin: 10px auto 0;
+  }
+  .merupay {
+    width: 700px !important;
+    margin: 10px auto 0;
+  }
+  .config {
+    width: 700px !important;
+    margin: 10px auto 0;
+  }
 
 }
 
-@media screen and (min-width: 1068px) {
+@media screen and (min-width: 1000px) {
   .user_identification {
     width: 1020px;
     margin: 40px auto 0;
@@ -85,8 +101,28 @@
     float: right;
     width: 700px;
   }
+  .my-page_interval {
+    margin: 40px auto 0 !important;
+    width: 1020px !important;
+  }
   .my-page-aside_nav{
     width: 280px;
     margin: 0 40px 0 0;
+  }
+    .my-page-aside_merupay{
+    width: 280px;
+    margin: 0 10px 0 0;
+  }
+    .my-page-aside_config{
+    width: 280px;
+    margin: 0 10px 0 0;
+  }
+  .merupay {
+    width: 280px;
+    margin: 0;
+  }
+  .config {
+    width: 280px;
+    margin: 0;
   }
 }

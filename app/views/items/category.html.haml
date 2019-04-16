@@ -1,0 +1,35 @@
+= render partial: "layouts/main-header"
+%section.searched-category-list_wrap
+  %li.searched-category-list
+    = link_to "/", {class: "searched-category-list_btn"} do
+      メルカリ
+      %i.fas.fa-chevron-right
+  %li.searched-category-list
+    = link_to "/", {class: "searched-category-list_btn"} do
+      カテゴリー一覧
+      %i.fas.fa-chevron-right
+
+
+%main.index_mainbody
+  %article.index_item-wrap
+    %ul.index_item-lists
+      - if @item.present?
+        - @items.each do |item|
+          %li.index_item-list
+            = link_to "items/#{item.id}" do
+              %section.index_item_top
+                = image_tag("mercari_icon", class: "index_item_top_image")
+              %section.index_item_bottom
+                %h3.index_item_bottom_name
+                  = item.name
+                .index_item_bottom-num
+                  %p.index_item_bottom-num_price
+                    = item.price
+                  %p.index_item_bottom-num_like
+                    ♡
+                    %span 0
+      - else
+        %p 検索したカテゴリーに当てはまるアイテムはありませんでした。
+
+= render partial: "layouts/main-footer"
+= render "layouts/footer-sell-btn"
