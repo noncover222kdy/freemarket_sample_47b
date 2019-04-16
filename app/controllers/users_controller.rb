@@ -22,6 +22,9 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def select
+  end
+
   def about
   end
 
