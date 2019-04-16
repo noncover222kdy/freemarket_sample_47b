@@ -26,7 +26,7 @@
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => exhibitindex_user_path(current_user.id)}
+      %a.my-page-aside_nav_list{:href => "#"}
         出品した商品 - 出品中
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
@@ -105,17 +105,17 @@
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to(about_user_path(current_user.id), class: 'my-page-aside_config_list_a') do
         本人情報
         %span.num
-        %i.my-page-aside_config_list_right-arrow &gt;
+        %i.fas.fa-chevron-right.my-page-aside_config_list_right-arrow
     %li.my-page-aside_config_list
       %a.my-page-aside_config_list_a{:href => "#"}
         電話番号の確認
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to(log_out_user_path(current_user.id), class: 'my-page-aside_config_list_a') do
         ログアウト
         %span.num
-        %i.my-page-aside_config_list_right-arrow &gt;
+        %i.fas.fa-chevron-right.my-page-aside_config_list_right-arrow
