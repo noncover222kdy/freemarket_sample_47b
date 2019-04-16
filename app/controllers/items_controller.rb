@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  before_action :define_varialable, only: [:edit, :show, :update, :destroy]
   def index
+    @items = Item.where("category = 'レディース'").order('id DESC').limit(4)
   end
 
   def new
@@ -18,18 +20,30 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def show
+    @nickname = @item.user.nickname
   end
 
   def update
+    if @item.update(item_params)
+      redirect_to items_path
+    else
+      render "edit"
+    end
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy if item.user_id == current_user.id
+    if @item.destroy
+      redirect_to users_path
+    else
+      render "show"
+    end
+  end
+
+  def category
+    @items = Item.where("category = ?", "#{params[:category]}")
   end
 
   private
@@ -38,4 +52,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes:[:id, :image, :_destroy]).merge(saler_id: current_user.id)
   end
 
+  def define_varialable
+    @item = Item.find(params[:id])
+  end
 end
