@@ -4,7 +4,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   if Rails.env.production?
-    config.omniauth :facebook Rails.application.secrets.facebook_devise_p_id, Rails.application.secrets.facebook_devise_p_key
+    config.omniauth :facebook, Rails.application.secrets.facebook_devise_p_id, Rails.application.secrets.facebook_devise_p_key
     config.omniauth :google_oauth2, Rails.application.secrets.google_devise_p_id, Rails.application.secrets.google_devise_p_key
   else
     config.omniauth :facebook, Rails.application.secrets.facebook_devise_id, Rails.application.secrets.facebook_devise_key
