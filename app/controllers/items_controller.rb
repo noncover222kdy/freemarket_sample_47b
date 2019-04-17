@@ -59,5 +59,4 @@ class ItemsController < ApplicationController
   def define_varialable
     @item = Item.find(params[:id])
   end
-
 end

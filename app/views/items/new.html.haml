@@ -6,6 +6,7 @@
       %form.sell_form-container
         %label.sell_upload__head 出品画像
         %span.form_require 必須
+
         = f.fields_for :item_images, html: {class: "sell_upload__img"} do |fin|
           .dropzone_container.clearfix
             #dropzone_preview
@@ -17,6 +18,7 @@
             .dropzone_area2
               = fin.label :image, class: "dropzone_area_box", for: "upload-image" do
                 %p
+
         .sell_item
           .sell_item__form
             %label
@@ -119,6 +121,23 @@
         .sell_item
           %div
             %p
+              = link_to "", class: "sell_cation" do
+                禁止されている出品
+
+              、
+              = link_to "", class: "sell_cation" do
+                行為
+              を必ずご確認ください。
+            %p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "", class: "sell_cation" do
+                偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+            %p
+              また、出品をもちまして
+
+              = link_to "加盟店規約", "/", class: "sell_cation"
+
               = link_to "", class: "sell_cation" do
                 禁止されている出品
               、
