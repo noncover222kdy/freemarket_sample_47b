@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
+    member do
+      get 'buy' => 'items#buy'
+      post 'buy/pay' => 'items#pay'
+    end
     collection do
       get 'category/:category' => 'items#category'
     end
@@ -17,9 +21,11 @@ Rails.application.routes.draw do
       get 'exhibitindex'
     end
     resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
-    resources :banks, only: [:index, :new, :create, :edit, :update, :destroy]
-    collection do
-      get 'select'
+    resources :banks do
+      collection do
+        post 'pay' => 'banks#pay'
+        get 'select'
+      end
     end
   end
 

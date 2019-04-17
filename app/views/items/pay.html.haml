@@ -12,10 +12,11 @@
       %section.buy_content.buy_item
         .buy_content__inner
           = image_tag('test1.jpg', class: 'buy_item__img')
-          %p.item__name= "ルンバ的"
+          %p.item__name
+            = @item.name
           %form.buy_item__form
             %p.buy_item__price
-              = "¥ 1,200 "
+              = @item.price
               %span.buy_item__postage
                 = "送料込み"
       %section.buy_content.buy_user_info
@@ -26,22 +27,15 @@
             %br
             = "日本"
             %br
-            = "山田 太郎"
-          = link_to "/", class: "buy_user_info__fix"
+            = current_user.nickname
+          = link_to "/", class: "buy_user_info__fix" do
             %span 変更する
             %i.fas.fa-chevron-right
       %section.buy_content.buy_user_info
         .buy_content__inner
           %h3.buy_user_info__heading 支払い方法
           -if current_user = 0
-            %p.buy_user_info__text
-              = "12345678"
-              %br
-              = "10 20"
+            .buy_user_info__text
+
             = image_tag('master-card.svg', class: 'buy_user_info__card')
-          -else
-            %p /
-          = link_to "/", class: "buy_user_info__fix"
-            %span 変更する
-            %i.fas.fa-chevron-right
   = render partial: "layouts/simple-footer"
