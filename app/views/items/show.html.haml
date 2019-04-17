@@ -1,7 +1,8 @@
-= render :partial => "layouts/main-header"
+= render "layouts/main-header"
+
 .interval
   %main.item-wrap
-    %h1.item-name item name
+    %h1.item-name= @item.name
     .slider
       %ul.bxslider
         %li.img{style: "background:#ffffcf;"}
@@ -12,76 +13,90 @@
         %li.img{style: "background:#cfffcf;"}
       #bx-pager-1
         %li.sub-img{style: "background:#ffffcf;"}
-          %a{"data-slide-index" => "0", href: ""}
+          = link_to "", "data-slide-index": "0"
         %li.sub-img{style: "background:#ffcfcf;"}
-          %a{"data-slide-index" => "1", href: ""}
+          = link_to "", "data-slide-index": "1"
         %li.sub-img{style: "background:#ffcfff;"}
-          %a{"data-slide-index" => "2", href: ""}
+          = link_to "", "data-slide-index": "2"
         %li.sub-img{style: "background:#cfcfff;"}
-          %a{"data-slide-index" => "3", href:""}
+          = link_to "", "data-slide-index": "3"
         %li.sub-img{style: "background:#cfffff;"}
-          %a{"data-slide-index" => "4", href:""}
+          = link_to "", "data-slide-index": "4"
       #bx-pager-2
         %li.sub-img{style: "background:#cfffcf;"}
-          %a{"data-slide-index" => "5", href: ""}
+          = link_to "", "data-slide-index": "5"
 
     %table.table
       %tr.table_row
         %td.table_data 出品者
-        %td.table_data.link_blue カルボナーラ
+        %td.table_data= @nickname
       %tr.table_row
         %td.table_data カテゴリー
-        %td.table_data.link_blue カルボナーラ
+        %td.table_data= @item.category
       %tr.table_row
         %td.table_data ブランド
-        %td.table_data.link_blue カルボナーラ
+        %td.table_data= @item.brand
+      %tr.table_row
+        %td.table_data 商品のサイズ
+        %td.table_data= @item.size
       %tr.table_row
         %td.table_data 商品の状態
-        %td.table_data カルボナーラ
+        %td.table_data= @item.status
       %tr.table_row
         %td.table_data 配送料の負担
-        %td.table_data カルボナーラ
+        %td.table_data= @item.shopping_charges
       %tr.table_row
         %td.table_data 配送の方法
         %td.table_data カルボナーラ
       %tr.table_row
         %td.table_data 配送元地域
-        %td.table_data.link_blue カルボナーラ
+        %td.table_data= @item.source_area
       %tr.table_row
         %td.table_data 発送日の目安
-        %td.table_data カルボナーラ
+        %td.table_data= @item.shopping_days
     .info
       .info_price
         %p.info_price_num
-          1,000
+          = @item.price
           %span.info_price_tax (税込)
           %span.info_price_shipping 送料込み
-      /- if @item.user_id == current_user.id
 
-      /- else
-      .info_buy
-        %a.info_buy_btn{href: "#"} 購入画面に進む
-      .info_content
-        %p.info_content_text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text
-      /- if @item.user_id == current_user.id
+      - if user_signed_in? && @item.saler_id == current_user.id
+        .info_content
+          %p.info_content_text= @item.discription
 
-      /- else
-      %ul.info_review-wrap
-        %li.info_review-wrap_like
-          %i.far.fa-heart いいね！
-        %li.info_review-wrap_report
-          %i.far.fa-flag 不適切な商品の報告
-        %p.info_review-wrap_support
-          %i.fas.fa-unlock-alt あんしん・あんぜんへの取り組み
-  .edit_item
-    = link_to "商品の編集", "/", method: :get, class: "btn_default buy_item__button"
-    %p
-      or
-    %form{}
-      %input{type: "hidden", value: ""}
-        %button{type: "submit", class: "btn_default btn_gray__long"}
-          出品を一旦停止する
-    = link_to "この商品を削除する","/", method: :delete, class: "btn_default btn_gray__long delete_button"
+        %ul.info_review-wrap
+          %li.info_review-wrap_like
+            %i.far.fa-heart いいね！
+          %li.info_review-wrap_report
+            %i.far.fa-flag 不適切な商品の報告
+          %p.info_review-wrap_support
+            %i.fas.fa-unlock-alt あんしん・あんぜんへの取り組み
+
+        .edit_item
+          = link_to "商品の編集", edit_item_path, method: :get, class: "btn_default buy_item__button"
+          %p
+            or
+          %form{}
+            %input{type: "hidden", value: ""}
+              %button{type: "submit", class: "btn_default btn_gray__long"}
+                出品を一旦停止する
+          = link_to "この商品を削除する","/items/#{@item.id}", method: :delete, class: "btn_default btn_gray__long delete_button"
+
+      - else
+        .info_buy
+          = link_to "購入画面に進む", "/items/#{@item.id}/buy", class: "info_buy_btn"
+        .info_content
+          %p.info_content_text= @item.discription
+
+        %ul.info_review-wrap
+          %li.info_review-wrap_like
+            %i.far.fa-heart いいね！
+          %li.info_review-wrap_report
+            %i.far.fa-flag 不適切な商品の報告
+          %p.info_review-wrap_support
+            %i.fas.fa-unlock-alt あんしん・あんぜんへの取り組み
+
   %article.comment-wrap
     .comment-list
       .comment_user
@@ -110,3 +125,8 @@
         = image_tag "Line.jpg"
       %li.sns-list_pinterest
         = image_tag "Pinterest.jpg"
+
+
+= render "layouts/main-footer"
+
+= render "layouts/footer-sell-btn"

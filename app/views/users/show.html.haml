@@ -7,15 +7,16 @@
   .user_show_main
     %section.user_details
       .user_details__profile
-        %a{href: ""}
+        = link_to "#" do
           .user_details__profile__photo{style: "backaground-image: url('')"}
           %h2.user_details__profile__name.font_6
-            あああ
+            = @user.nickname
         .user_details__profile__score
           %span.font_3
             評価 100
           %span.font_3
-            出品数 100
+            出品数
+            = @items.count
       .user_details__info
         .user_details__rate
           %div.user_details__rate__other.clearfix
@@ -36,42 +37,29 @@
       .sns_icons
         %ul.sns_icons__content
           %li
-            %a{href: ""}
+            = link_to "#" do
               %i{class: "fab fa-facebook-square fa-3x"}
           %li
-            %a{href: ""}
+            = link_to "#" do
               %i{class: "fab fa-twitter-square fa-3x"}
           %li
-            %a{href: ""}
+            = link_to "#" do
               %i{class: "fab fa-line fa-3x"}
       %section.user_details__items
         %h2 この出品者の商品
         .user_details__items__content
-          %section.item_box
-            %a{href: ""}
-              %figure.item_box__image
-                = image_tag('test1.jpg', class: 'item_box__image__set')
-              .item_box__text
-                %h3.item_box__text__name
-                  abc
-                .item_box__text__num
-                  .item_box__text__price
-                    ¥ 99,999
-                  %p.item_box__text__tax
-                    (税込)
-          %section.item_box
-            %a{href: ""}
-              %figure.item_box__image
-                = image_tag('test1.jpg', class: 'item_box__image__set')
-              .item_box__text
-                %h3.item_box__text__name
-                  abc
-                .item_box__text__num
-                  .item_box__text__price
-                    ¥ 99,999
-                  %p.item_box__text__tax
-                    (税込)
-          %section.item_box
-          %section.item_box
+          - @items.each do |item|
+            %section.item_box
+              = link_to "/items/#{item.id}" do
+                %figure.item_box__image
+                  = image_tag('test1.jpg', class: 'item_box__image__set')
+                .item_box__text
+                  %h3.item_box__text__name
+                    = item.name
+                  .item_box__text__num
+                    .item_box__text__price
+                      ¥
+                      = item.price
+                    %p.item_box__text__tax
+                      (税込)
   = render partial: "layouts/main-footer"
-  = render "layouts/footer-sell-btn"

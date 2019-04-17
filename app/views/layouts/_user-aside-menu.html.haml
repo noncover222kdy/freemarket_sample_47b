@@ -1,121 +1,121 @@
 %aside.my-page-aside
   %ul.my-page-aside_nav
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to users_path, class: "my-page-aside_nav_list" do
         マイページ
         %span.num 1
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         お知らせ
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         やることリスト
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         いいね！一覧
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         出品する
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to exhibitindex_user_path(current_user.id), class: "my-page-aside_nav_list" do
         出品した商品 - 出品中
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         出品した商品 - 取引中
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         出品した商品 - 売却済み
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         購入した商品 - 取引中
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         購入した商品 - 過去の取引
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         ニュース一覧
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         評価一覧
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         ガイド
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         お問い合わせ
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
   %h3.merupay メルペイ
   %ul.my-page-aside_merupay
     %li
-      %a.my-page-aside_merupay_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         売上・振込申請
         %span.num
         %i.my-page-aside_merupay_list_right-arrow &gt;
     %li
-      %a.my-page-aside_merupay_list{:href => "#"}
+      = link_to "#", class: "my-page-aside_nav_list" do
         ポイント
         %span.num
         %i.my-page-aside_merupay_list_right-arrow &gt;
   %h3.config 設定
   %ul.my-page-aside_config
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to edit_user_path(current_user.id), class: "my-page-aside_config_list_a" do
         プロフィール
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to "#", class: "my-page-aside_config_list_a" do
         発送元・お届け先住所変更
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to user_banks_path(current_user.id), class: "my-page-aside_config_list_a" do
         支払い方法
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to "#", class: "my-page-aside_config_list_a" do
         メール/パスワード
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to(about_user_path(current_user.id), class: 'my-page-aside_config_list_a') do
         本人情報
         %span.num
-        %i.my-page-aside_config_list_right-arrow &gt;
+        %i.fas.fa-chevron-right.my-page-aside_config_list_right-arrow
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to "#", class: "my-page-aside_config_list_a" do
         電話番号の確認
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to(log_out_user_path(current_user.id), class: 'my-page-aside_config_list_a') do
         ログアウト
         %span.num
-        %i.my-page-aside_config_list_right-arrow &gt;
+        %i.fas.fa-chevron-right.my-page-aside_config_list_right-arrow

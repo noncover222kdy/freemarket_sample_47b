@@ -1,0 +1,18 @@
+/出品した商品ー出品中ページからリンクで飛ぶと行く商品詳細ページ
+= render :partial => "layouts/main-header"
+
+.my-page__interval
+  %main.my-page-main-exhibit
+    .my-page-main-exhibit__title
+      %h2 出品した商品
+    .my-page-main-exhibit__notice-wrap
+      %menu.my-page-main-exhibit__notice-index
+        %li.my-page-main-exhibit__notice-index__news 出品中
+        %li.my-page-main-exhibit__notice-index__todo 取引中
+        %li.my-page-main-exhibit__notice-index__todo 売却済み
+
+
+      = render partial: "layouts/user-notice-three-pattern", collection: @items, :as => "item"
+
+  = render :partial => "layouts/user-aside-menu"
+= render :partial => "layouts/main-footer"
