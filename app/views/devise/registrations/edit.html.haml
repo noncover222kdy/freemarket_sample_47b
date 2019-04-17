@@ -1,36 +1,80 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.user-signup-page
+  = render "layouts/simple-header-registration"
+  %main.membership-information
+    .membership-input
+      .membership-input__title
+        %h2 会員情報入力
+      .membership-input__elements
+        .membership-forms
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .membership-forms__field
+              = f.label :"ニックネーム"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）メルカリ太郎"
+
+            .membership-forms__field
+              = f.label :"メールアドレス"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+
+            .membership-forms__identification-description
+              %h3 本人確認
+              %P
+                安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+            .membership-forms__field
+              = f.label :"姓（全角）"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.text_field :first_name, autocomplete: "first_name", placeholder: "例）山田"
+
+            .membership-forms__field
+              = f.label :"名（全角）"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.text_field :last_name, autocomplete: "last_name", placeholder: "例）彩"
+
+            .membership-forms__field
+              = f.label :"姓カナ（全角）"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "例）ヤマダ"
+
+            .membership-forms__field
+              = f.label :"名カナ（全角）"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "例）アヤ"
+
+            .membership-forms__field
+              = f.label :"生年月日"
+              .membership-forms__field__required
+                必須
+              %br/
+              = f.date_select :birthday, start_year: 1900, end_year: (Time.now.year), :use_month_numbers => true, :include_blank => true
+
+            .membership-forms__correct-input-description
+              %P ※ 本人情報は正しく入力してください。会員登録 後、修正するにはお時間を頂く場合があります。
+
+            .membership-forms__signup-recaptcha
+            .membership-forms__service-ok
+              %p「次へ進む」のボタンを押すことにより、
+              =link_to "利用規約", "", class: "membership-forms__service-ok__text"
+              %span に同意したものとみなします
+
+            .membership-forms__actions
+              =f.submit "次へ進む", class: "membership-forms__actions__next-button"
+
+            = link_to "", class: "membership-forms__link-personal-information" do
+              本人情報の登録について＞
+  .user-signup-simplefooter
+    = render "layouts/simple-footer"

@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_04_16_102155) do
 
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "post_address"
@@ -122,14 +123,14 @@ ActiveRecord::Schema.define(version: 2019_04_16_102155) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.datetime "birthday", null: false
+    t.string "nickname"
+    t.string "email", default: ""
+    t.string "encrypted_password", default: ""
+    t.string "first_name"
+    t.string "last_name"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
+    t.datetime "birthday"
     t.text "introduction"
     t.integer "point"
     t.datetime "expiration"

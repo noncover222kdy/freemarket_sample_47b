@@ -86,9 +86,9 @@
     }
     .registration-bar {
       float: left;
-      .registration-bar__elements {
+      &__elements {
 
-        .registration-bar__elements__ele, .registration-bar__elements__ele-red {
+        &__ele, &__ele-red {
           display: inline-block;
           list-style-type: disc;
           font-weight: 600;

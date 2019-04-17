@@ -17,7 +17,7 @@
                 - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
                 = exp_month + " / " + exp_year
           .index-bank_content__button
-            =link_to "/users/#{current_user.id}/banks/new", class: "bank-card__button" do
+            =link_to new_user_bank_path(current_user.id), class: "bank-card__button" do
               .index-bank_content__button__text
                 クレジットカードを追加する
               = icon('fal fa-credit-card fa-pull-left')

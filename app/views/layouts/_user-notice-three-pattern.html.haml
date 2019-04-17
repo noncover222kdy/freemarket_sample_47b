@@ -1,0 +1,19 @@
+= link_to item_path(item.id), class: "my-page-main-exhibit_item" do
+  .my-page-main-exhibit__item
+    .my-page-main-exhibit__item__ele
+      .my-page-main-exhibit__item__ele__image
+        / = @item.item_images.image
+      .my-page-main-exhibit__item__ele__name
+        = item.name
+      .my-page-main-exhibit_item__ele__icons
+        .my-page-main-exhibit__item__ele__icons__heart
+          = icon('fal fa-heart')
+        .my-page-main-exhibit__item__ele__icons__number
+          0
+        .my-page-main-exhibit__item__ele__icons__comment
+          = icon('fal fa-comment-alt')
+        .my-page-main-exhibit__item__ele__icons__number
+          0
+        .my-page-main-exhibit__item__ele__icons__exhibit
+          出品中
+    = icon('far fa-chevron-right')

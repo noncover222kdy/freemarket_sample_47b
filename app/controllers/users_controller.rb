@@ -24,6 +24,9 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def select
+  end
+
   def about
   end
 
@@ -33,5 +36,8 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:nickname, :first_name, :last_name)
+  def exhibitindex
+    user = User.find(params[:id])
+    @items = user.items.order("created_at DESC")
   end
 end
