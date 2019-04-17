@@ -98,7 +98,7 @@
 
         .sell_item.clearfix
           %h3.sell_item__head= "販売価格(300~9,999,999)"
-          %a{href: '', class: "sell_question"} ?
+          = link_to "?", "/", class: "sell_question"
           .sell_item__selecters
             %ul.sell_price
               %li.sell_item__form
@@ -127,8 +127,8 @@
               を必ずご確認ください。
             %p
               またブランド品でシリアルナンバー等がある場合はご記載ください。
-              %a{href: "", class: "sell_cation"} 偽ブランドの販売
-              は犯罪であり処罰される可能性があります。
+              = link_to "偽ブランドの販売
+              は犯罪であり処罰される可能性があります。", "/", class: "sell_cation"
             %p
               また、出品をもちまして
               = link_to "加盟店規約", "/", class: "sell_cation"

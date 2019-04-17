@@ -1,9 +1,6 @@
 var lists = [
   { name: "レディース",                      tier: "a" },
-
-
   { name: "トップス",                        tier: "aa" },
-
   { name: "Tシャツ/カットソー(半袖/袖なし)",    tier: "aaa" },
   { name: "Tシャツ/カットソー(七分/長袖)",     tier: "aab" },
   { name: "シャツ/ブラウス(半袖/袖なし)",      tier: "aac" },
@@ -18,10 +15,7 @@ var lists = [
   { name: "アンサンブル",                    tier: "aal" },
   { name: "ベスト/ジレ",                     tier: "aam" },
   { name: "パーカー",                        tier: "aan" },
-
-
   { name: "ジャケット/アウター",               tier: "ab" },
-
   { name: "テーラードジャケット",               tier: "aba" },
   { name: "ノーカラージャケット",               tier: "abb" },
   { name: "Gジャン/デニムジャケット",            tier: "abc" },
@@ -36,10 +30,7 @@ var lists = [
   { name: "トレンチコート",                     tier: "aal" },
   { name: "ダッフルコート",                     tier: "aam" },
   { name: "ピーコート",                        tier: "aan" },
-
-
   { name: "パンツ",                           tier: "ac" },
-
   { name: "デニム/ジーンズ",                   tier: "aca" },
   { name: "ショートパンツ",                    tier: "acb" },
   { name: "カジュアルパンツ",                  tier: "acc" },
@@ -52,27 +43,18 @@ var lists = [
   { name: "サルエルパンツ",                    tier: "acj" },
   { name: "ガウチョパンツ",                    tier: "ack" },
   { name: "その他",                           tier: "acl" },
-
-
   { name: "スカート",                          tier: "ad" },
-
   { name: "ミニスカート",                      tier: "ada" },
   { name: "ひざ丈スカート",                    tier: "adb" },
   { name: "ロングスカート",                    tier: "adc" },
   { name: "キュロット",                       tier: "add" },
   { name: "その他",                           tier: "ade" },
-
-
   { name: "ワンピース",                        tier: "ae" },
-
   { name: "ミニワンピース",                    tier: "aea" },
   { name: "ひざ丈ワンピース",                  tier: "aeb" },
   { name: "ロングワンピース",                  tier: "aec" },
   { name: "その他",                           tier: "aed" },
-
-
   { name: "靴",                               tier: "af" },
-
   { name: "ハイヒール/パンプス",                tier: "afa" },
   { name: "ブーツ",                           tier: "afb" },
   { name: "サンダル",                         tier: "afc" },
@@ -83,25 +65,16 @@ var lists = [
   { name: "フラットシューズ/バレエシューズ",     tier: "afh" },
   { name: "長靴/レインシューズ",               tier: "afi" },
   { name: "その他",                           tier: "afj" },
-
-
   { name: "ルームウェア/パジャマ",              tier: "ag" },
-
   { name: "パジャマ",                         tier: "aga" },
   { name: "ルームウェア",                      tier: "agb" },
-
-
   { name: "レッグウェア",                      tier: "ah" },
-
   { name: "ソックス",                         tier: "aha" },
   { name: "スパッツ/レギンス",                 tier: "ahb" },
   { name: "ストッキング/タイツ",               tier: "ahc" },
   { name: "レッグウォーマー",                  tier: "ahd" },
   { name: "その他",                          tier: "ahe" },
-
-
   { name: "帽子",                             tier: "ai" },
-
   { name: "ニットキャップ/ビーニー",            tier: "aia" },
   { name: "ハット",                           tier: "aib" },
   { name: "ハンチング/ベレー帽",               tier: "aic" },
@@ -109,10 +82,7 @@ var lists = [
   { name: "キャスケット",                      tier: "aie" },
   { name: "麦わら帽子",                       tier: "aif" },
   { name: "その他",                           tier: "aig" },
-
-
   { name: "バッグ",                           tier: "aj" },
-
   { name: "ハンドバック",                      tier: "aja" },
   { name: "トートバッグ",                      tier: "ajb" },
   { name: "エコバッグ",                        tier: "ajc" },
@@ -127,10 +97,7 @@ var lists = [
   { name: "メッセンジャーバッグ",               tier: "ajl" },
   { name: "ビジネスバッグ",                    tier: "ajm" },
   { name: "旅行用バッグ/キャリーバッグ",         tier: "ajn" },
-
-
   { name: "アクセサリー",                      tier: "ak" },
-
   { name: "ネックレス",                        tier: "aka" },
   { name: "ブレスレット",                      tier: "akb" },
   { name: "バングル/リストバンド",              tier: "akc" },
@@ -142,17 +109,12 @@ var lists = [
   { name: "ブローチ/コサージュ",                tier: "aki" },
   { name: "チャーム",                         tier: "akj" },
   { name: "その他",                           tier: "akk" },
-
-
   { name: "ヘアアクセサリー",                  tier: "al" },
-
   { name: "ヘアゴム/シュシュ",                 tier: "ala" },
   { name: "ヘアバンド/カチューシャ",            tier: "alb" },
   { name: "ヘアピン",                         tier: "alc" },
   { name: "その他",                           tier: "ald" },
-
   { name: "小物",                             tier: "am" },
-
   { name: "長財布",                           tier: "ama" },
   { name: "折り財布",                         tier: "amb" },
   { name: "コインケース/小銭入れ",              tier: "amc" },
@@ -167,24 +129,15 @@ var lists = [
   { name: "バンダナ/スカーフ",                 tier: "aml" },
   { name: "ネックウォーマー",                  tier: "amm" },
   { name: "サスペンダー",                      tier: "amn" },
-
-
   { name: "時計",                            tier: "an" },
-
   { name: "腕時計(アナログ)",                  tier: "ana" },
   { name: "腕時計(デジタル)",                  tier: "anb" },
   { name: "ラバーベルト",                      tier: "anc" },
   { name: "レザーベルト",                      tier: "and" },
   { name: "金属ベルト",                       tier: "anf" },
   { name: "その他",                           tier: "ang" },
-
-
-
   { name: "メンズ",                            tier: "b" },
-
-
   { name: "トップス",                          tier: "ba" },
-
   { name: "Tシャツ/カットソー(半袖/袖なし)",     tier: "baa" },
   { name: "Tシャツ/カットソー(七分/長袖)",       tier: "bab" },
   { name: "シャツ",                           tier: "bac" },
@@ -197,7 +150,6 @@ var lists = [
   { name: "ジャージ",                         tier: "baj" },
   { name: "ベスト",                           tier: "bak" },
   { name: "その他",                           tier: "bal" },
-
   { name: "ジャケット/アウター",               tier: "bb" },
   { name: "パンツ",                          tier: "bc" },
   { name: "靴",                              tier: "bd" },
@@ -211,9 +163,7 @@ var lists = [
   { name: "レッグウェア",                     tier: "bl" },
   { name: "アンダーウェア",                   tier: "bm" },
   { name: "その他",                          tier: "bn" },
-
   { name: "ベビー・キッズ",               tier: "c" },
-
   { name: "",                      tier: "" },
   { name: "",                      tier: "" },
   { name: "",                      tier: "" },
@@ -229,5 +179,4 @@ var lists = [
   { name: "自動車",                      tier: "l"},
   { name: "その他",                      tier: "m"},
   { name: "カテゴリー一覧",               tier: "n"},
-
 ];
