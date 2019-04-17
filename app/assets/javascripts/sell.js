@@ -1,11 +1,11 @@
 $(document).on("turbolinks:load", function(){
-  var dropzone = $('.dropzone-area');
-  var dropzone2 = $('.dropzone-area2');
-  var dropzone_box = $('.dropzone-box');
+  var dropzone = $('.dropzone_area');
+  var dropzone2 = $('.dropzone_area2');
+  var dropzone_box = $('.dropzone_area_box');
   var images = [];
   var inputs = [];
   var input_area = $('.input_area');
-  var preview = $('#preview');
+  var preview = $('#dropzone_preview');
   var preview2 = $('#preview2');
 
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
@@ -128,7 +128,8 @@ $(document).on("turbolinks:load", function(){
     }
   });
 
-    $("#item_price").keyup(function() {
+
+  $("#item_price").keyup(function() {
 
     var maxPrice = 999999
     var minPrice = 300
@@ -143,5 +144,48 @@ $(document).on("turbolinks:load", function(){
       $("#fee_price").text("-");
       $("#profit_price").text("-");
     }
+  });
+
+
+  function makeList_2(list) {
+    var html = (list.name.match("カテゴリー一覧")) ? `` : `<option value='${list.tier}'>${list.name}</option>`;
+    $("#second_category").append(html);
+  }
+
+  function makeList_3(list) {
+    var html = (list.name.match("カテゴリー一覧")) ? `` : `<option value='${list.tier}'>${list.name}</option>`;
+    $("#third_category").append(html);
+  }
+
+  $('[name=first_category]').change(function() {
+    var val = $('[name=first_category]').val();
+    $("#third_category").remove();
+    ($("#second_category").length > 0 )? $("#second_category").empty().append(`<option class="sample">...</option>`) : $(".select_wrap_second").append(`<select id="second_category" name="second_category"><option class="sample">...</option></select>`);
+    $("#hidden_value").val(val);
+    lists.forEach(function(list) {
+      var reg = new RegExp('^' + val + '\\w$');
+      var value = list.tier;
+      if (value.match(reg)) {
+        makeList_2(list);
+      }
+    })
+  });
+
+  $(document).on('change', 'select[name=second_category]', function () {
+    var val = $('[name=second_category]').val();
+    ($("#third_category").length > 0 )? $("#third_category").empty().append(`<option class="sample">...</option>`) : $(".select_wrap_third").append(`<select id="third_category" name="third_category"><option class="sample">...</option></select>`);
+    $("#hidden_value").val(val);
+    lists.forEach(function(list) {
+      var reg = new RegExp('^' + val + '\\w$');
+      var value = list.tier;
+      if (value.match(reg)) {
+        makeList_3(list);
+      }
+    })
+  });
+
+  $(document).on('change', 'select[name=third_category]', function () {
+    var val = $('[name=third_category]').val();
+    $("#hidden_value").val(val);
   });
 });

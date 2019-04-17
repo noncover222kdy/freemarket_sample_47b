@@ -5,21 +5,18 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.build
+    @item_image = @item.item_images.build
   end
 
   def create
     @item = Item.new(item_params)
-    respond_to do |format|
-      if @item.save
-        params[:item_images][:image].each do |image|
-          @item.item_images.create(image: image, item_id: @item.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        @item.item_images.build
-        format.html{render action: "new"}
+    if @item.save
+      params[:item_images][:image].each do |img|
+        @item_image = @item.item_images.create!(image: img)
       end
+      redirect_to root_path, notice: "出品しました"
+    else
+      render :new
     end
   end
 

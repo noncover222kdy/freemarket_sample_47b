@@ -2,21 +2,21 @@
   = render partial: "layouts/simple-header"
   %main.simple_content
     = form_for @item, html: {class: "simple_content_form", id: "item-dropzone"} do |f|
-      %h2.heading 商品の情報を入力
+      %h2.heading_top 商品の情報を入力
       %form.sell_form-container
         %label.sell_upload__head 出品画像
         %span.form_require 必須
 
         = f.fields_for :item_images, html: {class: "sell_upload__img"} do |fin|
-          .dropzone-container.clearfix
-            #preview
-            .dropzone-area
-              = fin.label :image, class: "dropzone-box", for: "upload-image" do
+          .dropzone_container.clearfix
+            #dropzone_preview
+            .dropzone_area
+              = fin.label :image, class: "dropzone_area_box", for: "upload-image" do
                 .input_area
-                  = fin.file_field :image, multiple: true, name: "item_images[image][]", class: "upload-image", id: "upload-image", 'data-image': 0
+                  = fin.file_field :image, multiple: true, name: "item_images[image][]", class: "upload-image", id: "upload-image", type: "file"
                   %p ここをクリックして画像ファイルをアップロードしてください
-            .dropzone-area2
-              = fin.label :image, class: "dropzone-box", for: "upload-image" do
+            .dropzone_area2
+              = fin.label :image, class: "dropzone_area_box", for: "upload-image" do
                 %p
 
         .sell_item
@@ -38,8 +38,26 @@
                 カテゴリー
                 %span.form_require 必須
               .select_wrap
-                = f.select :category, [["---", ""], ["レディース", "a"], ["メンズ", "b"], ["ベビー・キッズ", "c"], ["インテリア・住まい・小物", "d"], ["本・音楽・ゲーム", "e"], ["おもちゃ・ホビー・グッズ", "f"], ["コスメ・香水・美容", "g"], ["家電・スマホ・カメラ", "h"], ["スポーツ・レジャー", "i"],["ハンドメイド", "j"], ["チケット", "k"], ["自動車・オートバイ", "l"], ["その他", "m"]], {}, {class: "select_default", value: "#{@item.category}"}
+                %select#first_category{name: "first_category", class: "select_default"}
+                  %option{value: ""} ---
+                  %option{value: "a"} レディース
+                  %option{value: "b"} メンズ
+                  %option{value: "c"} ベビー・キッズ
+                  %option{value: "d"} インテリア・住まい・小物
+                  %option{value: "e"} 本・音楽・ゲーム
+                  %option{value: "f"} おもちゃ・ホビー・グッズ
+                  %option{value: "g"} コスメ・香水・美容
+                  %option{value: "h"} 家電・スマホ・カメラ
+                  %option{value: "i"} スポーツ・レジャー
+                  %option{value: "j"} ハンドメイド
+                  %option{value: "k"} チケット
+                  %option{value: "l"} 自動車・オートバイ
+                  %option{value: "m"} その他
                 %i{class: "fas fa-chevron-down"}
+              .select_wrap_second
+              .select_wrap_third
+
+              = f.text_field :category, class: "input_some_hidden", id: "hidden_value", value: "", style: "display: none"
 
             .sell_item__form
               %label
@@ -115,6 +133,7 @@
               また、出品をもちまして
               = link_to "加盟店規約", "/", class: "sell_cation"
               に同意したことになります。
-          %button{type: "submit", class: 'btn_default buy_item__button'} 出品する
-          %a.btn_default.btn_gray もどる
+          .button_default
+            %button{type: "submit", class: 'buy_item__button'} 出品する
+            .btn_gray もどる
   = render partial: "layouts/simple-footer"
