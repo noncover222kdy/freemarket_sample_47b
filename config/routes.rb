@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get 'exhibitindex'
     end
     resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
-    resources :banks, only: [:new, :create, :edit, :update, :destroy]
+    resources :banks, only: [:index, :new, :create, :edit, :update, :destroy]
     collection do
       get 'select'
     end
