@@ -4,7 +4,7 @@
   %main.my-page-main
     .my-page-main_image
       .my-page-main_account
-        = link_to "/users/1/" do
+        = link_to user_path(current_user.id) do
           %i.my-page-main_account_icon
           %p.my-page-main_account_name
             user name

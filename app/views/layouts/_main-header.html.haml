@@ -34,8 +34,8 @@
         %ul.index_menu_list
           // not log-in
           - unless user_signed_in?
-            = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
-            = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
+            = link_to "ログイン", user_session_path, class: "index_menu_list_login"
+            = link_to "新規登録", select_users_path, class: "index_menu_list_signup"
             // signed-in
           - else
             %li.menu__list.menu__list__info
@@ -111,7 +111,7 @@
                     %span いいね！一覧
                     %i.fas.fa-chevron-right
                 %li
-                  = link_to "/", class: "menu__list_my-page__list-other" do
+                  = link_to exhibitindex_user_path(current_user.id), class: "menu__list_my-page__list-other" do
                     %span 出品した商品 - 出品中
                     %i.fas.fa-chevron-right
                 %li
