@@ -6,7 +6,7 @@ class BanksController < ApplicationController
     if bank.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+      Payjp.api_key = PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(bank.customer_id)
       @default_card_information = customer.cards.retrieve(bank.card_id)
     end
@@ -20,7 +20,7 @@ class BanksController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+    Payjp.api_key = PAYJP_SECRET_KEY
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -49,7 +49,7 @@ class BanksController < ApplicationController
     bank = Bank.where(user_id: current_user.id).first
     if bank.blank?
     else
-      Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+      Payjp.api_key = PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       bank.delete

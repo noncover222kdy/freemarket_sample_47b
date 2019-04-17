@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
     if bank.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+      Payjp.api_key = PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(bank.customer_id)
       @default_card_information = customer.cards.retrieve(bank.card_id)
     end
@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
   def pay
     @item = Item.find(params[:id])
     @bank = current_user.banks.first
-    Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+    Payjp.api_key = PAYJP_SECRET_KEY
     charge = Payjp::Charge.create(
     amount: "#{@item.price}",
     customer: @bank.customer_id,
