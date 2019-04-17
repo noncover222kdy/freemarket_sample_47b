@@ -7,7 +7,7 @@
   .user_show_main
     %section.user_details
       .user_details__profile
-        %a{href: ""}
+        = link_to "#" do
           .user_details__profile__photo{style: "backaground-image: url('')"}
           %h2.user_details__profile__name.font_6
             = @user.nickname
@@ -37,13 +37,13 @@
       .sns_icons
         %ul.sns_icons__content
           %li
-            %a{href: ""}
+            = link_to "#" do
               %i{class: "fab fa-facebook-square fa-3x"}
           %li
-            %a{href: ""}
+            = link_to "#" do
               %i{class: "fab fa-twitter-square fa-3x"}
           %li
-            %a{href: ""}
+            = link_to "#" do
               %i{class: "fab fa-line fa-3x"}
       %section.user_details__items
         %h2 この出品者の商品
