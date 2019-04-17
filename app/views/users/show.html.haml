@@ -50,7 +50,7 @@
         .user_details__items__content
           - @items.each do |item|
             %section.item_box
-              = link_to "/items/#{item.id}/" do
+              = link_to item_path(item.id) do
                 %figure.item_box__image
                   = image_tag('test1.jpg', class: 'item_box__image__set')
                 .item_box__text

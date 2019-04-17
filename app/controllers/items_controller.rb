@@ -61,12 +61,16 @@ class ItemsController < ApplicationController
   def pay
     @item = Item.find(params[:id])
     @bank = current_user.banks.first
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-    charge = Payjp::Charge.create(
-    amount: "#{@item.price}",
-    customer: @bank.customer_id,
-    currency: 'jpy',
-  )
+    if @bank.blank?
+      redirect_to action: "buy"
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      charge = Payjp::Charge.create(
+      amount: "#{@item.price}",
+      customer: @bank.customer_id,
+      currency: 'jpy',
+      )
+    end
   end
   private
 
