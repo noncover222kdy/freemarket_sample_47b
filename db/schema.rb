@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_004225) do
+ActiveRecord::Schema.define(version: 2019_04_16_102155) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -26,12 +26,10 @@ ActiveRecord::Schema.define(version: 2019_04_11_004225) do
 
   create_table "banks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "card_number", null: false
-    t.integer "expiration_date", null: false
-    t.integer "day", null: false
-    t.integer "security_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer_id"
+    t.string "card_id"
     t.index ["user_id"], name: "index_banks_on_user_id"
   end
 
@@ -50,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_04_11_004225) do
     t.integer "sold_items_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "trade", default: false, null: false
   end
 
   create_table "evalutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -112,6 +111,14 @@ ActiveRecord::Schema.define(version: 2019_04_11_004225) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tradings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "buyer_id"
+    t.string "saler_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "trade", default: false, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

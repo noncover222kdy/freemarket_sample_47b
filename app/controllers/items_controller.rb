@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  require "payjp"
   def index
     @items = Item.where("category = 'レディース'").order('id DESC').limit(4)
   end
@@ -34,7 +35,28 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy if item.user_id == current_user.id
   end
+  def buy
+    @item = Item.find(params[:id])
+    bank = Bank.where(user_id: current_user.id).first
+    if bank.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+      customer = Payjp::Customer.retrieve(bank.customer_id)
+      @default_card_information = customer.cards.retrieve(bank.card_id)
+    end
+  end
 
+  def pay
+    @item = Item.find(params[:id])
+    @bank = current_user.banks.first
+    Payjp.api_key = 'sk_test_dc85de7c8ac600a07ac7c4d5'
+    charge = Payjp::Charge.create(
+    amount: "#{@item.price}",
+    customer: @bank.customer_id,
+    currency: 'jpy',
+  )
+  end
   private
 
   def item_params

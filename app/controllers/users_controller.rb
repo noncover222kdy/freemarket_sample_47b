@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def index
+    @user = current_user
+    @items = @user.items
   end
 
   def new
@@ -26,5 +28,10 @@ class UsersController < ApplicationController
   end
 
   def log_out
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:nickname, :first_name, :last_name)
   end
 end

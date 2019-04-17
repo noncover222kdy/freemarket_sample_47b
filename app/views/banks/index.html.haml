@@ -9,11 +9,18 @@
         .index-bank_content
           .index-bank_content__description
             %h3 クレジットカード一覧
+            .index-bank_content__card
+              .index-bank_content__card__num
+                = "**** **** **** " + @default_card_information.last4
+              .index-bank_content__card__exp
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
           .index-bank_content__button
-            =link_to "", class: "bank-card__button" do
+            =link_to "/users/#{current_user.id}/banks/new", class: "bank-card__button" do
               .index-bank_content__button__text
                 クレジットカードを追加する
               = icon('fal fa-credit-card fa-pull-left')
           = link_to "支払い方法について＞", "",class: "about-payway-link"
-  = render partial: "layouts/user-aside-menu"
+  = render partial: "layouts/user-aside-menu", locals: { user: current_user}
 = render partial: "layouts/main-footer"

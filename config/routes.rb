@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
+    member do
+      get 'buy' => 'items#buy'
+      post 'buy/pay' => 'items#pay'
+    end
     resources :item_images
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
@@ -13,7 +17,11 @@ Rails.application.routes.draw do
       get 'about'
     end
     resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
-    resources :banks, only: [:new, :create, :edit, :update, :destroy]
+    resources :banks do
+      collection do
+        post 'pay' => 'banks#pay'
+      end
+    end
   end
 
 end

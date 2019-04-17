@@ -1,7 +1,7 @@
 %aside.my-page-aside
   %ul.my-page-aside_nav
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "/users/", class: "my-page-aside_nav_list" do
         マイページ
         %span.num 1
         %i.my-page-aside_nav_list_right-arrow &gt;
@@ -21,7 +21,7 @@
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
     %li
-      %a.my-page-aside_nav_list{:href => "#"}
+      = link_to "/items/new", class: "my-page-aside_nav_list" do
         出品する
         %span.num
         %i.my-page-aside_nav_list_right-arrow &gt;
@@ -85,7 +85,7 @@
   %h3.config 設定
   %ul.my-page-aside_config
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to "/", class: "my-page-aside_config_list_a" do
         プロフィール
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
@@ -95,7 +95,7 @@
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;
     %li.my-page-aside_config_list
-      %a.my-page-aside_config_list_a{:href => "#"}
+      = link_to "/users/#{user.id}/banks", class: "my-page-aside_config_list_a" do
         支払い方法
         %span.num
         %i.my-page-aside_config_list_right-arrow &gt;

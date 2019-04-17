@@ -55,5 +55,5 @@
                 %p.user_identification__right_text
                   = link_to "本人情報の登録について", "/"
                     %i.fas.fa-chevron-right
-  = render partial: "layouts/user-aside-menu"
+  = render partial: "layouts/user-aside-menu", locals: { user: current_user}
   = render partial: "layouts/main-footer"

@@ -63,8 +63,7 @@
       /- if @item.user_id == current_user.id
 
       /- else
-      .info_buy
-        = link_to "購入画面に進む", "/items/#{@item.id}/buy", class: "info_buy_btn"
+      = link_to "購入画面に進む", "/items/#{@item.id}/buy", class: "info_buy_btn info_buy"
       .info_content
         %p.info_content_text= @item.discription
 
@@ -115,5 +114,3 @@
 
 
 = render "layouts/main-footer"
-
-= render "layouts/footer-sell-btn"

@@ -2,16 +2,14 @@
   padding-top :40px;
   padding-bottom: 40px;
   .interval-bank {
-    width: 1000px;
     height: auto;
     margin: 0 auto;
     display: block;
     .index-bank {
-      height: 358px;
       width: 700px;
       background-color: #fff;
-      float: right;
-      .index-bank__title {
+      margin: 0 auto;
+      &__title {
         height: 50px;
         width: 100%;
         border-bottom: 1px solid #f5f5f5;
@@ -21,10 +19,9 @@
           line-height: 50px;
         }
       }
-      .index-bank_content {
-        height: calc(358px - 50px);
+      &_content {
         width: 100%;
-        .index-bank_content__description {
+        &__description {
           height: 16px;
           width: 572px;
           margin-top: 80px;
@@ -34,12 +31,13 @@
             padding-left: 190px;
           }
         }
-        .index-bank_content__button {
+        &__button {
           height: 107px;
           width: 572px;
           border-bottom: 1px solid #f5f5f5;
-          margin: 0 auto;
+          margin: 80px auto 0;
           .bank-card__button {
+            cursor: pointer;
             display: block;
             height: 50px;
             width: 320px;
@@ -56,6 +54,21 @@
               margin-left: 40px;
               color: #fff;
             }
+          }
+        }
+        &__card {
+          padding: 10px;
+          width: 300px;
+          margin: 0 auto;
+          border-bottom: 1px solid #ccc;
+          font-size: 14px;
+          &__num {
+            display: inline-block;
+          }
+          &__exp {
+            text-align: right;
+            display: inline-block;
+            width: 180px;
           }
         }
         .about-payway-link {
