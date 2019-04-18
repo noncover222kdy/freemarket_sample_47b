@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  require "payjp"
   before_action :define_varialable, only: [:edit, :show, :update, :destroy]
   def index
     @items = Item.where("category = 'レディース'").order('id DESC').limit(4)
@@ -7,23 +8,29 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.new
+    @item_image = @item.item_images.build
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to controller: :items, action: :index
+      params[:item_images][:image].each do |img|
+        @item_image = @item.item_images.create!(image: img)
+      end
+      redirect_to root_path, notice: "出品しました"
     else
-      render "new"
+      render :new
     end
   end
+
 
   def edit
   end
 
   def show
     @nickname = @item.user.nickname
+    @comment = Comment.new
+    @comments = @item.comments
   end
 
   def update
@@ -45,15 +52,41 @@ class ItemsController < ApplicationController
   def category
     @items = Item.where("category = ?", "#{params[:category]}")
   end
+  def buy
+    @item = Item.find(params[:id])
+    bank = Bank.where(user_id: current_user.id).first
+    if bank.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      customer = Payjp::Customer.retrieve(bank.customer_id)
+      @default_card_information = customer.cards.retrieve(bank.card_id)
+    end
+  end
 
   def search
     @items = Item.search(params[:search])
   end
 
+  def pay
+    @item = Item.find(params[:id])
+    @bank = current_user.banks.first
+    if @bank.blank?
+      redirect_to action: "buy"
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      charge = Payjp::Charge.create(
+      amount: "#{@item.price}",
+      customer: @bank.customer_id,
+      currency: 'jpy',
+      )
+    end
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes:[:id, :image, :_destroy]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes: [:id, :image, :_destroy]).merge(saler_id: current_user.id)
   end
 
   def define_varialable

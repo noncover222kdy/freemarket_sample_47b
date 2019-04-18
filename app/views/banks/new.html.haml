@@ -2,13 +2,13 @@
 .my-page_interval
   %main.my-page-main.bank-new
     %h2.heading-2 クレジットカード情報入力
-    = form_tag("/", method: :post, id: 'pay-form') do
+    = form_tag("/users/#{current_user.id}/banks/pay/", action: "pay", id: "pay-form") do
       .bank-new__inner
         .bank-new__main
           .bank-new__form
             %span.bank-new__form__title カード番号
             %span.form_require 必須
-            %input.input_some{maxlength: "16", name: "number", placeholder: "半角数字のみ", type: "number", id: "payment_card_no"}
+            = text_field_tag "number", "", placeholder: "半角数字のみ", class: "input_some bank-num", id: "pay-form__num", maxlength: "16"
             = image_tag "visa.svg", class:"buy_user_info__card"
             = image_tag "master-card.svg", class:"buy_user_info__card"
             = image_tag "saison-card.svg", class:"buy_user_info__card"
@@ -21,7 +21,7 @@
             %span.form_require 必須
             .bank-new__form__selecter
               .select_wrap
-                %select.select_default
+                %select.select_default.bank-exp-mon#pay-form__mon{maxlength: "2", name: "expiration_month", type: "text"}
                   %option{value: "1"}01
                   %option{value: "2"}02
                   %option{value: "3"}03
@@ -38,7 +38,7 @@
               %span 月
             .bank-new__form__selecter
               .select_wrap
-                %select.select_default
+                %select.select_default.bank-exp-year#pay-form__year{maxlength: "4", name: "expiration_year", type: "text"}
                   %option{value: "2019"}19
                   %option{value: "2020"}20
                   %option{value: "2021"}21
@@ -55,12 +55,13 @@
           .bank-new__form
             %span.bank-new__form__title セキュリティー番号
             %span.form_require 必須
-            %input.input_some{maxlength: "3", name: "cvc", placeholder: "カード背面４桁もしくは３桁の番号", type: "number", id: "payment_card_cvc"}
+            = text_field_tag "cvc", "", placeholder: "カード背面４桁もしくは３桁の番号", class: "input_some bank-cvc", id: "pay-form__cvc", maxlength: "4"
             .sell_cation.bank-new__form__cation
               .sell_question
                 ?
               カード裏面の番号とは?
           .actions
-            %button.btn_default.buy_item__button{type: "submit"} 登録完了
-  = render partial: "layouts/user-aside-menu"
+            %button.btn_default.buy_item__button{id: "pay-form__btn", type: "submit"}
+              登録完了
+  = render partial: "layouts/user-aside-menu", locals: { user: current_user}
 = render partial: "layouts/main-footer"

@@ -5,6 +5,6 @@
   .my-page-sub_log-out
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "my-page-sub_log-out_btn"
 
-  = render :partial => "layouts/user-aside-menu"
+  = render :partial => "layouts/user-aside-menu", locals: { user: current_user}
 
 = render "layouts/main-footer"

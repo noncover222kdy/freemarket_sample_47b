@@ -60,7 +60,6 @@
           = @item.price
           %span.info_price_tax (税込)
           %span.info_price_shipping 送料込み
-
       - if user_signed_in? && @item.saler_id == current_user.id
         .info_content
           %p.info_content_text= @item.discription
@@ -73,8 +72,8 @@
           %p.info_review-wrap_support
             %i.fas.fa-unlock-alt あんしん・あんぜんへの取り組み
 
-          .edit_item
-          = link_to "商品の編集", "/", method: :get, class: "btn_default buy_item__button"
+        .edit_item
+          = link_to "商品の編集", edit_item_path, method: :get, class: "btn_default buy_item__button"
           %p
             or
           %form{}
@@ -98,17 +97,12 @@
             %i.fas.fa-unlock-alt あんしん・あんぜんへの取り組み
 
   %article.comment-wrap
-    .comment-list
-      .comment_user
-        %figure.comment_user_icon
-        %p.comment_user_owner 出品者
-      .comment_text
-        %p.comment_text_user-name user name
-        %p.comment_text_content sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text
+    - @item.comments.each do |comment|
+      = render partial: "comment", locals: {comment: comment}
     %p.comment_wanted 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %form.comment_form
-      %textarea.comment_form_comment{placeholder: "コメント"}
-      %input.comment_form_btn{type: "submit", value: "コメントする"}
+    = form_for [@item, @comment], url: item_comments_path(@item), html: {class: "comment_form"} do |f|
+      = f.text_area :text, class: "comment_form_comment"
+      = f.submit 'コメントする', class: "comment_form_btn"
     %section.item-list-prev-next
       %li.item-list_prev
         %i.fas.fa-chevron-left
@@ -128,5 +122,3 @@
 
 
 = render "layouts/main-footer"
-
-= render "layouts/footer-sell-btn"

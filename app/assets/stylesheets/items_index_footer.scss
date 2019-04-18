@@ -213,7 +213,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 925px) {
   .footer-sell-btn{
     position: fixed;
     bottom: 10px;
@@ -232,6 +232,9 @@
     .footer_icon_camera {
       font-size: 30px;
     }
+  }
+  .app-banner {
+    display: none;
   }
 }
 

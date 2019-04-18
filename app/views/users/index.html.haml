@@ -4,15 +4,16 @@
   %main.my-page-main
     .my-page-main_image
       .my-page-main_account
-        = link_to "/users/1/" do
+        = link_to user_path(current_user.id) do
           %i.my-page-main_account_icon
           %p.my-page-main_account_name
-            user name
+            = @user.nickname
         %p.my-page-main_account_about
           評価
           %span.my-page-main_account_about_review 0
           出品数
-          %span.my-page-main_account_about_listing 0
+          %span.my-page-main_account_about_listing
+            = @user.items.length
     .my-page-main_notice-wrap
       %menu.my-page-main_notice
         %li.my-page-main_notice_news お知らせ
@@ -49,6 +50,6 @@
         %li.my-page-main_notice_news 取引中
         %li.my-page-main_notice_todo 過去の取引
 
-  = render :partial => "layouts/user-aside-menu"
+  = render partial: "layouts/user-aside-menu", locals: { user: current_user}
 = render partial: "layouts/main-footer"
 
