@@ -12,7 +12,7 @@
       width: 700px;
       margin: 0 auto;
       background-color: #fff;
-      .signup-contents__title {
+      &__title {
         height: 97px;
         width: 100%;
         border-bottom: ridge thin #eee;
@@ -23,7 +23,7 @@
           line-height: 97px;
         }
       }
-      .signup-contents__ways {
+      &__ways {
         position: relative;
         height: calc(100% - 97px);
         width: 100%;
@@ -36,15 +36,16 @@
           margin: auto;
           height: 182px;
           width: 320px;
-            .signup-ways__mail {
-              .signup-ways__mail__button {
+            &__mail {
+              &__button {
                 display: block;
                 width: 320px;
                 height: 50px;
                 background-color: #eee;
                 padding: 0 auto;
                 margin-bottom:16px;
-                .signup-ways__mail__button__text {
+                color: #ccc;
+                &__text {
                   float: right;
                   margin-right: 90px;
                   line-height: 50px;
@@ -60,7 +61,7 @@
               }
             }
             .signup-ways__facebook {
-              .signup-ways__facebook__button {
+              &__button {
                 display: block;
                 width: 320px;
                 height: 50px;
@@ -74,6 +75,7 @@
                   margin-right: 100px;
                 }
                 .signup-ways__facebook__text__logo {
+                  display: block;
                   width: 30px;
                   height: 30px;
                   float: left;
@@ -84,13 +86,13 @@
 
             }
             .signup-ways__google {
-              .signup-ways__google__button {
+              &__button {
                 display: block;
                 width: 320px;
                 height: 50px;
                 background-color: #fff;
                 border: solid 1px #aaa;
-                .signup-ways__google__button__text {
+                &__text {
                   float: right;
                   margin-right: 110px;
                   line-height: 50px;
@@ -123,15 +125,15 @@
   box-sizing: border-box;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   .membership-information {
-    height: 1816px;
     width: 100%;
     background-color: #f5f5f5;
     .membership-input {
       height: 100%;
       width: 700px;
       margin: 0 auto;
+      padding-bottom: 100px;
       background-color: #fff;
-      .membership-input__title {
+      &__title {
         height: 97px;
         width: 100%;
         border-bottom: ridge thin #eee;
@@ -144,18 +146,18 @@
       }
       .membership-input__elements {
         .membership-forms {
-          height: 1239px;
+          height: calc(100% - 97px);
           width: 320px;
           margin: 0 auto;
           margin-top: 70px;
           clear: both;
-          .membership-forms__field {
+          &__field {
             label {
               float: left;
               font-weight: 600;
               margin-right: 10px;
             }
-            .membership-forms__field__required {
+            &__required {
               float: left;
               padding: 2px 4px;
               background-color: #ea352d;
@@ -179,7 +181,7 @@
 
             }
           }
-          .membership-forms__identification-description {
+          &__identification-description {
             h3 {
               font-size: 22px;
               font-weight: 600;
@@ -190,7 +192,7 @@
               font-size: 14px;
             }
           }
-          .membership-forms__correct-input-description {
+          &__correct-input-description {
             margin-top: 5px;
             p {
             color: #888;
@@ -204,7 +206,7 @@
             margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
-            background-color: gray;
+            background-color: #ccc;
           }
           .membership-forms__service-ok {
             margin-top: 50px;
@@ -213,16 +215,20 @@
             p {
             font-size: 14px;
             }
-            .membership-forms__service-ok__text {
+            &__text {
               color: #0099e8;
               font-size: 14px;
+            }
+            &__text:hover {
+              opacity: 0.8;
+              text-decoration: underline;
             }
             span {
               font-size: 14px;
             }
           }
           .membership-forms__actions {
-            .membership-forms__actions__next-button {
+            &__next-button {
               width: 320px;
               height: 50px;
               background-color: #ea352d;
@@ -230,6 +236,18 @@
               font-size: 14px;
               cursor: pointer;
             }
+          }
+          .membership-forms__link-personal-information {
+            display: block;
+            width: 320px;
+            margin-top: 30px;
+            color: #0099e8;
+            font-size: 14px;
+            text-align: right;
+          }
+          .membership-forms__link-personal-information:hover {
+              opacity: 0.8;
+              text-decoration: underline;
           }
       }
     }
@@ -255,7 +273,7 @@
         width: 100%;
         border-bottom: ridge thin #eee;
         position: relative;
-        .go__signup-contents {
+        &-contents {
           text-align: center;
           height: 50px;
           width: 100%;
@@ -265,8 +283,8 @@
           right: 0;
           bottom: 0;
           margin: auto;
-          .go__signup-contents__message {
-            p.go__signup-contents__message__text {
+          &__message {
+            p &__text {
               font-size: 14px;
             }
           }
@@ -304,6 +322,7 @@
                   margin-right: 90px;
                 }
                 .signin-ways__facebook__text__logo {
+                  display: block;
                   width: 30px;
                   height: 30px;
                   float: left;
@@ -314,7 +333,7 @@
 
             }
             .signin-ways__google {
-              .signin-ways__google__button {
+              &__button {
                 display: block;
                 width: 320px;
                 height: 50px;
@@ -322,7 +341,7 @@
                 border: solid 1px #aaa;
                 margin-left: auto;
                 margin-right: auto;
-                .signin-ways__google__button__text {
+                &__text {
                   float: right;
                   margin-right: 100px;
                   line-height: 50px;
@@ -330,6 +349,7 @@
                   font-size: 14px;
                 }
                 .signin-ways__google__text__logo {
+                  display: block;
                   float: left;
                   width: 30px;
                   height: 30px;
@@ -341,7 +361,7 @@
           }
         .signin-form {
           margin-top: 60px;
-          .signin-form-contents {
+          &-contents {
             .field {
               margin-bottom: 25px;
               text-align:center;
@@ -356,10 +376,10 @@
               margin-top: 20px;
               margin-left: auto;
               margin-right: auto;
-              background-color: gray;
+              background-color: #ccc;
             }
             .actions {
-              .actions__login-button {
+              &__login-button {
               display: block;
               height: 50px;
               width: 320px;
@@ -374,9 +394,13 @@
             .password-forgotten {
               padding-left: 64px;
               margin-top: 30px;
-              .password-forgotten__text {
+              &__text {
                 font-size: 14px;
                 color: #0099e8;
+              }
+              &__text:hover {
+              opacity: 0.8;
+              text-decoration: underline;
               }
             }
           }

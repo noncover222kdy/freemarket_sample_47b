@@ -51,6 +51,7 @@ gem 'jquery-rails'
 gem 'active_hash'
 gem 'fog-aws'
 gem 'payjp'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,6 +66,10 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'jquery-turbolinks'
+  gem 'enum_help'
+  gem 'active_hash'
+  gem 'rails-i18n', '~> 5.1'
 end
 
 group :development do
