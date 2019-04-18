@@ -2,11 +2,10 @@
   = render partial: "layouts/simple-header"
   %main.simple_content
     = form_for @item, html: {class: "simple_content_form", id: "item-dropzone"} do |f|
-      %h2.heading_top 商品の情報を入力
+      %h2.sell_heading_top 商品の情報を入力
       %form.sell_form-container
         %label.sell_upload__head 出品画像
         %span.form_require 必須
-
         = f.fields_for :item_images, html: {class: "sell_upload__img"} do |fin|
           .dropzone_container.clearfix
             #dropzone_preview
@@ -18,7 +17,6 @@
             .dropzone_area2
               = fin.label :image, class: "dropzone_area_box", for: "upload-image" do
                 %p
-
         .sell_item
           .sell_item__form
             %label
@@ -30,7 +28,6 @@
               商品の説明
               %span.form_require 必須
             = f.text_area :discription, class: "textarea_some", placeholder: "商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", rows: "5", value: "#{@item.discription}"
-
           %h3.sell_item__head 商品の詳細
           .sell_item__selecters
             .sell_item__form
@@ -56,17 +53,14 @@
                 %i{class: "fas fa-chevron-down"}
               .select_wrap_second
               .select_wrap_third
-
               = f.text_field :category, class: "input_some_hidden", id: "hidden_value", value: "", style: "display: none"
-
             .sell_item__form
               %label
                 商品の状態
                 %span.form_require 必須
               .select_wrap
-                = f.select :status, [["---", ""], ["新着、未使用", "新着、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], {},{ class: "select_default", value: "#{@item.status}"}
+                = f.select :status, Item.statuses_i18n.keys.map {|k| [Item.statuses_i18n[k], k]},{prompt: "---"}, {class: "select_default"}
                 %i{class: "fas fa-chevron-down"}
-
         .sell_item.clearfix
           %h3.sell_item__head 配送について
           %a{href: '', class: "sell_question"} ?
@@ -76,26 +70,22 @@
                 配送料の負担
                 %span.form_require 必須
               .select_wrap
-
-                = f.select :shopping_charges, [["---", ""], ["送料込み(出品者負担)", "送料込み"], ["着払い(購入者負担)", "着払い"]], {}, {class: "select_default", value: "#{@item.shopping_charges}"}
+                = f.select :shopping_charges, Item.shopping_charges_i18n.keys.map {|k| [Item.shopping_charges_i18n[k], k]},{prompt: "---"}, {class: "select_default"}
                 %i{class: "fas fa-chevron-down"}
-
             .sell_item__form
               %label
                 発送元の地域
                 %span.form_require 必須
               .select_wrap
-                = f.select :source_area, [["---", ""], ["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"],["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"]], {}, {class: "select_default", value: "#{@item.source_area}"}
+                = f.collection_select :source_area, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select_default"}
                 %i{class: "fas fa-chevron-down"}
-
             .sell_item__form
               %label
                 発送までの日数
                 %span.form_require 必須
               .select_wrap
-                = f.select :shopping_days, [["---", ""], ["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], {}, {class: "select_default", value: "#{@item.shopping_days}"}
+                = f.select :shopping_days, Item.shopping_days_i18n.keys.map {|k| [Item.shopping_days_i18n[k], k]},{prompt: "---"}, {class: "select_default"}
                 %i{class: "fas fa-chevron-down"}
-
         .sell_item.clearfix
           %h3.sell_item__head= "販売価格(300~9,999,999)"
           = link_to "?", "/", class: "sell_question"
@@ -123,7 +113,6 @@
             %p
               = link_to "", class: "sell_cation" do
                 禁止されている出品
-
               、
               = link_to "", class: "sell_cation" do
                 行為
@@ -135,9 +124,7 @@
               は犯罪であり処罰される可能性があります。
             %p
               また、出品をもちまして
-
               = link_to "加盟店規約", "/", class: "sell_cation"
-
               = link_to "", class: "sell_cation" do
                 禁止されている出品
               、
@@ -153,7 +140,6 @@
               また、出品をもちまして
               = link_to "", class: "sell_cation" do
                 加盟店規約
-
               に同意したことになります。
           .button_default
             %button{type: "submit", class: 'buy_item__button'} 出品する

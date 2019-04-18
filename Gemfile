@@ -66,6 +66,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'jquery-turbolinks'
+  gem 'enum_help'
+  gem 'active_hash'
+  gem 'rails-i18n', '~> 5.1'
 end
 
 group :development do

@@ -28,13 +28,12 @@ h2 {
 .simple_main > div, p, label {
   font-size: 14px;
 }
-.heading {
+.sell_heading_top {
   padding: 24px 8px;
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
 }
-
 
 .simple_content_form {
   width: 700px;
@@ -62,7 +61,6 @@ h2 {
     font-weight: bold;
   }
 }
-
 
 .dropzone_container.clearfix {
   width: 620px;
@@ -101,7 +99,6 @@ h2 {
           position: absolute;
           bottom: 0;
           right: 10px;
-
         }
       }
     }
@@ -111,9 +108,7 @@ h2 {
     height: 180px;
     display: inline-block;
 
-
     .dropzone_area_box {
-
       .input_area {
         text-align: center;
         margin: 74px;
@@ -123,13 +118,11 @@ h2 {
         }
         p {
           text-align: center;
-
         }
       }
     }
   }
 }
-
 
 input.input_some {
   width: 100%;
@@ -293,7 +286,6 @@ input.input_some {
     line-height: 1.5;
     cursor: pointer;
     outline: 0;
-
   }
 }
 
@@ -345,7 +337,6 @@ input.input_some {
     color: #fff;
   }
 }
-
 
 .sell_question {
   display: inline-block;
