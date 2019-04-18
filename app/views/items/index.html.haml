@@ -17,48 +17,18 @@
   %h2 ピックアップカテゴリー
   %article.index_item-wrap
     %h2
-      = link_to "レディース新着アイテム","/",class: "index_item_new"
+      = link_to "レディース新着アイテム", "/items/category/a", class: "index_item_new"
     %ul.index_item-lists
-      - @items.each do |item|
-        %li.index_item-list
-          = link_to "items/#{item.id}" do
-            %section.index_item_top
-              = image_tag("mercari_icon", class: "index_item_top_image")
-            %section.index_item_bottom
-              %h3.index_item_bottom_name
-                = item.name
-              .index_item_bottom-num
-                %p.index_item_bottom-num_price
-                  = item.price
-                %p.index_item_bottom-num_like
-                  ♡
-                  %span 0
-      %li.index_item-list
-      %li.index_item-list
-      %li.index_item-list
+      = render @ladies
     %p.index_all-show
       = link_to "全ての商品を見る", "/", class: "index_all-show_path"
 
   %article.index_item-wrap
     %h2
-      = link_to "メンズ新着アイテム","/",class: "index_item_new"
+      = link_to "メンズ新着アイテム", "/items/category/b", class: "index_item_new"
     %ul.index_item-lists
-      %li.index_item-list
-        = link_to "/" do
-          %section.index_item_top
-            = image_tag("mercari_icon", class: "index_item_top_image")
-          %section.index_item_bottom
-            %h3.index_item_bottom_name メルカリアイテム
-            .index_item_bottom-num
-              %p.index_price ¥300
-              %p.index_like
-                ♡
-                %span 0
-      %li.index_item-list
-      %li.index_item-list
-      %li.index_item-list
+      = render @mens
     %p.index_all-show
       = link_to "全ての商品を見る", "/", class: "index_all-show_path"
-
 
 = render "layouts/main-footer"
