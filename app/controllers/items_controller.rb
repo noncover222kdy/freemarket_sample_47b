@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
 
   def show
     @nickname = @item.user.nickname
+    @comment = Comment.new
+    @comments = @item.comments
   end
 
   def update
