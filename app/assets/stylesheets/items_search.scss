@@ -1,0 +1,212 @@
+.search_container {
+  width: 1020px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+
+  .right-content {
+    width: 700px;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    float: right;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    .index_item {
+
+      &-list {
+        width: 160px;
+        height: 270px;
+        margin: 0 5px 10px 5px;
+        background: #fff;
+        display: block;
+      }
+
+      &_top_image {
+        width: 100%;
+        height: 160px;
+        background: #f0f0f0;
+        display: block;
+        &::after {
+          content: "";
+          width: 100px;
+          height: 25px;
+          display: block;
+          -webkit-box-shadow: -70px 0px 50px 0px #fff inset;
+          -moz-box-shadow: -70px 0px 50px 0px #fff inset;
+          -o-box-shadow: -70px 0px 50px 0px #fff inset;
+          -ms-box-shadow: -70px 0px 50px 0px #fff inset;
+          box-shadow: -70px 0px 50px 0px #fff inset;
+          position: relative;
+          bottom: calc(-100% - 25px);
+          left: calc(100% - 100px);
+          z-index: 1000;
+        }
+      }
+      &_bottom {
+        width: calc(100% - (5% * 2));
+        height: 110px;
+        padding: 5px 10px 5%;
+        display: block;
+        &_name {
+          width: auto;
+          height: 3em;
+          text-align: left;
+          color: #333;
+          display: block;
+          overflow: hidden;
+          word-break: break-word;
+          position: relative;
+          line-height: 45px;
+        }
+        &-num {
+          &_price {
+            float: left;
+            font-weight: 600;
+            color: #333;
+            position: relative;
+            top: 20px;
+            &::after {
+              content: "(税込)";
+              word-wrap: break-word;
+              font-size: 12px;
+            }
+          }
+          &_like{
+            width: 50px;
+            height: 25px;
+            display: block;
+            float: right;
+            position: relative;
+            top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .left-content {
+    width: 280px;
+    height: auto;
+    margin: 0 30px 0 0;
+    display: block;
+    float: right;
+    &_search {
+      &-sort {
+        height: 48px;
+        background: #fff;
+        margin: 20px 0;
+      }
+
+      &-box {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding: 16px 16px 60px;
+        margin-bottom: 20px;
+        background: #fff;
+        display: block;
+        &_label {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+      &_wrap {
+        width: 100%;
+        height: auto;
+        display: block;
+        clear: both;
+      }
+
+
+      &_select, &_brand, &_keyword {
+        width: 100%;
+        position: relative;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+
+        &_icon {
+          position: relative;
+          left: calc(100% - 25px);
+          bottom: 35px;
+          color: #888;
+          font-size: 18px;
+        }
+      }
+
+      &_brand, &_keyword {
+          width: calc(100% - (16px * 2));
+          margin-bottom: 20px;
+      }
+      &_label {
+        width: 100%;
+        height: 20px;
+        padding: 25px 0 10px;
+        display: block;
+        clear: both;
+      }
+      &_check {
+        &-box {
+          width: 18px;
+          height: 20px;
+          margin: 10px 10px 10px 0;
+          padding-right: 16px;
+          display: block;
+          float: left;
+          background: #fff;
+          border: solid 1px #999;
+          // -webkit-appearance: none;
+          // -moz-appearance: none;
+          // -o-appearance: none;
+          // -ms-appearance: none;
+        }
+        &-label {
+          width: 96px;
+          height: 30px;
+          line-height: 15px;
+          margin: 5px 0;
+          padding: 0;
+          display: block;
+          float: left;
+        }
+      }
+      &_button, &_submit {
+        width: 110px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+        display: block;
+        color: #fff;
+        float: left;
+        box-size: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        -ms-appearance: none;
+      }
+
+      &_button {
+        margin: 10px 25px 10px 0;
+        background: #999;
+      }
+
+      &_submit {
+        margin: 10px 0;
+        background: #ea352d;
+      }
+
+
+    }
+
+  }
+}

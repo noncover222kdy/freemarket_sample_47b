@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :items do
     collection do
-      get 'category/:category' => 'items#category'
+      get 'category/:category'  => 'items#category'
+      get 'search'              => 'items#search',   as: 'search'
     end
     resources :item_images
     resources :likes, only: [:create, :destroy]

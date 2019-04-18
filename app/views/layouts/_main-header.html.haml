@@ -4,9 +4,12 @@
       %h1.index_header_top_logo
         = link_to root_path do
           = image_tag("mercari_main_icon", class: "index_mercari_main_logo")
-      %form.index_header_top_form{action: "/items/search", method: "get"}
-        %input.index_header_top_form_search{name: "search", type: "text", placeholder: "何かお探しですか？"}
-          = icon 'search', class: "index_header_top_form_btn"
+
+      = form_with url: search_items_path, method: :get, local: true, class: "index_header_top_form" do |f|
+        = f.text_field :search, class: "index_header_top_form_search", placeholder: "何かお探しですか？"
+        = button_tag :type => "submit" do
+          %i.fa.fa-search.index_header_top_form_btn
+
     %section.index_header_bottom
       %nav.index_header_bottom_nav
         %ul.index_search_list
