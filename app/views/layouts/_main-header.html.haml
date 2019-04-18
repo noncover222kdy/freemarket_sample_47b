@@ -35,11 +35,9 @@
                 =link_to "ブランド一覧", "/", class: "bland-list"
       %menu.index_header_bottom_menu
         %ul.index_menu_list
-          // not log-in
           - unless user_signed_in?
             = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
             = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
-            // signed-in
           - else
             %li.menu__list.menu__list__info
               = icon "bell", class: "gray_icon"
