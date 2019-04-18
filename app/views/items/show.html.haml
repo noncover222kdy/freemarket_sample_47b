@@ -62,8 +62,6 @@
           %span.info_price_shipping 送料込み
 
       - if user_signed_in? && @item.saler_id == current_user.id
-        .info_buy
-          = link_to "購入画面に進む", "/items/#{@item.id}/buy", class: "info_buy_btn"
         .info_content
           %p.info_content_text= @item.discription
 
