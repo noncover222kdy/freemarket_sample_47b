@@ -8,7 +8,8 @@ Rails.application.routes.draw do
       post 'buy/pay' => 'items#pay'
     end
     collection do
-      get 'category/:category' => 'items#category'
+      get 'category/:category'  => 'items#category'
+      get 'search'              => 'items#search',   as: 'search'
     end
     resources :item_images
     resources :likes, only: [:create, :destroy]

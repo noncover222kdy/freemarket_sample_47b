@@ -10,22 +10,22 @@
       %i.fas.fa-chevron-right
 
 
-%main.index_mainbody
-  %article.index_item-wrap
-    %ul.index_item-lists
-      - if @item.present?
+%main.category_mainbody
+  %article.category_item-wrap
+    %ul.category_item-lists
+      - if @items.present?
         - @items.each do |item|
-          %li.index_item-list
+          %li.category_item-list
             = link_to "items/#{item.id}" do
-              %section.index_item_top
-                = image_tag("mercari_icon", class: "index_item_top_image")
-              %section.index_item_bottom
-                %h3.index_item_bottom_name
+              %section.category_item_top
+                = image_tag("mercari_icon", class: "category_item_top_image")
+              %section.category_item_bottom
+                %h3.category_item_bottom_name
                   = item.name
-                .index_item_bottom-num
-                  %p.index_item_bottom-num_price
+                .category_item_bottom-num
+                  %p.category_item_bottom-num_price
                     = item.price
-                  %p.index_item_bottom-num_like
+                  %p.category_item_bottom-num_like
                     ♡
                     %span 0
       - else
