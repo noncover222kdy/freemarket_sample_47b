@@ -60,7 +60,6 @@
           = @item.price
           %span.info_price_tax (税込)
           %span.info_price_shipping 送料込み
-
       - if user_signed_in? && @item.saler_id == current_user.id
         .info_content
           %p.info_content_text= @item.discription
@@ -128,5 +127,3 @@
 
 
 = render "layouts/main-footer"
-
-= render "layouts/footer-sell-btn"
