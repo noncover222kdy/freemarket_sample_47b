@@ -15,12 +15,12 @@
             =link_to user_facebook_omniauth_authorize_path, class: "signup-ways__facebook__button" do
               .signup-ways__facebook__text
                 Facebookで登録
-              %img{src: "../assets/flogo-HexRBG-Wht-58.png", class: "signup-ways__facebook__text__logo"}
+              = image_tag("facebook_logo", class: "signup-ways__facebook__text__logo")
           %li.signup-ways__google
             =link_to user_google_oauth2_omniauth_authorize_path, class: "signup-ways__google__button" do
               .signup-ways__google__button__text
                 Googleで登録
-              %img{src: "../assets/google-logo.png", class: "signup-ways__google__text__logo"}
+              = image_tag("google_logo", class: "signup-ways__google__text__logo")
 
   .user-signup-ways-simplefooter
     = render "layouts/simple-footer"

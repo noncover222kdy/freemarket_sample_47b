@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  require "payjp"
   before_action :define_varialable, only: [:edit, :show, :update, :destroy]
   def index
     @items = Item.where("category = 'レディース'").order('id DESC').limit(4)
@@ -49,7 +50,32 @@ class ItemsController < ApplicationController
   def category
     @items = Item.where("category = ?", "#{params[:category]}")
   end
+  def buy
+    @item = Item.find(params[:id])
+    bank = Bank.where(user_id: current_user.id).first
+    if bank.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      customer = Payjp::Customer.retrieve(bank.customer_id)
+      @default_card_information = customer.cards.retrieve(bank.card_id)
+    end
+  end
 
+  def pay
+    @item = Item.find(params[:id])
+    @bank = current_user.banks.first
+    if @bank.blank?
+      redirect_to action: "buy"
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      charge = Payjp::Charge.create(
+      amount: "#{@item.price}",
+      customer: @bank.customer_id,
+      currency: 'jpy',
+      )
+    end
+  end
   private
 
   def item_params
