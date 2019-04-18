@@ -20,11 +20,13 @@ Rails.application.routes.draw do
       get 'about'
       get 'exhibitindex'
     end
+    collection do
+      get 'select'
+    end
     resources :addresses, only: [:new, :create, :edit, :show, :update, :destroy]
     resources :banks do
       collection do
         post 'pay' => 'banks#pay'
-        get 'select'
       end
     end
   end
