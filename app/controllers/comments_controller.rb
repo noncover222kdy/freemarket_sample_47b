@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    if @comment.text.length != 0
-      @comment.save
+    if @comment.save
       redirect_to item_path(params[:item_id])
     else
       redirect_to item_path(params[:item_id])
