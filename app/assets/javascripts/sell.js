@@ -128,16 +128,11 @@ $(document).on("turbolinks:load", function(){
     }
   });
 
-
   $("#item_price").keyup(function() {
-
-    var maxPrice = 999999
-    var minPrice = 300
     var num = $("#item_price").val();
     var fee = Math.floor(num * 0.1)
     var profit = num - fee
-
-    if(num >= minPrice && num <= maxPrice) {
+    if(num >= 300 && num <= 999999) {
       $("#fee_price").text(fee);
       $("#profit_price").text(profit);
     } else {
@@ -145,7 +140,6 @@ $(document).on("turbolinks:load", function(){
       $("#profit_price").text("-");
     }
   });
-
 
   function makeList_2(list) {
     var html = (list.name.match("カテゴリー一覧")) ? `` : `<option value='${list.tier}'>${list.name}</option>`;
