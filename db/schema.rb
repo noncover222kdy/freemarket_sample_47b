@@ -113,6 +113,14 @@ ActiveRecord::Schema.define(version: 2019_04_16_102155) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tradings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "buyer_id"
+    t.string "saler_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "trade", default: false, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname"
     t.string "email", default: ""
