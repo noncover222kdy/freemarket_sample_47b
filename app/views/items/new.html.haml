@@ -59,7 +59,7 @@
                 商品の状態
                 %span.form_require 必須
               .select_wrap
-                = f.select :status, Item.statuses_i18n.keys.map {|k| [Item.statuses_i18n[k], k]},{prompt: "---"}, {class: "select_default"}
+                = f.select :status, [["新着、未使用", "新着、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], {}, {class: "select_default"}
                 %i{class: "fas fa-chevron-down"}
         .sell_item.clearfix
           %h3.sell_item__head 配送について
@@ -70,7 +70,7 @@
                 配送料の負担
                 %span.form_require 必須
               .select_wrap
-                = f.select :shopping_charges, Item.shopping_charges_i18n.keys.map {|k| [Item.shopping_charges_i18n[k], k]},{prompt: "---"}, {class: "select_default"}
+                = f.select :shopping_charges, [["送料込み(出品者負担)", "送料込み"], ["着払い(購入者負担)", "着払い"]], {}, {class: "select_default", prompt: "---"}
                 %i{class: "fas fa-chevron-down"}
             .sell_item__form
               %label
@@ -78,13 +78,14 @@
                 %span.form_require 必須
               .select_wrap
                 = f.collection_select :source_area, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select_default"}
+
                 %i{class: "fas fa-chevron-down"}
             .sell_item__form
               %label
                 発送までの日数
                 %span.form_require 必須
               .select_wrap
-                = f.select :shopping_days, Item.shopping_days_i18n.keys.map {|k| [Item.shopping_days_i18n[k], k]},{prompt: "---"}, {class: "select_default"}
+                = f.select :shopping_days, [["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], {}, {class: "select_default"}
                 %i{class: "fas fa-chevron-down"}
         .sell_item.clearfix
           %h3.sell_item__head= "販売価格(300~9,999,999)"
