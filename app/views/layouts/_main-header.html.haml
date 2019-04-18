@@ -33,9 +33,9 @@
       %menu.index_header_bottom_menu
         %ul.index_menu_list
           // not log-in
-          - unless user_signed_in?
+          - if !user_signed_in?
             = link_to "ログイン", user_session_path, class: "index_menu_list_login"
-            = link_to "新規登録", select_users_path, class: "index_menu_list_signup"
+            = link_to "新規登録", new_user_session_path, class: "index_menu_list_signup"
             // signed-in
           - else
             %li.menu__list.menu__list__info
@@ -142,19 +142,21 @@
           = image_tag("mercari_main_icon", class: "index_mercari_main_logo")
       %ul.slim__menu.clearfix
         // not log-in
-        = link_to "ログイン", "/users/sign_in", class: "slim__menu__signin mini-box"
-        = link_to "新規登録", "/users/sign_up", class: "slim__menu__signup mini-box"
-        // signed-in
-        %li.slim-icon.slim__menu__info
-          = link_to "/" do
-            = icon "bell", class: "gray_icon"
-        %li.slim-icon.slim__menu__todo
-          = link_to "/" do
-            = icon "check", class: "gray_icon"
-        %li.slim-icon.slim__menu__plof
-          = link_to "/users" do
-            %div
-              = image_tag("test1.jpg", class: "top_icon")
+        - if !user_signed_in?
+          = link_to "ログイン", "/users/sign_in", class: "slim__menu__signin mini-box"
+          = link_to "新規登録", "/users/sign_up", class: "slim__menu__signup mini-box"
+          // signed-in
+        - else
+          %li.slim-icon.slim__menu__info
+            = link_to "/" do
+              = icon "bell", class: "gray_icon"
+          %li.slim-icon.slim__menu__todo
+            = link_to "/" do
+              = icon "check", class: "gray_icon"
+          %li.slim-icon.slim__menu__plof
+            = link_to "/users" do
+              %div
+                = image_tag("test1.jpg", class: "top_icon")
     .slim__search
       %form.slim__search__form{action: "/items/search", method: "get"}
         %input.slim__search__bar{name: "search", type: "text", placeholder: "何をお探しですか？"}
