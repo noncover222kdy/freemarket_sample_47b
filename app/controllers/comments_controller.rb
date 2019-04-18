@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    @comment.save
-    redirect_to item_path(params[:item_id])
+    if @comment.text.length != 0
+      @comment.save
+      redirect_to item_path(params[:item_id])
+    else
+      redirect_to item_path(params[:item_id])
+    end
   end
 
   private
