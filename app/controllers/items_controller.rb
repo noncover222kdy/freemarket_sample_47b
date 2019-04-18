@@ -8,17 +8,21 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.new
+    @item_image = @item.item_images.build
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to controller: :items, action: :index
+      params[:item_images][:image].each do |img|
+        @item_image = @item.item_images.create!(image: img)
+      end
+      redirect_to root_path, notice: "出品しました"
     else
-      render "new"
+      render :new
     end
   end
+
 
   def edit
   end
@@ -77,7 +81,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes:[:id, :image, :_destroy]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :category, :discription, :size, :brand, :status, :shopping_charges, :source_area, :shopping_days, :price, item_images_attributes: [:id, :image, :_destroy]).merge(saler_id: current_user.id)
   end
 
   def define_varialable
