@@ -64,6 +64,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:search])
+  end
+
   def pay
     @item = Item.find(params[:id])
     @bank = current_user.banks.first
@@ -78,6 +82,7 @@ class ItemsController < ApplicationController
       )
     end
   end
+
   private
 
   def item_params

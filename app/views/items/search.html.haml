@@ -1,0 +1,119 @@
+= render "layouts/main-header"
+
+%main.search_container
+  .right-content
+    - if @items.present?
+      - @items.each do |item|
+        %li.index_item-list
+          = link_to "/items/#{item.id}" do
+            %section.index_item_top
+              = image_tag("mercari_icon", class: "index_item_top_image")
+            %section.index_item_bottom
+              %h3.index_item_bottom_name
+                = item.name
+              .index_item_bottom-num
+                %p.index_item_bottom-num_price
+                  = item.price
+                %p.index_item_bottom-num_like
+                  ♡
+                  %span 0
+    - else
+      %p 検索したカテゴリーに当てはまるアイテムはありませんでした。
+
+  .left-content
+    = form_with url: search_items_path do |f|
+      .left-content_search-sort
+        =f.select :price,[["並べ替え", ""],["価格の安い順", ""], ["価格の高い順", ""], ["出品の古い順", ""],["出品の新しい順", ""],["いいねの多い順", ""]], {}, class: 'left-content_search_select'
+        %i{class: "fas fa-chevron-down left-content_search_select_icon"}
+
+      .left-content_search-box
+        %h2.left-content_search-box_label 詳細検索
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "plus", class: "side-icon"
+            キーワードを追加する
+          = f.text_field :search, class: "left-content_search_keyword", placeholder: "例) 値下げ", value: (params[:name])
+
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "list", class: "side-icon"
+            カテゴリーを選択する
+          = f.select :category, [["全て", ""], ["レディース", "a"], ["メンズ", "b"], ["ベビー・キッズ", "c"], ["インテリア・住まい・小物", "d"], ["本・音楽・ゲーム", "e"], ["おもちゃ・ホビー・グッズ", "f"], ["コスメ・香水・美容", "g"], ["家電・スマホ・カメラ", "h"], ["スポーツ・レジャー", "i"], ["ハンドメイド", "j"], ["チケット", "k"], ["自動車・オートバイ", "l"], ["その他", "m"]], {}, class: 'left-content_search_select'
+          %i{class: "fas fa-chevron-down left-content_search_select_icon"}
+
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "tag", class: "side-icon"
+            ブランド名から探す
+          = f.text_field :search, class: "left-content_search_brand", placeholder: "例) シャネル", value: (params[:brand])
+
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "crop", class: "side-icon"
+            サイズを指定する
+          = f.select :size, [["すべて", ""], ["洋服のサイズ", ""], ["メンズ靴のサイズ", "b"], ["レディース靴のサイズ", "c"], ["スカートのサイズ", "d"], ["キッズ服のサイズ", "e"], ["ベビー・キッズ靴のサイズ", "f"], ["テレビのサイズ", "g"], ["カメラレンズのサイズ", "h"], ["オートバイのサイズ", "i"], ["ヘルメットのサイズ", "j"], ["タイヤのサイズ", "k"], ["スキーのサイズ", "l"], ["スノーボードのサイズ", "m"]], {}, class: 'left-content_search_select'
+          %i{class: "fas fa-chevron-down left-content_search_select_icon"}
+
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "crop", class: "side-icon"
+            価格
+          = f.select :price, [["選択してください", ""], ["300 ~ 1000", "300,1000"], ["1000 ~ 5000", "1000,5000"], ["5000 ~ 10000", "5000,10000"], ["10000 ~ 30000", "10000,30000"], ["30000 ~ 50000", "30000,50000"], ["50000 ~", "50000,"]], {}, class: 'left-content_search_select'
+          %i{class: "fas fa-chevron-down left-content_search_select_icon"}
+
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "crop", class: "side-icon"
+            商品の状態
+          = check_box_tag :sample1, "", false, class: "left-content_search_check-box"
+          = label_tag :sample1, "すべて", class: "left-content_search_check-label"
+
+          = check_box_tag :sample2, "新品、未使用", false, class: "left-content_search_check-box"
+          = label_tag :sample2, "新品、未使用", class: "left-content_search_check-label"
+
+          = check_box_tag :sample2, "未使用に近い", false, class: "left-content_search_check-box"
+          = label_tag :sample2, "未使用に近い", class: "left-content_search_check-label"
+
+          = check_box_tag :sample3, "目立った傷や汚れなし", false, class: "left-content_search_check-box"
+          = label_tag :sample3, "目立った傷や汚れなし", class: "left-content_search_check-label"
+
+          = check_box_tag :sample4, "やや傷や汚れあり", false, class: "left-content_search_check-box"
+          = label_tag :sample4, "やや傷や汚れあり", class: "left-content_search_check-label"
+
+          = check_box_tag :sample5, "傷や汚れあり", false, class: "left-content_search_check-box"
+          = label_tag :sample5, "傷や汚れあり", class: "left-content_search_check-label"
+
+          = check_box_tag :sample6, "全体的に状態が悪い", false, class: "left-content_search_check-box"
+          = label_tag :sample6, "全体的に状態が悪い", class: "left-content_search_check-label"
+
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "crop", class: "side-icon"
+            配送料の負担
+          = check_box_tag :sample7, "", false, class: "left-content_search_check-box"
+          = label_tag :sample7, "すべて", class: "left-content_search_check-label"
+
+          = check_box_tag :sample8, "着払い(購入者負担)", false, class: "left-content_search_check-box"
+          = label_tag :sample8, "着払い(購入者負担)", class: "left-content_search_check-label"
+
+          = check_box_tag :sample9, "送料込み(出品者負担)", false, class: "left-content_search_check-box"
+          = label_tag :sample9, "送料込み(出品者負担)", class: "left-content_search_check-label"
+        .left-content_search_wrap
+          %label.left-content_search_label
+            = icon "crop", class: "side-icon"
+            販売状況
+          = check_box_tag :sample10, "", false, class: "left-content_search_check-box"
+          = label_tag :sample10, "すべて", class: "left-content_search_check-label"
+
+          = check_box_tag :sample11, "販売中", false, class: "left-content_search_check-box"
+          = label_tag :sample11, "販売中", class: "left-content_search_check-label"
+
+          = check_box_tag :sample12, "売り切れ", false, class: "left-content_search_check-box"
+          = label_tag :sample12, "売り切れ", class: "left-content_search_check-label"
+
+          .left-content_search_wrap
+            = button_tag "クリア", class: "left-content_search_button"
+            = f.submit "完了", class: "left-content_search_submit"
+
+
+= render "layouts/main-footer"

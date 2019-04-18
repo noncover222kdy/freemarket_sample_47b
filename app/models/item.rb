@@ -10,6 +10,11 @@ class Item < ApplicationRecord
 
   belongs_to :user, class_name: 'User', primary_key: :id, foreign_key: :saler_id
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where(['name LIKE ? OR discription LIKE ? OR size LIKE ? OR brand LIKE ? OR status LIKE ? OR price LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+  end
+
   belongs_to_active_hash :prefecture
 
   enum status: {
@@ -31,4 +36,5 @@ class Item < ApplicationRecord
     two_to_three: "2~3日で発送",
     four_to_seven: "4~7日で発送"
   }
+
 end

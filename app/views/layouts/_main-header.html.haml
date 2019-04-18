@@ -4,9 +4,12 @@
       %h1.index_header_top_logo
         = link_to root_path do
           = image_tag("mercari_main_icon", class: "index_mercari_main_logo")
-      %form.index_header_top_form{action: "/items/search", method: "get"}
-        %input.index_header_top_form_search{name: "search", type: "text", placeholder: "何かお探しですか？"}
-          = icon 'search', class: "index_header_top_form_btn"
+
+      = form_with url: search_items_path, method: :get, local: true, class: "index_header_top_form" do |f|
+        = f.text_field :search, class: "index_header_top_form_search", placeholder: "何かお探しですか？"
+        = button_tag :type => "submit" do
+          %i.fa.fa-search.index_header_top_form_btn
+
     %section.index_header_bottom
       %nav.index_header_bottom_nav
         %ul.index_search_list
@@ -32,11 +35,11 @@
                 =link_to "ブランド一覧", "/", class: "bland-list"
       %menu.index_header_bottom_menu
         %ul.index_menu_list
-          // not log-in
-          - if !user_signed_in?
-            = link_to "ログイン", user_session_path, class: "index_menu_list_login"
-            = link_to "新規登録", new_user_session_path, class: "index_menu_list_signup"
-            // signed-in
+
+          - unless user_signed_in?
+            = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
+            = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
+
           - else
             %li.menu__list.menu__list__info
               = icon "bell", class: "gray_icon"
