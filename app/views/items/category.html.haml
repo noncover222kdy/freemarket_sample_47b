@@ -16,7 +16,7 @@
       - if @items.present?
         - @items.each do |item|
           %li.category_item-list
-            = link_to "items/#{item.id}" do
+            = link_to item_path(item.id) do
               %section.category_item_top
                 = image_tag("mercari_icon", class: "category_item_top_image")
               %section.category_item_bottom
