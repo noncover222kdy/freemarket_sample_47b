@@ -7,12 +7,6 @@
       %ul.bxslider
         - @item.item_images.each do |image|
           = image_tag image.image.url, class: "img"
-        / %li.img{style: "background:#ffffcf;"}
-        / %li.img{style: "background:#ffcfcf;"}
-        / %li.img{style: "background:#ffcfff;"}
-        / %li.img{style: "background:#cfcfff;"}
-        / %li.img{style: "background:#cfffff;"}
-        / %li.img{style: "background:#cfffcf;"}
       #bx-pager-1
         %li.sub-img{style: "background:#ffffcf;"}
           = link_to "", "data-slide-index": "0"
