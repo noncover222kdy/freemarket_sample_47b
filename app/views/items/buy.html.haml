@@ -73,7 +73,7 @@
             = image_tag('master-card.svg', class: 'buy_user_info__card')
           -else
             %p /
-          %a{href: "", class: "buy_user_info__fix"}
+          = link_to user_banks_path(current_user), class: "buy_user_info__fix" do
             %span 変更する
             %i.fas.fa-chevron-right
   = render partial: "layouts/simple-footer"
