@@ -50,7 +50,9 @@
         .user_details__items__content
           - @items.each do |item|
             %section.item_box
-              = link_to item_path(item.id), data: {"turbolinks" => false} do
+
+              = link_to item_path(item.id) do
+
                 %figure.item_box__image
                   = image_tag item_item_images_path(item), class: 'item_box__image__set'
                 .item_box__text

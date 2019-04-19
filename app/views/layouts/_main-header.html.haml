@@ -36,9 +36,9 @@
       %menu.index_header_bottom_menu
         %ul.index_menu_list
 
-          - unless user_signed_in?
-            = link_to "ログイン", "/users/sign_in", class: "index_menu_list_login"
-            = link_to "新規登録", "/users/sign_up", class: "index_menu_list_signup"
+          - if !user_signed_in?
+            = link_to "ログイン", user_session_path, class: "index_menu_list_login"
+            = link_to "新規登録", new_user_session_path, class: "index_menu_list_signup"
 
           - else
             %li.menu__list.menu__list__info
