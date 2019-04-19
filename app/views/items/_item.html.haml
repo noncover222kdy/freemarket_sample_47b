@@ -1,0 +1,13 @@
+%li.index_item-list
+  = link_to item_path(item.id), data: {"turbolinks" => false} do
+    %section.index_item_top
+      = image_tag item.item_images[0].image.url, class: "index_item_top_image"
+    %section.index_item_bottom
+      %h3.index_item_bottom_name
+        = item.name
+      .index_item_bottom-num
+        %p.index_item_bottom-num_price
+          = item.price
+        %p.index_item_bottom-num_like
+          ♡
+          %span 0

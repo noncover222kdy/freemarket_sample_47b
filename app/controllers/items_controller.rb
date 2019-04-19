@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
   require "payjp"
   before_action :define_varialable, only: [:edit, :show, :update, :destroy]
   def index
-    @items = Item.where("category = 'レディース'").order('id DESC').limit(4)
+    @ladies = Item.where("category LIKE?", "a%").order(created_at: :desc).limit(4)
+
+    @mens = Item.where("category LIKE?", "b%").order(created_at: :desc).limit(4)
   end
 
   def new
@@ -22,7 +24,6 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-
 
   def edit
   end
@@ -64,6 +65,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:search])
+  end
+
   def pay
     @item = Item.find(params[:id])
     @bank = current_user.banks.first
@@ -78,6 +83,7 @@ class ItemsController < ApplicationController
       )
     end
   end
+
   private
 
   def item_params
